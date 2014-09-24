@@ -1,4 +1,4 @@
-liblxqt (0.7.96-1) unstable; urgency=medium
+liblxqt (0.7.96-1) unstable; urgency=low
 
   * Initial release (Closes: #747620)
 
