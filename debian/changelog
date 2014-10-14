@@ -1,3 +1,17 @@
+liblxqt (0.8.0-1) unstable; urgency=low
+
+  * Imported Upstream version 0.8.0
+  * bump Standards to 3.9.6
+  * set urgency to low
+  * libegl1-mesa-dev removed from build dependencies,
+    Qt 5 bug fixed in 5.3.2
+  * build dependendcy libqt5xdg-dev (>= 1.0.0)
+  * min Qt 5 Version 5.3.2
+  * Symbols fixed
+  * install fixed
+
+ -- Alf Gaida <agaida@siduction.org>  Tue, 14 Oct 2014 23:04:41 +0200
+
 liblxqt (0.7.96-2) unstable; urgency=medium
 
   * symbols added and tested amd64 and i386
