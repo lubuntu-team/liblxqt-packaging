@@ -21,3 +21,4 @@ CMakeLists.txt.user*
 /build
 nbproject/
 /test
+/.tx
