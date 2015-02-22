@@ -1,0 +1,9 @@
+/*.debhelper
+/*.log
+/*.substvars
+/files
+
+/liblxqt0/
+/liblxqt0-dbg/
+/liblxqt0-dev/
+/tmp
