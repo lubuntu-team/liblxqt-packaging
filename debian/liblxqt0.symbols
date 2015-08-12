@@ -22,28 +22,26 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LxQt::GridLayout::moveItem(int, int)@Base" 0.8.0
  (c++)"LxQt::GridLayout::GridLayout(QWidget*)@Base" 0.8.0
  (c++)"LxQt::GridLayout::~GridLayout()@Base" 0.8.0
- (c++)"LxQt::MessageBox::~MessageBox()@Base" 0.8.0
  (c++)"LxQt::PluginInfo::load(QString const&)@Base" 0.8.0
  (c++)"LxQt::PluginInfo::search(QStringList const&, QString const&, QString const&)@Base" 0.8.0
  (c++)"LxQt::PluginInfo::search(QString const&, QString const&, QString const&)@Base" 0.8.0
  (c++)"LxQt::PluginInfo::PluginInfo()@Base" 0.8.0
- (c++)"LxQt::PluginInfo::~PluginInfo()@Base" 0.8.0
  (c++)"LxQt::Translator::translatePlugin(QString const&, QString const&)@Base" 0.8.0
  (c++)"LxQt::Translator::translateLibrary(QString const&)@Base" 0.8.0
  (c++)"LxQt::Translator::translateApplication(QString const&)@Base" 0.8.0
  (c++)"LxQt::Translator::translationSearchPaths()@Base" 0.8.0
  (c++)"LxQt::Translator::setTranslationSearchPaths(QStringList const&)@Base" 0.8.0
- (c++)"LxQt::AboutDialog::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.8.0
- (c++)"LxQt::AboutDialog::qt_metacast(char const*)@Base" 0.8.0
- (c++)"LxQt::AboutDialog::staticMetaObject@Base" 0.8.0
- (c++)"LxQt::AboutDialog::AboutDialog()@Base" 0.8.0
- (c++)"LxQt::AboutDialog::~AboutDialog()@Base" 0.8.0
+ (c++)"LxQt::Application::unixSignal(int)@Base" 0.9.0
  (c++)"LxQt::Application::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.8.0
  (c++)"LxQt::Application::qt_metacast(char const*)@Base" 0.8.0
  (c++)"LxQt::Application::updateTheme()@Base" 0.8.0
  (c++)"LxQt::Application::themeChanged()@Base" 0.8.0
  (c++)"LxQt::Application::staticMetaObject@Base" 0.8.0
+ (c++)"LxQt::Application::listenToUnixSignals(QList<int> const&)@Base" 0.9.0
  (c++)"LxQt::Application::Application(int&, char**)@Base" 0.8.0
+ (c++)"LxQt::Application::Application(int&, char**, bool)@Base" 0.9.0
+ (c++)"LxQt::Application::Application(int&, char**)@Base" 0.8.0
+ (c++)"LxQt::Application::Application(int&, char**, bool)@Base" 0.9.0
  (c++)"LxQt::ScreenSaver::lockScreen()@Base" 0.8.0
  (c++)"LxQt::ScreenSaver::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.8.0
  (c++)"LxQt::ScreenSaver::qt_metacast(char const*)@Base" 0.8.0
@@ -53,8 +51,8 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LxQt::ScreenSaver::done()@Base" 0.8.0
  (c++)"LxQt::ScreenSaver::activated()@Base" 0.8.0
  (c++)"LxQt::ScreenSaver::ScreenSaver(QObject*)@Base" 0.8.0
- (c++)"LxQt::ScreenSaver::~ScreenSaver()@Base" 0.8.0
  (c++)"LxQt::ConfigDialog::closeEvent(QCloseEvent*)@Base" 0.8.0
+ (c++)"LxQt::ConfigDialog::setButtons(QFlags<QDialogButtonBox::StandardButton>)@Base" 0.9.0
  (c++)"LxQt::ConfigDialog::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.8.0
  (c++)"LxQt::ConfigDialog::qt_metacast(char const*)@Base" 0.8.0
  (c++)"LxQt::ConfigDialog::updateIcons()@Base" 0.8.0
@@ -64,6 +62,8 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LxQt::ConfigDialog::reset()@Base" 0.8.0
  (c++)"LxQt::ConfigDialog::addPage(QWidget*, QString const&, QStringList const&)@Base" 0.8.0
  (c++)"LxQt::ConfigDialog::addPage(QWidget*, QString const&, QString const&)@Base" 0.8.0
+ (c++)"LxQt::ConfigDialog::clicked(QDialogButtonBox::StandardButton)@Base" 0.9.0
+ (c++)"LxQt::ConfigDialog::showPage(QWidget*)@Base" 0.9.0
  (c++)"LxQt::ConfigDialog::ConfigDialog(QString const&, LxQt::Settings*, QWidget*)@Base" 0.8.0
  (c++)"LxQt::ConfigDialog::~ConfigDialog()@Base" 0.8.0
  (c++)"LxQt::HtmlDelegate::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.8.0
@@ -122,7 +122,6 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LxQt::RotatedWidget::mouseDoubleClickEvent(QMouseEvent*)@Base" 0.8.0
  (c++)"LxQt::RotatedWidget::setOrigin(Qt::Corner)@Base" 0.8.0
  (c++)"LxQt::RotatedWidget::RotatedWidget(QWidget&, QWidget*, QFlags<Qt::WindowType>)@Base" 0.8.0
- (c++)"LxQt::RotatedWidget::~RotatedWidget()@Base" 0.8.0
  (c++)"LxQt::SettingsCache::loadToSettings()@Base" 0.8.0
  (c++)"LxQt::SettingsCache::loadFromSettings()@Base" 0.8.0
  (c++)"LxQt::SettingsCache::SettingsCache(QSettings*)@Base" 0.8.0
@@ -137,20 +136,6 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LxQt::AutostartEntry::AutostartEntry()@Base" 0.8.0
  (c++)"LxQt::AutostartEntry::AutostartEntry(QString const&)@Base" 0.8.0
  (c++)"LxQt::AutostartEntry::AutostartEntry()@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::timerEvent(QTimerEvent*)@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::pluginAdded(QString const&)@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::qt_metacast(char const*)@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::pluginRemoved(QString const&)@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::pluginSelected(LxQt::PluginInfo const&)@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::setPluginsInUse(QStringList)@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::staticMetaObject@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::emitPluginSelected()@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::searchEditTexChanged(QString const&)@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::toggleAddButtonState()@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::init()@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::AddPluginDialog(QStringList const&, QString const&, QString const&, QWidget*)@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::~AddPluginDialog()@Base" 0.8.0
  (c++)"LxQt::PageSelectWidget::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.8.0
  (c++)"LxQt::PageSelectWidget::qt_metacast(char const*)@Base" 0.8.0
  (c++)"LxQt::PageSelectWidget::staticMetaObject@Base" 0.8.0
@@ -215,7 +200,6 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LxQt::GridLayout::direction() const@Base" 0.8.0
  (c++)"LxQt::PluginInfo::loadLibrary(QString const&) const@Base" 0.8.0
  (c++)"LxQt::PluginInfo::isValid() const@Base" 0.8.0
- (c++)"LxQt::AboutDialog::metaObject() const@Base" 0.8.0
  (c++)"LxQt::Application::metaObject() const@Base" 0.8.0
  (c++)"LxQt::ScreenSaver::metaObject() const@Base" 0.8.0
  (c++)"LxQt::ConfigDialog::metaObject() const@Base" 0.8.0
@@ -234,7 +218,6 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LxQt::AutostartEntry::file() const@Base" 0.8.0
  (c++)"LxQt::AutostartEntry::name() const@Base" 0.8.0
  (c++)"LxQt::AutostartEntry::isEnabled() const@Base" 0.8.0
- (c++)"LxQt::AddPluginDialog::metaObject() const@Base" 0.8.0
  (c++)"LxQt::PageSelectWidget::metaObject() const@Base" 0.8.0
  (c++)"LxQt::PageSelectWidget::sizeHint() const@Base" 0.8.0
  (c++)"LxQt::SingleApplication::metaObject() const@Base" 0.8.0
@@ -257,7 +240,6 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"typeinfo for LxQt::GridLayout@Base" 0.8.0
  (c++)"typeinfo for LxQt::MessageBox@Base" 0.8.0
  (c++)"typeinfo for LxQt::PluginInfo@Base" 0.8.0
- (c++)"typeinfo for LxQt::AboutDialog@Base" 0.8.0
  (c++)"typeinfo for LxQt::Application@Base" 0.8.0
  (c++)"typeinfo for LxQt::ScreenSaver@Base" 0.8.0
  (c++)"typeinfo for LxQt::ConfigDialog@Base" 0.8.0
@@ -267,7 +249,6 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"typeinfo for LxQt::RotatedWidget@Base" 0.8.0
  (c++)"typeinfo for LxQt::SettingsCache@Base" 0.8.0
  (c++)"typeinfo for LxQt::AutostartEntry@Base" 0.8.0
- (c++)"typeinfo for LxQt::AddPluginDialog@Base" 0.8.0
  (c++)"typeinfo for LxQt::PageSelectWidget@Base" 0.8.0
  (c++)"typeinfo for LxQt::SingleApplication@Base" 0.8.0
  (c++)"typeinfo for LxQt::Power@Base" 0.8.0
@@ -275,7 +256,6 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"typeinfo name for LxQt::GridLayout@Base" 0.8.0
  (c++)"typeinfo name for LxQt::MessageBox@Base" 0.8.0
  (c++)"typeinfo name for LxQt::PluginInfo@Base" 0.8.0
- (c++)"typeinfo name for LxQt::AboutDialog@Base" 0.8.0
  (c++)"typeinfo name for LxQt::Application@Base" 0.8.0
  (c++)"typeinfo name for LxQt::ScreenSaver@Base" 0.8.0
  (c++)"typeinfo name for LxQt::ConfigDialog@Base" 0.8.0
@@ -285,7 +265,6 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"typeinfo name for LxQt::RotatedWidget@Base" 0.8.0
  (c++)"typeinfo name for LxQt::SettingsCache@Base" 0.8.0
  (c++)"typeinfo name for LxQt::AutostartEntry@Base" 0.8.0
- (c++)"typeinfo name for LxQt::AddPluginDialog@Base" 0.8.0
  (c++)"typeinfo name for LxQt::PageSelectWidget@Base" 0.8.0
  (c++)"typeinfo name for LxQt::SingleApplication@Base" 0.8.0
  (c++)"typeinfo name for LxQt::Power@Base" 0.8.0
@@ -293,7 +272,6 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"vtable for LxQt::GridLayout@Base" 0.8.0
  (c++)"vtable for LxQt::MessageBox@Base" 0.8.0
  (c++)"vtable for LxQt::PluginInfo@Base" 0.8.0
- (c++)"vtable for LxQt::AboutDialog@Base" 0.8.0
  (c++)"vtable for LxQt::Application@Base" 0.8.0
  (c++)"vtable for LxQt::ScreenSaver@Base" 0.8.0
  (c++)"vtable for LxQt::ConfigDialog@Base" 0.8.0
@@ -303,7 +281,6 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"vtable for LxQt::RotatedWidget@Base" 0.8.0
  (c++)"vtable for LxQt::SettingsCache@Base" 0.8.0
  (c++)"vtable for LxQt::AutostartEntry@Base" 0.8.0
- (c++)"vtable for LxQt::AddPluginDialog@Base" 0.8.0
  (c++)"vtable for LxQt::PageSelectWidget@Base" 0.8.0
  (c++)"vtable for LxQt::SingleApplication@Base" 0.8.0
  (c++)"vtable for LxQt::Power@Base" 0.8.0
@@ -311,10 +288,6 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"non-virtual thunk to LxQt::GridLayout::invalidate()@Base" 0.8.0
  (c++)"non-virtual thunk to LxQt::GridLayout::setGeometry(QRect const&)@Base" 0.8.0
  (c++)"non-virtual thunk to LxQt::GridLayout::~GridLayout()@Base" 0.8.0
- (c++)"non-virtual thunk to LxQt::MessageBox::~MessageBox()@Base" 0.8.0
- (c++)"non-virtual thunk to LxQt::AboutDialog::~AboutDialog()@Base" 0.8.0
  (c++)"non-virtual thunk to LxQt::ConfigDialog::~ConfigDialog()@Base" 0.8.0
- (c++)"non-virtual thunk to LxQt::RotatedWidget::~RotatedWidget()@Base" 0.8.0
- (c++)"non-virtual thunk to LxQt::AddPluginDialog::~AddPluginDialog()@Base" 0.8.0
  (c++)"non-virtual thunk to LxQt::PageSelectWidget::~PageSelectWidget()@Base" 0.8.0
  (c++)"non-virtual thunk to LxQt::GridLayout::sizeHint() const@Base" 0.8.0
