@@ -12,7 +12,7 @@ Build-Depends:
  libx11-dev,
  pkg-config,
  libqt5x11extras5-dev (>= 5.3),
- libqt5xdg-dev (>= 1.2.0), 
+ libqt5xdg-dev (>= 1.2.0),
  qttools5-dev (>= 5.3),
  qttools5-dev-tools (>= 5.3),
  libkf5windowsystem-dev (>= 5.9),
@@ -29,7 +29,7 @@ Pre-Depends:
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
-Breaks: liblxqt-qt5-0 (<< 0.9.0) 
+Breaks: liblxqt-qt5-0 (<< 0.9.0)
 Replaces: liblxqt-qt5-0 (<< 0.9.0)
 Description: Shared libraries for LXQt desktop environment (libs)
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
@@ -65,7 +65,7 @@ Depends:
  ${misc:Depends},
  liblxqt0 (= ${binary:Version}),
 Breaks: liblxqt-qt5-0-dbg (<< 0.9.0)
-Replaces: liblxqt-qt5-0-dbg (<< 0.9.0)  
+Replaces: liblxqt-qt5-0-dbg (<< 0.9.0)
 Description: Shared libraries for LXQt desktop environment (debug)
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
  technologies. It has been tailored for users who value simplicity, speed, and
