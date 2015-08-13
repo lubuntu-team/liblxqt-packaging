@@ -45,6 +45,13 @@ ConfigDialog::ConfigDialog(const QString& title, Settings* settings, QWidget* pa
         button->setAutoDefault(false);
 }
 
+void ConfigDialog::setButtons(QDialogButtonBox::StandardButtons buttons)
+{
+    ui->buttons->setStandardButtons(buttons);
+    foreach(QPushButton* button, ui->buttons->findChildren<QPushButton*>())
+        button->setAutoDefault(false);
+}
+
 void ConfigDialog::addPage(QWidget* page, const QString& name, const QString& iconName)
 {
     addPage(page, name, QStringList() << iconName);
@@ -52,6 +59,15 @@ void ConfigDialog::addPage(QWidget* page, const QString& name, const QString& ic
 
 void ConfigDialog::addPage(QWidget* page, const QString& name, const QStringList& iconNames)
 {
+    /* We set the layout margin to 0. In the default configuration, one page
+     *  only, it aligns buttons with the page. In multi-page it saves a little
+     *  bit of space, without clutter.
+     */
+    if (page->layout())
+    {
+        page->layout()->setMargin(0);
+    }
+
     QStringList icons = QStringList(iconNames) << "application-x-executable";
     new QListWidgetItem(XdgIcon::fromTheme(icons), name, ui->moduleList);
     mIcons.append(icons);
@@ -60,14 +76,26 @@ void ConfigDialog::addPage(QWidget* page, const QString& name, const QStringList
     {
         ui->moduleList->setVisible(true);
         ui->moduleList->setCurrentRow(0);
-        mMaxSize = QSize(qMax(page->geometry().width() + ui->moduleList->geometry().width(), mMaxSize.width()),
-                         qMax(page->geometry().height() + ui->buttons->geometry().height(), mMaxSize.height()));
+        mMaxSize = QSize(qMax(page->geometry().width() + ui->moduleList->geometry().width(),
+                              mMaxSize.width()),
+                         qMax(page->geometry().height() + ui->buttons->geometry().height(),
+                              mMaxSize.height()));
     }
     else
     {
         mMaxSize = page->geometry().size();
     }
     resize(mMaxSize);
+}
+
+void ConfigDialog::showPage(QWidget* page)
+{
+    int index = ui->stackedWidget->indexOf(page);
+    if (index < 0)
+        return;
+
+    ui->stackedWidget->setCurrentIndex(index);
+    ui->moduleList->setCurrentRow(index);
 }
 
 void ConfigDialog::closeEvent(QCloseEvent* event)
@@ -78,13 +106,14 @@ void ConfigDialog::closeEvent(QCloseEvent* event)
 
 void ConfigDialog::dialogButtonsAction(QAbstractButton* button)
 {
-    QDialogButtonBox::ButtonRole role = ui->buttons->buttonRole(button);
-    if (role == QDialogButtonBox::ResetRole)
+    QDialogButtonBox::StandardButton standardButton = ui->buttons->standardButton(button);
+    emit clicked(standardButton);
+    if (standardButton == QDialogButtonBox::Reset)
     {
         mCache->loadToSettings();
         emit reset();
     }
-    else
+    else if(standardButton == QDialogButtonBox::Close)
     {
         close();
     }
