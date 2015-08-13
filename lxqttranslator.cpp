@@ -24,7 +24,7 @@ QStringList *getSearchPaths()
     {
         searchPath = new QStringList();
         *searchPath << QString(LXQT_SHARE_TRANSLATIONS_DIR);
-        *searchPath << XdgDirs::dataDirs(LXQT_RELATIVE_SHARE_TRANSLATIONS_DIR);
+        *searchPath << XdgDirs::dataDirs(QLatin1Char('/') % LXQT_RELATIVE_SHARE_TRANSLATIONS_DIR);
         searchPath->removeDuplicates();
     }
 
@@ -114,7 +114,6 @@ bool Translator::translateApplication(const QString &applicationName)
     else
     {
         delete qtTranslator;
-        qWarning("LxQt::Translator: Qt translations not found");
     }
 
     if (!applicationName.isEmpty())

@@ -28,6 +28,7 @@
 #include "lxqtsettings.h"
 #include <QDialog>
 #include <QAbstractButton>
+#include <QDialogButtonBox>
 #include "lxqtglobals.h"
 
 namespace Ui {
@@ -43,7 +44,13 @@ class LXQT_API ConfigDialog : public QDialog
 
 public:
     explicit ConfigDialog(const QString& title, Settings* settings, QWidget* parent = 0);
+
     ~ConfigDialog();
+
+    /*!
+     * Sets buttons in button bar
+     */
+    void setButtons(QDialogButtonBox::StandardButtons buttons);
 
     /*!
      * Add a page to the configure dialog
@@ -54,6 +61,13 @@ public:
      * Add a page to the configure dialog, attempting several alternative icons to find one in the theme
      */
     void addPage(QWidget* page, const QString& name, const QStringList& iconNames);
+
+    /*!
+     * Show page containing the widget in parameter
+     */
+    void showPage(QWidget *page);
+
+
 
 signals:
     /*!
@@ -67,6 +81,11 @@ signals:
      * It is only necessary if additional actions need to be performed - Settings are handled automatically.
      */
     void save();
+
+    /*!
+     * This is emitted when some button in the buttonbar is clicked.
+     */
+    void clicked(QDialogButtonBox::StandardButton);
 
 protected:
     Settings* mSettings;
