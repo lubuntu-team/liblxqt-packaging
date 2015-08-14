@@ -1,3 +1,27 @@
+liblxqt (0.9.0+20150806-1) unstable; urgency=medium
+
+  [ Alf Gaida ]
+  * source options added - don't provide .gitignore in package.
+  * make the rules less verbos and drop the not needed QT5 switch.
+  * drop remaining .tx directory.
+
+  [ ChangZhuo Chen (陳昌倬) ]
+  * Update d/watch with PGP key.
+  * Ignore anything except debian directory.
+
+  [ Alf Gaida ]
+  * changed team an vcs fields build dependency libqtxdg fixed.
+  * some changes in debian $foo.
+  * drop metapackages.
+
+  [ Andrew Lee (李健秋) ]
+  * Merging upstream version 0.9.0+20150806.
+  * Removing whitespaces at EOL and EOF.
+  * Added myself as Uploader.
+  * Sorting build-depends.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Thu, 13 Aug 2015 21:36:40 +0800
+
 liblxqt (0.9.0-1) experimental; urgency=low
 
   * Initial release (Closes: #747620)
