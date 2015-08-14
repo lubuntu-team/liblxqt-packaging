@@ -74,29 +74,3 @@ Description: Shared libraries for LXQt desktop environment (debug)
  fine with less powerful machines.
  .
  This package contain the debugging symbols.
-
-# ---- can be dropped in 2016 ----
-
-Package: liblxqt0-qt5-0
-Depends: liblxqt0, ${misc:Depends}
-Priority: extra
-Section: oldlibs
-Architecture: all
-Description: liblxqt transitional package
- Empty package to facilitate upgrades, can be safely removed.
-
-Package: liblxqt0-qt5-0-dev
-Depends: liblxqt0-dev, ${misc:Depends}
-Priority: extra
-Section: oldlibs
-Architecture: all
-Description: liblxqt transitional package (dev)
- Empty package to facilitate upgrades, can be safely removed.
-
-Package: liblxqt0-qt5-0-dbg
-Depends: liblxqt0-dbg, ${misc:Depends}
-Priority: extra
-Section: oldlibs
-Architecture: all
-Description: liblxqt transitional package (dbg)
- Empty package to facilitate upgrades, can be safely removed.
