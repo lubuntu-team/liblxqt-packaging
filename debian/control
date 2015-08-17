@@ -9,7 +9,7 @@ Uploaders:
 Build-Depends:
  cmake (>= 3.0.2),
  debhelper (>= 9),
- libdrm-dev,
+ libdrm-dev [!hurd-any],
  libkf5windowsystem-dev (>= 5.9),
  libqt5x11extras5-dev (>= 5.3),
  libqt5xdg-dev (>= 1.2.0),
