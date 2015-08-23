@@ -29,8 +29,6 @@ Pre-Depends:
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
-Breaks: liblxqt-qt5-0 (<< 0.9.0)
-Replaces: liblxqt-qt5-0 (<< 0.9.0)
 Description: Shared libraries for LXQt desktop environment (libs)
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
  technologies. It has been tailored for users who value simplicity, speed, and
@@ -46,8 +44,6 @@ Section: libdevel
 Depends:
  ${misc:Depends},
  liblxqt0 (= ${binary:Version}),
-Breaks: liblxqt-qt5-0-dev (<< 0.9.0)
-Replaces: liblxqt-qt5-0-dev (<< 0.9.0)
 Description: Shared libraries for LXQt desktop environment (dev)
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
  technologies. It has been tailored for users who value simplicity, speed, and
@@ -64,8 +60,6 @@ Priority: extra
 Depends:
  ${misc:Depends},
  liblxqt0 (= ${binary:Version}),
-Breaks: liblxqt-qt5-0-dbg (<< 0.9.0)
-Replaces: liblxqt-qt5-0-dbg (<< 0.9.0)
 Description: Shared libraries for LXQt desktop environment (debug)
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
  technologies. It has been tailored for users who value simplicity, speed, and
