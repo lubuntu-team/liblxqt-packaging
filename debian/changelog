@@ -4,6 +4,7 @@ liblxqt (0.9.0+20150806-3) unstable; urgency=medium
     by other packages if needed in $architecture 
   * removed breaks/replaces
   * fixed watch file
+  * cme fix dpkg-control
 
  -- Alf Gaida <agaida@siduction.org>  Thu, 27 Aug 2015 18:21:56 +0200
 
