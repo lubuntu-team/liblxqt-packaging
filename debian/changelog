@@ -1,12 +1,21 @@
+liblxqt (0.9.0+20150901-1) unstable; urgency=medium
+
+  * Fixed copyright, only LGPL2.1+ is used
+  * Cherry-picking upstream version 0.9.0-20150901
+  * Fixed Symbols
+  * Fixed license
+
+ -- Alf Gaida <agaida@siduction.org>  Wed, 09 Sep 2015 20:06:10 +0200
+
 liblxqt (0.9.0+20150806-3) unstable; urgency=medium
 
-  * removed the libdrm-dev build dependency, as libdrm-dev is thrown in
+  * Removed the libdrm-dev build dependency, as libdrm-dev is thrown in
     by other packages if needed in $architecture 
-  * removed breaks/replaces
-  * fixed watch file
+  * Removed breaks/replaces
+  * Fixed watch file
   * cme fix dpkg-control
 
- -- Alf Gaida <agaida@siduction.org>  Thu, 27 Aug 2015 18:21:56 +0200
+ -- Alf Gaida <agaida@siduction.org>  Tue, 01 Sep 2015 21:29:06 +0200
 
 liblxqt (0.9.0+20150806-2) unstable; urgency=medium
 
