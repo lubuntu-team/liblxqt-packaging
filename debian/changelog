@@ -1,11 +1,11 @@
-liblxqt (0.9.0+20150901-1) unstable; urgency=medium
+liblxqt (0.9.0+20150911-1) unstable; urgency=medium
 
+  * Cherry-picked upstream version 0.9.0+20150911. 
   * Fixed copyright, only LGPL2.1+ is used
-  * Cherry-picking upstream version 0.9.0-20150901
   * Fixed Symbols
   * Fixed license
 
- -- Alf Gaida <agaida@siduction.org>  Wed, 09 Sep 2015 20:06:10 +0200
+ -- Alf Gaida <agaida@siduction.org>  Fri, 11 Sep 2015 23:01:56 +0200
 
 liblxqt (0.9.0+20150806-3) unstable; urgency=medium
 
