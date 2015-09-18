@@ -1,21 +1,18 @@
-liblxqt (0.9.0+20150911-1) unstable; urgency=medium
+liblxqt (0.9.0+20150911-1) experimental; urgency=medium
 
+  [ Alf Gaida ]
   * Cherry-picked upstream version 0.9.0+20150911. 
-  * Fixed copyright, only LGPL2.1+ is used
-  * Fixed Symbols
-  * Fixed license
-
- -- Alf Gaida <agaida@siduction.org>  Fri, 11 Sep 2015 23:01:56 +0200
-
-liblxqt (0.9.0+20150806-3) unstable; urgency=medium
-
   * Removed the libdrm-dev build dependency, as libdrm-dev is thrown in
     by other packages if needed in $architecture 
+  * Fixed copyright, only LGPL2.1+ is used
   * Removed breaks/replaces
   * Fixed watch file
-  * cme fix dpkg-control
+  * Fixed Symbols
 
- -- Alf Gaida <agaida@siduction.org>  Tue, 01 Sep 2015 21:29:06 +0200
+  [ ChangZhuo Chen (陳昌倬) ]
+  * Upload to experimental due to namespace change from LxQt to LXQt.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Fri, 18 Sep 2015 21:16:59 +0800
 
 liblxqt (0.9.0+20150806-2) unstable; urgency=medium
 
