@@ -8,4 +8,4 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 
 override_dh_install:
-	dh_install --list-missing --fail-missing
+	dh_install --fail-missing
