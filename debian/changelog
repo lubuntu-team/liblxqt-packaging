@@ -1,9 +1,9 @@
-liblxqt (0.9.0+20150930-1) experimental; urgency=medium
+liblxqt (0.9.0+20151019-1) experimental; urgency=medium
 
-  * Cherry-picked upstream-version 0.9.0+20150930.
+  * Cherry-picked upstream-version 0.9.0+20151019-1.
   * Remove --list-missing from rules, it's included in --fail-missing
 
- -- Alf Gaida <agaida@siduction.org>  Sat, 03 Oct 2015 10:29:34 +0200
+ -- Alf Gaida <agaida@siduction.org>  Fri, 23 Oct 2015 22:27:13 +0200
 
 liblxqt (0.9.0+20150911-2) experimental; urgency=medium
 
