@@ -1,3 +1,9 @@
+liblxqt (0.10.0-2) UNRELEASED; urgency=medium
+
+  * Added minimum libqtxdg version
+
+ -- Alf Gaida <agaida@siduction.org>  Tue, 03 Nov 2015 20:33:01 +0100
+
 liblxqt (0.10.0-1) experimental; urgency=medium
 
   * New upstream release.
