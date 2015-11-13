@@ -25,6 +25,7 @@ Multi-Arch: same
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
+Provides: lxqt-abi-0-10-0
 Description: Shared libraries for LXQt desktop environment (libs)
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
  technologies. It has been tailored for users who value simplicity, speed, and
