@@ -29,7 +29,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::AboutDialogPrivate</name>
+    <name>LXQt::AboutDialogPrivate</name>
     <message>
         <source>Yes</source>
         <translation type="obsolete">Taip</translation>
@@ -40,11 +40,11 @@
     </message>
 </context>
 <context>
-    <name>LxQt::MessageBox</name>
+    <name>LXQt::MessageBox</name>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
-        <source>LxQt Power Manager Error</source>
-        <translation type="unfinished">LxQt Energijos Nustatymų Klaida</translation>
+        <source>LXQt Power Manager Error</source>
+        <translation type="unfinished">LXQt Energijos Nustatymų Klaida</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
@@ -53,7 +53,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::NotificationPrivate</name>
+    <name>LXQt::NotificationPrivate</name>
     <message>
         <location filename="../lxqtnotification.cpp" line="152"/>
         <source>Notifications Fallback</source>
@@ -61,7 +61,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::PowerManager</name>
+    <name>LXQt::PowerManager</name>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="112"/>
         <source>Hibernate</source>
@@ -89,8 +89,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="152"/>
-        <source>LxQt Session Suspend</source>
-        <translation>LxQt sesijos užmigdymas</translation>
+        <source>LXQt Session Suspend</source>
+        <translation>LXQt sesijos užmigdymas</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="153"/>
@@ -99,8 +99,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="162"/>
-        <source>LxQt Session Hibernate</source>
-        <translation>LxQt sesijos sustabdymas į atmintį.</translation>
+        <source>LXQt Session Hibernate</source>
+        <translation>LXQt sesijos sustabdymas į atmintį.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="163"/>
@@ -109,8 +109,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="172"/>
-        <source>LxQt Session Reboot</source>
-        <translation>LxQt sesijos perkrovimas</translation>
+        <source>LXQt Session Reboot</source>
+        <translation>LXQt sesijos perkrovimas</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="173"/>
@@ -119,8 +119,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="182"/>
-        <source>LxQt Session Shutdown</source>
-        <translation>LxQt sesijos išjungimas</translation>
+        <source>LXQt Session Shutdown</source>
+        <translation>LXQt sesijos išjungimas</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="183"/>
@@ -129,8 +129,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="192"/>
-        <source>LxQt Session Logout</source>
-        <translation>LxQt sesijos atjungimas</translation>
+        <source>LXQt Session Logout</source>
+        <translation>LXQt sesijos atjungimas</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="193"/>
@@ -140,8 +140,8 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="201"/>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
-        <source>LxQt Power Manager Error</source>
-        <translation>LxQt Energijos Nustatymų Klaida</translation>
+        <source>LXQt Power Manager Error</source>
+        <translation>LXQt Energijos Nustatymų Klaida</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="201"/>
@@ -155,61 +155,59 @@
     </message>
 </context>
 <context>
-    <name>LxQt::ScreenSaver</name>
+    <name>LXQt::ScreenSaver</name>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="51"/>
         <source>Lock Screen</source>
         <translation>Užrakinti ekraną</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="70"/>
-        <location filename="../lxqtscreensaver.cpp" line="78"/>
-        <location filename="../lxqtscreensaver.cpp" line="86"/>
-        <location filename="../lxqtscreensaver.cpp" line="98"/>
-        <location filename="../lxqtscreensaver.cpp" line="106"/>
-        <location filename="../lxqtscreensaver.cpp" line="114"/>
-        <location filename="../lxqtscreensaver.cpp" line="123"/>
+        <location filename="../lxqtscreensaver.cpp" line="77"/>
+        <source>Screen Saver Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="83"/>
+        <location filename="../lxqtscreensaver.cpp" line="89"/>
+        <location filename="../lxqtscreensaver.cpp" line="96"/>
         <source>Screen Saver Activation Error</source>
         <translation>Ekrano užsklandos aktyvavimo klaida</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="71"/>
+        <location filename="../lxqtscreensaver.cpp" line="97"/>
+        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation>Klaida paleidžiant ekrano užsklandą. xdg-screensaver negali pasileisti, nes nulūžo.</translation>
+        <translation type="vanished">Klaida paleidžiant ekrano užsklandą. xdg-screensaver negali pasileisti, nes nulūžo.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="79"/>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation>Klaida paleidžiant ekrano užsklandą. xdg-screensaver nėra tinkamai įdiegtas.</translation>
+        <translation type="vanished">Klaida paleidžiant ekrano užsklandą. xdg-screensaver nėra tinkamai įdiegtas.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>Klaida paleidžiant ekrano užsklandą. xdg-screensaver negali būti paleistas.</translation>
+        <translation type="vanished">Klaida paleidžiant ekrano užsklandą. xdg-screensaver negali būti paleistas.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="99"/>
+        <location filename="../lxqtscreensaver.cpp" line="78"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation>Klaida paleidžiant ekrano užsklandą. Sintaksės klaida xdg-screensaver argumentuose.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="107"/>
+        <location filename="../lxqtscreensaver.cpp" line="84"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation>Klaida paleidžiant ekrano užsklandą. Įsitikinkite, ar įdiegtas ir paleistas xscreensaver.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="115"/>
+        <location filename="../lxqtscreensaver.cpp" line="90"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation>Klaida paleidžiant ekrano užsklandą. Nevyko atlikti veiksmo „activate“. Įsitikinkite, ar įdiegtas ir paleistas xscreensaver.</translation>
     </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="124"/>
-        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
-    <name>LxQt::ShortcutButton</name>
+    <name>LXQt::ShortcutButton</name>
     <message>
         <source>Clear</source>
         <translation type="obsolete">Išvalyti</translation>
@@ -244,7 +242,7 @@
     <name>about</name>
     <message>
         <source> About LXQt</source>
-        <translation type="vanished">Apie LxQt</translation>
+        <translation type="vanished">Apie LXQt</translation>
     </message>
     <message>
         <source>About</source>

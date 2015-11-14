@@ -29,7 +29,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::AboutDialogPrivate</name>
+    <name>LXQt::AboutDialogPrivate</name>
     <message>
         <source>Version: %1</source>
         <translation type="vanished">Versio: %1</translation>
@@ -72,11 +72,11 @@
     </message>
 </context>
 <context>
-    <name>LxQt::MessageBox</name>
+    <name>LXQt::MessageBox</name>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
-        <source>LxQt Power Manager Error</source>
-        <translation type="unfinished">LxQtin virranhallintavirhe</translation>
+        <source>LXQt Power Manager Error</source>
+        <translation type="unfinished">LXQtin virranhallintavirhe</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
@@ -85,7 +85,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::NotificationPrivate</name>
+    <name>LXQt::NotificationPrivate</name>
     <message>
         <location filename="../lxqtnotification.cpp" line="152"/>
         <source>Notifications Fallback</source>
@@ -93,7 +93,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::PowerManager</name>
+    <name>LXQt::PowerManager</name>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="112"/>
         <source>Hibernate</source>
@@ -121,7 +121,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="152"/>
-        <source>LxQt Session Suspend</source>
+        <source>LXQt Session Suspend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -131,7 +131,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="162"/>
-        <source>LxQt Session Hibernate</source>
+        <source>LXQt Session Hibernate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -141,7 +141,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="172"/>
-        <source>LxQt Session Reboot</source>
+        <source>LXQt Session Reboot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -151,8 +151,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="182"/>
-        <source>LxQt Session Shutdown</source>
-        <translation>LxQt-istunnon sammutus</translation>
+        <source>LXQt Session Shutdown</source>
+        <translation>LXQt-istunnon sammutus</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="183"/>
@@ -161,8 +161,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="192"/>
-        <source>LxQt Session Logout</source>
-        <translation>LxQt-istunnon uloskirjaus</translation>
+        <source>LXQt Session Logout</source>
+        <translation>LXQt-istunnon uloskirjaus</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="193"/>
@@ -172,8 +172,8 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="201"/>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
-        <source>LxQt Power Manager Error</source>
-        <translation>LxQtin virranhallintavirhe</translation>
+        <source>LXQt Power Manager Error</source>
+        <translation>LXQtin virranhallintavirhe</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="201"/>
@@ -187,61 +187,59 @@
     </message>
 </context>
 <context>
-    <name>LxQt::ScreenSaver</name>
+    <name>LXQt::ScreenSaver</name>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="51"/>
         <source>Lock Screen</source>
         <translation>Lukitse näyttö</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="70"/>
-        <location filename="../lxqtscreensaver.cpp" line="78"/>
-        <location filename="../lxqtscreensaver.cpp" line="86"/>
-        <location filename="../lxqtscreensaver.cpp" line="98"/>
-        <location filename="../lxqtscreensaver.cpp" line="106"/>
-        <location filename="../lxqtscreensaver.cpp" line="114"/>
-        <location filename="../lxqtscreensaver.cpp" line="123"/>
+        <location filename="../lxqtscreensaver.cpp" line="77"/>
+        <source>Screen Saver Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="83"/>
+        <location filename="../lxqtscreensaver.cpp" line="89"/>
+        <location filename="../lxqtscreensaver.cpp" line="96"/>
         <source>Screen Saver Activation Error</source>
         <translation>Näytönsäästäjän käynnistysvirhe</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="71"/>
+        <location filename="../lxqtscreensaver.cpp" line="97"/>
+        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation>Näytönsäästäjää käynnistäessä ilmeni virhe. Näytönsäästäjää xdg-screensaver ei voi käynnistää, koska se kaatui.</translation>
+        <translation type="vanished">Näytönsäästäjää käynnistäessä ilmeni virhe. Näytönsäästäjää xdg-screensaver ei voi käynnistää, koska se kaatui.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="79"/>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation>Näytönsäästäjää käynnistäessä ilmeni virhe. Näytönsäästäjän xdg-screensaver asennus ei ole kunnossa.</translation>
+        <translation type="vanished">Näytönsäästäjää käynnistäessä ilmeni virhe. Näytönsäästäjän xdg-screensaver asennus ei ole kunnossa.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>Näytönsäästäjää käynnistäessä ilmeni virhe. Näytönsäästäjää xdg-screensaver ei voi käynnistää.</translation>
+        <translation type="vanished">Näytönsäästäjää käynnistäessä ilmeni virhe. Näytönsäästäjää xdg-screensaver ei voi käynnistää.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="99"/>
+        <location filename="../lxqtscreensaver.cpp" line="78"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="107"/>
+        <location filename="../lxqtscreensaver.cpp" line="84"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation>Näytönsäästäjää käynnistäessä ilmeni virhe. Varmista, että xscreensaver on asennettu ja että se on toiminnassa.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="115"/>
+        <location filename="../lxqtscreensaver.cpp" line="90"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation>Näytönsäästäjää käynnistäessä ilmeni virhe. Toiminto &apos;activate&apos; epäonnistui. Varmista, että xscreensaver on asennettu ja että se on toiminnassa.</translation>
     </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="124"/>
-        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
-    <name>LxQt::ShortcutButton</name>
+    <name>LXQt::ShortcutButton</name>
     <message>
         <source>Clear</source>
         <translation type="obsolete">Tyhjennä</translation>
@@ -272,7 +270,7 @@
     <name>about</name>
     <message>
         <source> About LXQt</source>
-        <translation type="vanished">Tietoja LxQtista</translation>
+        <translation type="vanished">Tietoja LXQtista</translation>
     </message>
     <message>
         <source>About</source>

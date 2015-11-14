@@ -1,3 +1,16 @@
+liblxqt (0.10.0-3) unstable; urgency=medium
+
+  * Merge from experimental.
+  * New upstream release.
+  * Update symbols and provide lxqt-abi-0-10.0.
+  * Added minimum libqtxdg version.
+  * Removed the libdrm-dev build dependency, as libdrm-dev is thrown in
+    by other packages if needed in $architecture.
+  * Fixed copyright, only LGPL2.1+ is used.
+  * Fixed watch file.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Sat, 14 Nov 2015 01:39:53 +0800
+
 liblxqt (0.9.0+20150806-3) unstable; urgency=medium
 
   * Provide lxqt-abi-0-9-0

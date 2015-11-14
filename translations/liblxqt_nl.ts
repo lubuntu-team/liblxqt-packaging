@@ -29,7 +29,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::AboutDialogPrivate</name>
+    <name>LXQt::AboutDialogPrivate</name>
     <message>
         <source>Yes</source>
         <translation type="obsolete">Ja</translation>
@@ -40,11 +40,11 @@
     </message>
 </context>
 <context>
-    <name>LxQt::MessageBox</name>
+    <name>LXQt::MessageBox</name>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
-        <source>LxQt Power Manager Error</source>
-        <translation type="unfinished">LxQt Energiebeheer fout</translation>
+        <source>LXQt Power Manager Error</source>
+        <translation type="unfinished">LXQt Energiebeheer fout</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
@@ -53,7 +53,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::NotificationPrivate</name>
+    <name>LXQt::NotificationPrivate</name>
     <message>
         <location filename="../lxqtnotification.cpp" line="152"/>
         <source>Notifications Fallback</source>
@@ -61,7 +61,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::PowerManager</name>
+    <name>LXQt::PowerManager</name>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="112"/>
         <source>Hibernate</source>
@@ -89,8 +89,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="152"/>
-        <source>LxQt Session Suspend</source>
-        <translation>LxQt Sessie Slapen</translation>
+        <source>LXQt Session Suspend</source>
+        <translation>LXQt Sessie Slapen</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="153"/>
@@ -99,8 +99,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="162"/>
-        <source>LxQt Session Hibernate</source>
-        <translation>LxQt Sessie Slaapstand</translation>
+        <source>LXQt Session Hibernate</source>
+        <translation>LXQt Sessie Slaapstand</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="163"/>
@@ -109,8 +109,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="172"/>
-        <source>LxQt Session Reboot</source>
-        <translation>LxQt Sessie Herstarten</translation>
+        <source>LXQt Session Reboot</source>
+        <translation>LXQt Sessie Herstarten</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="173"/>
@@ -119,8 +119,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="182"/>
-        <source>LxQt Session Shutdown</source>
-        <translation>LxQt Sessie Afsluiten</translation>
+        <source>LXQt Session Shutdown</source>
+        <translation>LXQt Sessie Afsluiten</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="183"/>
@@ -129,8 +129,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="192"/>
-        <source>LxQt Session Logout</source>
-        <translation>LxQt Sessie Afmelden</translation>
+        <source>LXQt Session Logout</source>
+        <translation>LXQt Sessie Afmelden</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="193"/>
@@ -140,8 +140,8 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="201"/>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
-        <source>LxQt Power Manager Error</source>
-        <translation>LxQt Energiebeheer fout</translation>
+        <source>LXQt Power Manager Error</source>
+        <translation>LXQt Energiebeheer fout</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="201"/>
@@ -155,61 +155,59 @@
     </message>
 </context>
 <context>
-    <name>LxQt::ScreenSaver</name>
+    <name>LXQt::ScreenSaver</name>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="51"/>
         <source>Lock Screen</source>
         <translation>Scherm Vergrendelen</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="70"/>
-        <location filename="../lxqtscreensaver.cpp" line="78"/>
-        <location filename="../lxqtscreensaver.cpp" line="86"/>
-        <location filename="../lxqtscreensaver.cpp" line="98"/>
-        <location filename="../lxqtscreensaver.cpp" line="106"/>
-        <location filename="../lxqtscreensaver.cpp" line="114"/>
-        <location filename="../lxqtscreensaver.cpp" line="123"/>
+        <location filename="../lxqtscreensaver.cpp" line="77"/>
+        <source>Screen Saver Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="83"/>
+        <location filename="../lxqtscreensaver.cpp" line="89"/>
+        <location filename="../lxqtscreensaver.cpp" line="96"/>
         <source>Screen Saver Activation Error</source>
         <translation>Schermbeveiliging Activering fout</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="71"/>
+        <location filename="../lxqtscreensaver.cpp" line="97"/>
+        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation>Fout tijdens het starten van de schermbeveiliging. xdg-schermbeveiliging kan niet starten, wegens een crash.</translation>
+        <translation type="vanished">Fout tijdens het starten van de schermbeveiliging. xdg-schermbeveiliging kan niet starten, wegens een crash.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="79"/>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation>Fout tijdens het starten van de schermbeveiliging. xdg-schermbeveiliging is niet correct geinstalleerd..</translation>
+        <translation type="vanished">Fout tijdens het starten van de schermbeveiliging. xdg-schermbeveiliging is niet correct geinstalleerd..</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>Fout tijdens het starten van de schermbeveiliging. xdg-schermbeveiliging kan niet starten.</translation>
+        <translation type="vanished">Fout tijdens het starten van de schermbeveiliging. xdg-schermbeveiliging kan niet starten.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="99"/>
+        <location filename="../lxqtscreensaver.cpp" line="78"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation>Fout tijdens het starten van de schermbeveiliging. Regelfout in xdg-schermbeveiliging argumenten.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="107"/>
+        <location filename="../lxqtscreensaver.cpp" line="84"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation>Fout tijdens het starten van de schermbeveiliging. Controleer of xdg-schermbeveiliging is geinstalleerd en gestart.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="115"/>
+        <location filename="../lxqtscreensaver.cpp" line="90"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation>Fout tijdens het starten van de schermbeveiliging. Actie &apos;activeren&apos; mislukt. Controleer of xdg-schermbeveiliging is geinstalleerd en gestart.</translation>
     </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="124"/>
-        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
-    <name>LxQt::ShortcutButton</name>
+    <name>LXQt::ShortcutButton</name>
     <message>
         <source>Clear</source>
         <translation type="obsolete">Wissen</translation>
@@ -244,7 +242,7 @@
     <name>about</name>
     <message>
         <source> About LXQt</source>
-        <translation type="vanished">Over LxQt</translation>
+        <translation type="vanished">Over LXQt</translation>
     </message>
     <message>
         <source>About</source>

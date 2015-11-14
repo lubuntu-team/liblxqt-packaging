@@ -34,7 +34,7 @@
 #include <QLayout>
 
 
-namespace LxQt
+namespace LXQt
 {
 
 class GridLayoutPrivate;
@@ -89,6 +89,7 @@ public:
 
     QSize sizeHint() const;
     void setGeometry(const QRect &geometry);
+    QRect occupiedGeometry() const;
 
 
     /**
@@ -154,9 +155,10 @@ public:
     void setStretch(Stretch value);
 
     /**
-      Moves the item at index position from to index position to.
+      Moves the item at index position \param from to index position \param to.
+      If \param withAnimation set the reordering will be animated
      **/
-    void moveItem(int from, int to);
+    void moveItem(int from, int to, bool withAnimation = false);
 
     /**
      Returns the cells' minimum size.
@@ -233,5 +235,5 @@ private:
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(GridLayout::Stretch)
 
-} // namespace LxQt
+} // namespace LXQt
 #endif // LXQTGRIDLAYOUT_H

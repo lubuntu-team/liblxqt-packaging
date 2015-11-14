@@ -30,10 +30,41 @@
 #include <QDebug>
 #include <math.h>
 #include <QWidget>
+#include <QVariantAnimation>
 
-using namespace LxQt;
+using namespace LXQt;
 
-class LxQt::GridLayoutPrivate
+namespace
+{
+    class ItemMoveAnimation : public QVariantAnimation
+    {
+    public:
+        static void animate(QLayoutItem * item, QRect const & geometry)
+        {
+            ItemMoveAnimation* animation = new ItemMoveAnimation(item);
+            animation->setStartValue(item->geometry());
+            animation->setEndValue(geometry);
+            animation->start(DeleteWhenStopped);
+        }
+
+        ItemMoveAnimation(QLayoutItem *item)
+            : mItem(item)
+        {
+            setDuration(150);
+        }
+
+        void updateCurrentValue(const QVariant &current)
+        {
+            mItem->setGeometry(current.toRect());
+        }
+
+    private:
+        QLayoutItem* mItem;
+
+    };
+}
+
+class LXQt::GridLayoutPrivate
 {
 public:
     GridLayoutPrivate();
@@ -48,13 +79,16 @@ public:
     QSize mCellMaxSize;
     int mVisibleCount;
     GridLayout::Stretch mStretch;
+    bool mAnimate;
 
 
     void updateCache();
     int rows() const;
     int cols() const;
+    void setItemGeometry(QLayoutItem * item, QRect const & geometry);
     QSize mPrefCellMinSize;
     QSize mPrefCellMaxSize;
+    QRect mOccupiedGeometry;
 };
 
 
@@ -69,6 +103,7 @@ GridLayoutPrivate::GridLayoutPrivate()
     mIsValid = false;
     mVisibleCount = 0;
     mStretch = GridLayout::StretchHorizontal | GridLayout::StretchVertical;
+    mAnimate = false;
     mPrefCellMinSize = QSize(0,0);
     mPrefCellMaxSize = QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
 }
@@ -153,6 +188,17 @@ int GridLayoutPrivate::cols() const
     return ceil(mVisibleCount * 1.0 / rows);
 }
 
+void GridLayoutPrivate::setItemGeometry(QLayoutItem * item, QRect const & geometry)
+{
+    mOccupiedGeometry |= geometry;
+    if (mAnimate)
+    {
+        ItemMoveAnimation::animate(item, geometry);
+    } else
+    {
+        item->setGeometry(geometry);
+    }
+}
 
 
 /************************************************
@@ -328,9 +374,10 @@ void GridLayout::setStretch(Stretch value)
 /************************************************
 
  ************************************************/
-void GridLayout::moveItem(int from, int to)
+void GridLayout::moveItem(int from, int to, bool withAnimation /*= false*/)
 {
     Q_D(GridLayout);
+    d->mAnimate = withAnimation;
     d->mItems.move(from, to);
     invalidate();
 }
@@ -510,6 +557,10 @@ void GridLayout::setGeometry(const QRect &geometry)
 {
     Q_D(GridLayout);
 
+    QLayout::setGeometry(geometry);
+    d->mOccupiedGeometry.setTopLeft(geometry.topLeft());
+    d->mOccupiedGeometry.setBottomRight(geometry.topLeft());
+
     if (!d->mIsValid)
         d->updateCache();
 
@@ -578,7 +629,7 @@ void GridLayout::setGeometry(const QRect &geometry)
                 remain_width = widthRemain;
             }
 
-            item->setGeometry(QRect(x, y, width, height));
+            d->setItemGeometry(item, QRect(x, y, width, height));
             x += width;
         }
     }
@@ -599,9 +650,17 @@ void GridLayout::setGeometry(const QRect &geometry)
                 width = itemWidth + (0 < remain_width-- ? 1 : 0);
                 remain_height = heightRemain;
             }
-            item->setGeometry(QRect(x, y, width, height));
+            d->setItemGeometry(item, QRect(x, y, width, height));
             y += height;
         }
     }
+    d->mAnimate = false;
 }
 
+/************************************************
+
+ ************************************************/
+QRect GridLayout::occupiedGeometry() const
+{
+    return d_func()->mOccupiedGeometry;
+}

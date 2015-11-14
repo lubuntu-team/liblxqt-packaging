@@ -10,7 +10,7 @@ Build-Depends: cmake (>= 3.0.2),
                libdrm-dev [!hurd-any],
                libkf5windowsystem-dev,
                libqt5x11extras5-dev,
-               libqt5xdg-dev,
+               libqt5xdg-dev (>= 1.3.0),
                libx11-dev,
                pkg-config,
                qttools5-dev,
@@ -26,7 +26,7 @@ Multi-Arch: same
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Provides: lxqt-abi-0-9-0
+Provides: lxqt-abi-0-10-0
 Description: Shared libraries for LXQt desktop environment (libs)
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
  technologies. It has been tailored for users who value simplicity, speed, and

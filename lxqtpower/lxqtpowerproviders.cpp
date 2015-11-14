@@ -47,7 +47,7 @@
 #define SYSTEMD_INTERFACE       "org.freedesktop.login1.Manager"
 
 #define LXQT_SERVICE      "org.lxqt.session"
-#define LXQT_PATH         "/LxQtSession"
+#define LXQT_PATH         "/LXQtSession"
 #define LXQT_INTERFACE    "org.lxqt.session"
 
 #define LXSESSION_SERVICE      "org.lxde.SessionManager"
@@ -56,7 +56,7 @@
 
 #define PROPERTIES_INTERFACE    "org.freedesktop.DBus.Properties"
 
-using namespace LxQt;
+using namespace LXQt;
 
 /************************************************
  Helper func
@@ -183,7 +183,7 @@ bool dbusGetProperty(const QString &service,
     if (!dbus.isValid())
     {
         qWarning() << "dbusGetProperty: QDBusInterface is invalid" << service << path << interface << property;
-//        Notification::notify(QObject::tr("LxQt Power Manager"),
+//        Notification::notify(QObject::tr("LXQt Power Manager"),
 //                                  "lxqt-logo.png",
 //                                  QObject::tr("Power Manager Error"),
 //                                  QObject::tr("QDBusInterface is invalid")+ "\n\n" + service +" " + path +" " + interface +" " + property);
@@ -196,7 +196,7 @@ bool dbusGetProperty(const QString &service,
     if (!msg.errorName().isEmpty())
     {
         printDBusMsg(msg);
-//        Notification::notify(QObject::tr("LxQt Power Manager"),
+//        Notification::notify(QObject::tr("LXQt Power Manager"),
 //                                  "lxqt-logo.png",
 //                                  QObject::tr("Power Manager Error (Get Property)"),
 //                                  msg.errorName() + "\n\n" + msg.errorMessage());
@@ -427,7 +427,7 @@ bool SystemdProvider::canAction(Power::Action action) const
                     SYSTEMD_INTERFACE,
                     QDBusConnection::systemBus(),
                     command,
-		    false,
+                    false,
                     // canAction should be always silent because it can freeze
                     // g_main_context_iteration Qt event loop in QMessageBox
                     // on panel startup if there is no DBUS running.
@@ -467,26 +467,26 @@ bool SystemdProvider::doAction(Power::Action action)
              SYSTEMD_INTERFACE,
              QDBusConnection::systemBus(),
              command,
-	     true
+             true
             );
 }
 
 
 /************************************************
-  LxQtProvider
+  LXQtProvider
  ************************************************/
-LxQtProvider::LxQtProvider(QObject *parent):
+LXQtProvider::LXQtProvider(QObject *parent):
     PowerProvider(parent)
 {
 }
 
 
-LxQtProvider::~LxQtProvider()
+LXQtProvider::~LXQtProvider()
 {
 }
 
 
-bool LxQtProvider::canAction(Power::Action action) const
+bool LXQtProvider::canAction(Power::Action action) const
 {
     switch (action)
     {
@@ -501,7 +501,7 @@ bool LxQtProvider::canAction(Power::Action action) const
 }
 
 
-bool LxQtProvider::doAction(Power::Action action)
+bool LXQtProvider::doAction(Power::Action action)
 {
     QString command;
 
@@ -561,7 +561,8 @@ bool LxSessionProvider::doAction(Power::Action action)
     default:
         return false;
     }
-	return true;
+
+    return true;
 }
 
 
