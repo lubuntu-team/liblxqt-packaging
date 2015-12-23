@@ -32,7 +32,7 @@ Description: Shared libraries for LXQt desktop environment (libs)
  an intuitive interface. Unlike most desktop environments, LXQt also works
  fine with less powerful machines.
  .
- This package contain the shared libraries needed by the LXQt desktop
+ This package contains the shared libraries needed by the LXQt desktop
  environment.
 
 Package: liblxqt0-dev
@@ -46,7 +46,8 @@ Description: Shared libraries for LXQt desktop environment (dev)
  an intuitive interface. Unlike most desktop environments, LXQt also works
  fine with less powerful machines.
  .
- This package contain the development files.
+ This package contains the development files of the shared libraries needed
+ by the LXQt desktop environment.
 
 Package: liblxqt0-dbg
 Architecture: any
@@ -61,4 +62,5 @@ Description: Shared libraries for LXQt desktop environment (debug)
  an intuitive interface. Unlike most desktop environments, LXQt also works
  fine with less powerful machines.
  .
- This package contain the debugging symbols.
+ This package contains the debugging symbols of the shared libraries needed
+ by the LXQt desktop environment.
