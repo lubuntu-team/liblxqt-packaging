@@ -4,7 +4,7 @@
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 %:
-	dh ${@} --buildsystem cmake --dbg-package=liblxqt0-dbg --parallel
+	dh ${@} --buildsystem cmake --ddeb-migration='liblxqt0-dbg (<< 0.10.0-4~)' --parallel
 
 
 override_dh_install:
