@@ -32,7 +32,7 @@ Description: Shared libraries for LXQt desktop environment (libs)
  an intuitive interface. Unlike most desktop environments, LXQt also works
  fine with less powerful machines.
  .
- This package contain the shared libraries needed by the LXQt desktop
+ This package contains the shared libraries needed by the LXQt desktop
  environment.
 
 Package: liblxqt0-dev
