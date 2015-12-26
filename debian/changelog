@@ -1,3 +1,9 @@
+liblxqt (0.10.0-4) unstable; urgency=medium
+
+  * Remove dbg package in favor of dbgsym.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Sat, 26 Dec 2015 11:01:53 +0800
+
 liblxqt (0.10.0-3) unstable; urgency=medium
 
   * Merge from experimental.
