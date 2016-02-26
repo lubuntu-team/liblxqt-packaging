@@ -1,11 +1,10 @@
 #!/usr/bin/make -f
 # export DH_VERBOSE=1
 
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 %:
-	dh ${@} --buildsystem cmake --ddeb-migration='liblxqt0-dbg (<< 0.10.0-4~)' --parallel
-
-
-override_dh_install:
-	dh_install --fail-missing
+	dh ${@} --buildsystem cmake \
+		--parallel \
+		--fail-missing

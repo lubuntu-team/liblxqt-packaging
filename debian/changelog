@@ -1,3 +1,15 @@
+liblxqt (0.10.0-5) unstable; urgency=medium
+
+  * Bump Standards to 3.9.7
+  * Secured VCS-fields
+  * Added hardening=+all
+  * patched LXQtTranslateDesktop.cmake - it's already fixed upstream
+    but i don't want to catch up with upstream before the upcoming 
+    release
+  * Fixed years in copyright
+
+ -- Alf Gaida <agaida@siduction.org>  Fri, 26 Feb 2016 19:00:57 +0100
+
 liblxqt (0.10.0-4) unstable; urgency=medium
 
   * Remove dbg package in favor of dbgsym.
