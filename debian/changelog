@@ -1,3 +1,20 @@
+liblxqt (0.10.96~51-gcd10d27-1) experimental; urgency=medium
+
+  * New snapshot: 0.10.0-51-gcd10d27
+  * switch to experimental
+  * Fixed Format field in copyright
+  * Fixed VCS fields, use plain /git/ 
+  * Added build dependencies libxss-dev, libqt5xdgiconloader-dev 
+  * Fix symbols, only use lxqt-abi-0-11-0
+  * Added translation handling in rules
+  * Added Recommends liblxqt-l10n
+  * Bump standards to 3.9.8
+  * Bump years in copyright
+  * Deleted former patches 
+  * Added DCMAKE_BUILD_TYPE=RelWithDebInfo
+
+ -- Alf Gaida <agaida@siduction.org>  Tue, 12 Jul 2016 21:17:33 +0200
+
 liblxqt (0.10.0-5) unstable; urgency=medium
 
   * Bump Standards to 3.9.7

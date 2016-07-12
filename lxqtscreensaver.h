@@ -8,6 +8,8 @@
  * Authors:
  *   Petr Vanek <petr@scribus.info>
  *
+ * Copyright (c) 2016 Luís Pereira <luis.artur.pereira@gmail.com>
+ *
  * This program or library is free software; you can redistribute it
  * and/or modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -30,18 +32,22 @@
 
 #include "lxqtglobals.h"
 #include <QObject>
-#include <QProcess>
 #include <QAction>
 
 namespace LXQt
 {
 
+class ScreenSaverPrivate;
+
 class LXQT_API ScreenSaver : public QObject
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(ScreenSaver)
+    Q_DISABLE_COPY(ScreenSaver)
 
 public:
     ScreenSaver(QObject * parent=0);
+    ~ScreenSaver();
 
     QList<QAction*> availableActions();
 
@@ -52,11 +58,9 @@ public slots:
     void lockScreen();
 
 private:
-    QProcess * m_xdgProcess;
+    ScreenSaverPrivate* const d_ptr;
 
-private slots:
-    void xdgProcess_finished(int err, QProcess::ExitStatus status);
-
+    Q_PRIVATE_SLOT(d_func(), void _l_xdgProcess_finished(int, QProcess::ExitStatus))
 };
 
 } // namespace LXQt

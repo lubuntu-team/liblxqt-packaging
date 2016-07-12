@@ -32,6 +32,7 @@
 #include <QDBusMessage>
 #include <QWidget>
 #include <QDebug>
+#include <QTimer>
 
 using namespace LXQt;
 
@@ -42,7 +43,6 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
     QString service =
         QString::fromLatin1("org.lxqt.%1").arg(QApplication::applicationName());
 
-    SingleApplicationAdaptor *mAdaptor = new SingleApplicationAdaptor(this);
     QDBusConnection bus = QDBusConnection::sessionBus();
 
     if (!bus.isConnected()) {
@@ -57,13 +57,14 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
             return;
         } else {
             qCritical() << Q_FUNC_INFO << errorMessage;
-            ::exit(1);
+            QTimer::singleShot(0, [this] { exit(1); });
         }
     }
 
     bool registered = (bus.registerService(service) ==
                        QDBusConnectionInterface::ServiceRegistered);
     if (registered) { // We are the primary instance
+        SingleApplicationAdaptor *mAdaptor = new SingleApplicationAdaptor(this);
         QLatin1String objectPath("/");
         bus.registerObject(objectPath, mAdaptor,
             QDBusConnection::ExportAllSlots);
@@ -74,7 +75,7 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
             QStringLiteral("activateWindow"));
         QDBusConnection::sessionBus().send(msg);
 
-        ::exit(0);
+        QTimer::singleShot(0, [this] { exit(0); });
     }
 }
 
@@ -95,6 +96,7 @@ QWidget *SingleApplication::activationWindow() const
 void SingleApplication::activateWindow()
 {
     if (mActivationWindow) {
+        mActivationWindow->show();
         WId window = mActivationWindow->effectiveWinId();
 
         KWindowInfo info(window, NET::WMDesktop);
