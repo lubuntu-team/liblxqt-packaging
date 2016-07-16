@@ -1,3 +1,11 @@
+liblxqt (0.10.96~51-gcd10d27-2) experimental; urgency=medium
+
+  * Added build dependencies gcc (>= 4:6), g++ (>= 4:6)
+  * Exported LC_ALL=C.UTF-8 - define language settings for reproducable
+    builds
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 16 Jul 2016 21:01:29 +0200
+
 liblxqt (0.10.96~51-gcd10d27-1) experimental; urgency=medium
 
   * New snapshot: 0.10.0-51-gcd10d27
