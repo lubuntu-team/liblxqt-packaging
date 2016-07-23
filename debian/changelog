@@ -1,7 +1,13 @@
+liblxqt (0.10.96~51-gcd10d27-3) experimental; urgency=medium
+
+  * fixed typo in changelog
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 23 Jul 2016 12:47:51 +0200
+
 liblxqt (0.10.96~51-gcd10d27-2) experimental; urgency=medium
 
   * Added build dependencies gcc (>= 4:6), g++ (>= 4:6)
-  * Exported LC_ALL=C.UTF-8 - define language settings for reproducable
+  * Exported LC_ALL=C.UTF-8 - define language settings for reproducible
     builds
 
  -- Alf Gaida <agaida@siduction.org>  Sat, 16 Jul 2016 21:01:29 +0200
