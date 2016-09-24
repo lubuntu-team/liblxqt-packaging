@@ -1,3 +1,16 @@
+liblxqt (0.11.0-1) experimental; urgency=medium
+
+  * Cherry-picking upstream version 0.11.0.
+  * Bumped build dependency debhelper (>=10)
+  * Bumped compat to 10
+  * Removed --parallel from rules, now standard
+  * Bumped minimum version for libqt5xdg-dev and
+    libqt5xdgiconloader-dev (>= 2.0.0)
+  * Removed grep patch, merged upstream
+  * Removed virtual ABI, no longer needed
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 24 Sep 2016 14:15:51 +0200
+
 liblxqt (0.10.96~51-gcd10d27-3) experimental; urgency=medium
 
   * fixed typo in changelog
