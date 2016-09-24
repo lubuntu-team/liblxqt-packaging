@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
 project(liblxqt)
 
 set(LXQT_MAJOR_VERSION 0)
-set(LXQT_MINOR_VERSION 10)
+set(LXQT_MINOR_VERSION 11)
 set(LXQT_PATCH_VERSION 0)
 
 include(CMakePackageConfigHelpers)
@@ -124,6 +124,7 @@ list(APPEND CMAKE_MODULE_PATH
 )
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
+option(WITH_XDG_DIRS_FALLBACK "Use our XDG_CONFIG_DIRS fallback" ON)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -324,6 +325,12 @@ target_compile_definitions(${LXQT_LIBRARY_NAME}
     PRIVATE "$<$<CONFIG:Release>:QT_NO_DEBUG_OUTPUT>"
     PRIVATE "$<$<CONFIG:Release>:QT_NO_WARNING_OUTPUT>"
 )
+
+if (WITH_XDG_DIRS_FALLBACK)
+    target_compile_definitions(${LXQT_LIBRARY_NAME}
+        PRIVATE "WITH_XDG_DIRS_FALLBACK"
+    )
+endif ()
 
 target_include_directories(${LXQT_LIBRARY_NAME}
     INTERFACE "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${LXQT_LIBRARY_NAME}>"
