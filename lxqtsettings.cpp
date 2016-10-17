@@ -36,24 +36,70 @@
 #include <QSharedData>
 #include <QTimerEvent>
 
-#include <XdgIcon>
 #include <XdgDirs>
+#if QT_VERSION < QT_VERSION_CHECK(5, 6, 0)
+#include <algorithm>
+#endif
 
 using namespace LXQt;
 
 class LXQt::SettingsPrivate
 {
 public:
-    SettingsPrivate(Settings* parent):
-        mChangeTimer(0),
+    SettingsPrivate(Settings* parent, bool useXdgFallback):
+        mFileChangeTimer(0),
+        mAppChangeTimer(0),
+        mAddWatchTimer(0),
         mParent(parent)
     {
+        // HACK: we need to ensure that the user (~/.config/lxqt/<module>.conf)
+        //       exists to have functional mWatcher
+        if (!mParent->contains("__userfile__"))
+        {
+            mParent->setValue("__userfile__", true);
+#if defined(WITH_XDG_DIRS_FALLBACK)
+            if (useXdgFallback)
+            {
+                //Note: Qt doesn't support the xdg spec regarding the XDG_CONFIG_DIRS
+                //https://bugreports.qt.io/browse/QTBUG-34919
+                //(Partial) workaround: if the the user specific config file doesn't exist
+                //we try to find some system-wide configuration file and copy all settings into
+                //the user specific file
+                const QString org = mParent->organizationName();
+                const QString file_name = QFileInfo{mParent->fileName()}.fileName();
+                QStringList dirs = XdgDirs::configDirs();
+#if QT_VERSION < QT_VERSION_CHECK(5, 6, 0)
+                std::reverse(dirs.begin(), dirs.end());
+                for (auto dir_i = dirs.begin(), dir_e = dirs.end(); dir_i != dir_e; ++dir_i)
+#else // QT_VERSION
+                for (auto dir_i = dirs.rbegin(), dir_e = dirs.rend(); dir_i != dir_e; ++dir_i)
+#endif
+
+                {
+                    QDir dir{*dir_i};
+                    if (dir.cd(mParent->organizationName()) && dir.exists(file_name))
+                    {
+                        QSettings system_settings{dir.absoluteFilePath(file_name), QSettings::IniFormat};
+                        for (const QString & key : system_settings.allKeys())
+                        {
+                            mParent->setValue(key, system_settings.value(key));
+                        }
+                    }
+                }
+            }
+#endif
+            mParent->sync();
+        }
+        mWatcher.addPath(mParent->fileName());
+        QObject::connect(&(mWatcher), &QFileSystemWatcher::fileChanged, mParent, &Settings::_fileChanged);
     }
 
     QString localizedKey(const QString& key) const;
 
     QFileSystemWatcher mWatcher;
-    int mChangeTimer;
+    int mFileChangeTimer;
+    int mAppChangeTimer;
+    int mAddWatchTimer;
 
 private:
     Settings* mParent;
@@ -99,17 +145,8 @@ public:
  ************************************************/
 Settings::Settings(const QString& module, QObject* parent) :
     QSettings("lxqt", module, parent),
-    d_ptr(new SettingsPrivate(this))
+    d_ptr(new SettingsPrivate(this, true))
 {
-    // HACK: we need to ensure that the user (~/.config/lxqt/<module>.conf)
-    //       exists to have functional mWatcher
-    if (!contains("__userfile__"))
-    {
-        setValue("__userfile__", true);
-        sync();
-    }
-    d_ptr->mWatcher.addPath(this->fileName());
-    connect(&(d_ptr->mWatcher), &QFileSystemWatcher::fileChanged, this, &Settings::_fileChanged);
 }
 
 
@@ -118,17 +155,8 @@ Settings::Settings(const QString& module, QObject* parent) :
  ************************************************/
 Settings::Settings(const QString &fileName, QSettings::Format format, QObject *parent):
     QSettings(fileName, format, parent),
-    d_ptr(new SettingsPrivate(this))
+    d_ptr(new SettingsPrivate(this, false))
 {
-    // HACK: we need to ensure that the user (~/.config/lxqt/<module>.conf)
-    //       exists to have functional mWatcher
-    if (!contains("__userfile__"))
-    {
-        setValue("__userfile__", true);
-        sync();
-    }
-    d_ptr->mWatcher.addPath(this->fileName());
-    connect(&(d_ptr->mWatcher), &QFileSystemWatcher::fileChanged, this, &Settings::_fileChanged);
 }
 
 
@@ -137,7 +165,7 @@ Settings::Settings(const QString &fileName, QSettings::Format format, QObject *p
  ************************************************/
 Settings::Settings(const QSettings* parentSettings, const QString& subGroup, QObject* parent):
     QSettings(parentSettings->organizationName(), parentSettings->applicationName(), parent),
-    d_ptr(new SettingsPrivate(this))
+    d_ptr(new SettingsPrivate(this, false))
 {
     beginGroup(subGroup);
 }
@@ -148,7 +176,7 @@ Settings::Settings(const QSettings* parentSettings, const QString& subGroup, QOb
  ************************************************/
 Settings::Settings(const QSettings& parentSettings, const QString& subGroup, QObject* parent):
     QSettings(parentSettings.organizationName(), parentSettings.applicationName(), parent),
-    d_ptr(new SettingsPrivate(this))
+    d_ptr(new SettingsPrivate(this, false))
 {
     beginGroup(subGroup);
 }
@@ -171,15 +199,32 @@ bool Settings::event(QEvent *event)
 {
     if (event->type() == QEvent::UpdateRequest)
     {
-        emit settingsChanged();
+        // delay the settingsChanged* signal emitting for:
+        //  - checking in _fileChanged
+        //  - merging emitting the signals
+        if(d_ptr->mAppChangeTimer)
+            killTimer(d_ptr->mAppChangeTimer);
+        d_ptr->mAppChangeTimer = startTimer(100);
     }
     else if (event->type() == QEvent::Timer)
     {
-        if(static_cast<QTimerEvent*>(event)->timerId() == d_ptr->mChangeTimer)
+        const int timer = static_cast<QTimerEvent*>(event)->timerId();
+        killTimer(timer);
+        if (timer == d_ptr->mFileChangeTimer)
         {
+            d_ptr->mFileChangeTimer = 0;
             fileChanged(); // invoke the real fileChanged() handler.
-            killTimer(d_ptr->mChangeTimer);
-            d_ptr->mChangeTimer = 0;
+        } else if (timer == d_ptr->mAppChangeTimer)
+        {
+            d_ptr->mAppChangeTimer = 0;
+            // do emit the signals
+            emit settingsChangedByApp();
+            emit settingsChanged();
+        } else if (timer == d_ptr->mAddWatchTimer)
+        {
+            d_ptr->mAddWatchTimer = 0;
+            //try to re-add filename for watching
+            addWatchedFile(fileName());
         }
     }
 
@@ -189,18 +234,29 @@ bool Settings::event(QEvent *event)
 void Settings::fileChanged()
 {
     sync();
+    emit settingsChangedFromExternal();
     emit settingsChanged();
 }
 
 void Settings::_fileChanged(QString path)
 {
-    // delay the change notification for 100 ms to avoid
-    // unnecessary repeated loading of the same config file if
-    // the file is changed for several times rapidly.
-    if(d_ptr->mChangeTimer)
-        killTimer(d_ptr->mChangeTimer);
-    d_ptr->mChangeTimer = startTimer(100);
+    // check if the file isn't changed by our logic
+    // FIXME: this is poor implementation; should we rather compute some hash of values if changed by external?
+    if (0 == d_ptr->mAppChangeTimer)
+    {
+        // delay the change notification for 100 ms to avoid
+        // unnecessary repeated loading of the same config file if
+        // the file is changed for several times rapidly.
+        if(d_ptr->mFileChangeTimer)
+            killTimer(d_ptr->mFileChangeTimer);
+        d_ptr->mFileChangeTimer = startTimer(1000);
+    }
 
+    addWatchedFile(path);
+}
+
+void Settings::addWatchedFile(QString const & path)
+{
     // D*mn! yet another Qt 5.4 regression!!!
     // See the bug report: https://github.com/lxde/lxqt/issues/441
     // Since Qt 5.4, QSettings uses QSaveFile to save the config files.
@@ -214,7 +270,10 @@ void Settings::_fileChanged(QString path)
     // Luckily, I found a workaround: If the file path no longer exists
     // in the watcher's files(), this file is deleted.
     if(!d_ptr->mWatcher.files().contains(path))
-        d_ptr->mWatcher.addPath(path);
+        // in some situations adding fails because of non-existing file (e.g. editting file in external program)
+        if (!d_ptr->mWatcher.addPath(path) && 0 == d_ptr->mAddWatchTimer)
+            d_ptr->mAddWatchTimer = startTimer(100);
+
 }
 
 
@@ -377,15 +436,18 @@ LXQtTheme::LXQtTheme(const QString &path):
 QString LXQtThemeData::findTheme(const QString &themeName)
 {
     if (themeName.isEmpty())
-        return "";
+        return QString();
 
     QStringList paths;
+    QLatin1String fallback(LXQT_INSTALL_PREFIX);
+
     paths << XdgDirs::dataHome(false);
     paths << XdgDirs::dataDirs();
-    // TODO/FIXME: this is fallback path for standard CMAKE_INSTALL_PREFIX
-    paths << "/usr/local/share";
 
-    foreach(QString path, paths)
+    if (!paths.contains(fallback))
+        paths << fallback;
+
+    foreach(const QString &path, paths)
     {
         QDir dir(QString("%1/lxqt/themes/%2").arg(path, themeName));
         if (dir.isReadable())
@@ -463,14 +525,7 @@ QString LXQtTheme::previewImage() const
  ************************************************/
 QString LXQtTheme::qss(const QString& module) const
 {
-    QString styleSheet = d->loadQss(QStringLiteral("%1/%2.qss").arg(d->mPath, module));
-
-    // Single/double click ...........................
-    Settings s("desktop");
-    bool singleClick = s.value("icon-launch-mode", "singleclick").toString() == "singleclick";
-    styleSheet += QString("QAbstractItemView {activate-on-singleclick : %1; }").arg(singleClick ? 1 : 0);
-
-    return styleSheet;
+    return d->loadQss(QStringLiteral("%1/%2.qss").arg(d->mPath, module));
 }
 
 
@@ -554,12 +609,12 @@ QList<LXQtTheme> LXQtTheme::allThemes()
     paths << XdgDirs::dataHome(false);
     paths << XdgDirs::dataDirs();
 
-    foreach(QString path, paths)
+    foreach(const QString &path, paths)
     {
         QDir dir(QString("%1/lxqt/themes").arg(path));
         QFileInfoList dirs = dir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot);
 
-        foreach(QFileInfo dir, dirs)
+        foreach(const QFileInfo &dir, dirs)
         {
             if (!processed.contains(dir.fileName()) &&
                  QDir(dir.absoluteFilePath()).exists("lxqt-panel.qss"))
@@ -600,10 +655,12 @@ SettingsCache::SettingsCache(QSettings *settings) :
  ************************************************/
 void SettingsCache::loadFromSettings()
 {
-   foreach (QString key, mSettings.allKeys())
-   {
-       mCache.insert(key, mSettings.value(key));
-   }
+    const QStringList keys = mSettings.allKeys();
+
+    const int N = keys.size();
+    for (int i = 0; i < N; ++i) {
+        mCache.insert(keys.at(i), mSettings.value(keys.at(i)));
+    }
 }
 
 
@@ -633,24 +690,18 @@ GlobalSettings::GlobalSettings():
 {
     if (value("icon_theme").toString().isEmpty())
     {
-        QStringList failback;
-        failback << "oxygen";
-        failback << "Tango";
-        failback << "Prudence-icon";
-        failback << "Humanity";
-        failback << "elementary";
-        failback << "gnome";
+        qWarning() << QString::fromLatin1("Icon Theme not set. Fallbacking to Oxygen, if installed");
+        const QString fallback(QLatin1String("oxygen"));
 
-
-        QDir dir("/usr/share/icons/");
-        foreach (QString s, failback)
+        const QDir dir(QLatin1String(LXQT_DATA_DIR) + QLatin1String("/icons"));
+        if (dir.exists(fallback))
         {
-            if (dir.exists(s))
-            {
-                setValue("icon_theme", s);
-                sync();
-                break;
-            }
+            setValue("icon_theme", fallback);
+            sync();
+        }
+        else
+        {
+            qWarning() << QString::fromLatin1("Fallback Icon Theme (Oxygen) not found");
         }
     }
 
@@ -675,8 +726,6 @@ void GlobalSettings::fileChanged()
     QString it = value("icon_theme").toString();
     if (d->mIconTheme != it)
     {
-        d->mIconTheme = it;
-        XdgIcon::setThemeName(it);
         emit iconThemeChanged();
     }
 
@@ -688,6 +737,7 @@ void GlobalSettings::fileChanged()
         emit lxqtThemeChanged();
     }
 
+    emit settingsChangedFromExternal();
     emit settingsChanged();
 }
 

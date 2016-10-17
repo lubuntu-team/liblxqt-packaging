@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
 project(liblxqt)
 
 set(LXQT_MAJOR_VERSION 0)
-set(LXQT_MINOR_VERSION 10)
+set(LXQT_MINOR_VERSION 11)
 set(LXQT_PATCH_VERSION 0)
 
 include(CMakePackageConfigHelpers)
@@ -120,9 +120,11 @@ set(FORMS
 list(APPEND CMAKE_MODULE_PATH
     "${CMAKE_CURRENT_SOURCE_DIR}/cmake"
     "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules"
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/find-modules"
 )
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
+option(WITH_XDG_DIRS_FALLBACK "Use our XDG_CONFIG_DIRS fallback" ON)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -130,6 +132,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
+find_package(X11 REQUIRED QUIET)
 find_package(Qt5Widgets REQUIRED QUIET)
 find_package(Qt5DBus REQUIRED QUIET)
 find_package(Qt5X11Extras REQUIRED QUIET)
@@ -163,15 +166,16 @@ include(create_portable_headers)
 set(LXQT_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_PATCH_VERSION})
 set(LXQT_LIBRARY_NAME "lxqt" CACHE STRING "lxqt")
 set(LXQT_RELATIVE_SHARE_DIR "${LXQT_LIBRARY_NAME}")
-set(LXQT_SHARE_DIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATAROOTDIR}/${LXQT_RELATIVE_SHARE_DIR}")
+set(LXQT_SHARE_DIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}/${LXQT_RELATIVE_SHARE_DIR}")
 set(LXQT_RELATIVE_TRANSLATIONS_DIR "${LXQT_LIBRARY_NAME}/translations")
 set(LXQT_TRANSLATIONS_DIR "${LXQT_SHARE_DIR}/translations")
+set(LXQT_GRAPHICS_DIR "${LXQT_SHARE_DIR}/graphics")
 
 set(LXQT_INTREE_INCLUDE_DIR "${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/include")
 set(LXQT_INTREE_TARGETS_FILE "${CMAKE_BINARY_DIR}/${LXQT_LIBRARY_NAME}-targets.cmake")
 
 set(LXQT_INSTALL_INCLUDE_DIR "${CMAKE_INSTALL_FULL_INCLUDEDIR}/${LXQT_LIBRARY_NAME}")
-set(LXQT_INSTALL_CMAKE_DIR "${CMAKE_INSTALL_PREFIX}/share/cmake")
+set(LXQT_INSTALL_CMAKE_DIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}/cmake")
 
 
 ## Translations
@@ -185,6 +189,14 @@ lxqt_translate_ts(QM_FILES
         ${FORMS}
     INSTALL_DIR
         "${LXQT_TRANSLATIONS_DIR}/${PROJECT_NAME}"
+    PULL_TRANSLATIONS
+        ${PULL_TRANSLATIONS}
+    CLEAN_TRANSLATIONS
+        ${CLEAN_TRANSLATIONS}
+    TRANSLATIONS_REPO
+        ${TRANSLATIONS_REPO}
+    TRANSLATIONS_REFSPEC
+        ${TRANSLATIONS_REFSPEC}
 )
 
 message(STATUS "")
@@ -207,6 +219,8 @@ check_portable_headers(H_FILES ${PUB_HDRS} LINKS "${INTREE_PORTABLE_HEADERS}")
 #************************************************
 set(CFG_LXQT_TARGETS_FILE   "${LXQT_INTREE_TARGETS_FILE}")
 set(CFG_LXQT_CMAKE_MODULES_DIR "${PROJECT_SOURCE_DIR}/cmake/modules")
+set(CFG_LXQT_CMAKE_FIND_MODULES_DIR "${PROJECT_SOURCE_DIR}/cmake/find-modules")
+
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/cmake/lxqt-config.cmake.in"
@@ -219,6 +233,7 @@ configure_package_config_file(
 #************************************************
 set(CFG_LXQT_TARGETS_FILE "${LXQT_INSTALL_CMAKE_DIR}/${LXQT_LIBRARY_NAME}/${LXQT_LIBRARY_NAME}-targets.cmake")
 set(CFG_LXQT_CMAKE_MODULES_DIR "${LXQT_INSTALL_CMAKE_DIR}/${LXQT_LIBRARY_NAME}/modules")
+set(CFG_LXQT_CMAKE_FIND_MODULES_DIR "${LXQT_INSTALL_CMAKE_DIR}/${LXQT_LIBRARY_NAME}/find-modules")
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/cmake/lxqt-config.cmake.in"
@@ -242,6 +257,16 @@ install(FILES
 install(EXPORT
     ${LXQT_LIBRARY_NAME}-targets
     DESTINATION "${CMAKE_INSTALL_DATADIR}/cmake/${LXQT_LIBRARY_NAME}"
+    COMPONENT Devel
+)
+
+file(GLOB toInstallFindModules
+    "${PROJECT_SOURCE_DIR}/cmake/find-modules/*.cmake"
+)
+
+install(
+    FILES ${toInstallFindModules}
+    DESTINATION "${LXQT_INSTALL_CMAKE_DIR}/${LXQT_LIBRARY_NAME}/find-modules"
     COMPONENT Devel
 )
 
@@ -273,6 +298,9 @@ target_link_libraries(${LXQT_LIBRARY_NAME}
         Qt5::DBus
         Qt5::X11Extras
         Qt5Xdg
+    PRIVATE
+        ${X11_Xscreensaver_LIB}
+        ${X11_X11_LIB}
 )
 
 set_target_properties(${LXQT_LIBRARY_NAME} PROPERTIES
@@ -285,8 +313,10 @@ target_compile_definitions(${LXQT_LIBRARY_NAME}
     PRIVATE "LXQT_SHARE_DIR=\"${LXQT_SHARE_DIR}\""
     PRIVATE "LXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"${LXQT_RELATIVE_TRANSLATIONS_DIR}\""
     PRIVATE "LXQT_SHARE_TRANSLATIONS_DIR=\"${LXQT_TRANSLATIONS_DIR}\""
+    PRIVATE "LXQT_GRAPHICS_DIR=\"${LXQT_GRAPHICS_DIR}\""
     PRIVATE "LXQT_ETC_XDG_DIR=\"${LXQT_ETC_XDG_DIR}\""
     PRIVATE "LXQT_DATA_DIR=\"${LXQT_DATA_DIR}\""
+    PRIVATE "LXQT_INSTALL_PREFIX=\"${CMAKE_INSTALL_PREFIX}\""
     PRIVATE "LXQT_VERSION=\"${LXQT_VERSION}\""
     PRIVATE "COMPILE_LIBLXQT"
 )
@@ -295,6 +325,12 @@ target_compile_definitions(${LXQT_LIBRARY_NAME}
     PRIVATE "$<$<CONFIG:Release>:QT_NO_DEBUG_OUTPUT>"
     PRIVATE "$<$<CONFIG:Release>:QT_NO_WARNING_OUTPUT>"
 )
+
+if (WITH_XDG_DIRS_FALLBACK)
+    target_compile_definitions(${LXQT_LIBRARY_NAME}
+        PRIVATE "WITH_XDG_DIRS_FALLBACK"
+    )
+endif ()
 
 target_include_directories(${LXQT_LIBRARY_NAME}
     INTERFACE "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${LXQT_LIBRARY_NAME}>"

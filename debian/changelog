@@ -1,3 +1,29 @@
+liblxqt (0.11.0-2) unstable; urgency=medium
+
+  * Cherry-picking upstream version 0.11.0.
+  * Synced from experimental
+  * Bumped build dependency debhelper (>=10)
+  * Bump standards to 3.9.8
+  * Bump years in copyright
+  * Bumped compat to 10
+  * Removed --parallel from rules, now standard
+  * Bumped minimum version libqt5xdg-dev (>= 2.0.0)
+  * Added build dependency libqt5xdgiconloader-dev (>= 2.0.0)
+  * Added build dependency libxss-dev
+  * Added Recommends liblxqt-l10n
+  * Removed grep patch, merged upstream
+  * Removed virtual ABI, no longer needed
+  * Exported LC_ALL=C.UTF-8 - define language settings for reproducible
+    builds
+  * Fixed Format field in copyright
+  * Fixed VCS fields, use plain /git/ 
+  * Fix symbols, only use lxqt-abi-0-11-0
+  * Added translation handling in rules
+  * Deleted former patches 
+  * Added DCMAKE_BUILD_TYPE=RelWithDebInfo
+
+ -- Alf Gaida <agaida@siduction.org>  Tue, 12 Jul 2016 21:17:33 +0200
+
 liblxqt (0.10.0-5) unstable; urgency=medium
 
   * Bump Standards to 3.9.7

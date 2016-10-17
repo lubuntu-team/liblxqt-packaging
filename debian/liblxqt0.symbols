@@ -1,4 +1,4 @@
-liblxqt.so.0 liblxqt0 #MINVER#, lxqt-abi-0-10-0
+liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::Application::Application(int&, char**)@Base" 0.9.0+20150911
  (c++)"LXQt::Application::Application(int&, char**, bool)@Base" 0.9.0+20150911
  (c++)"LXQt::Application::listenToUnixSignals(QList<int> const&)@Base" 0.9.0+20150911
@@ -25,6 +25,7 @@ liblxqt.so.0 liblxqt0 #MINVER#, lxqt-abi-0-10-0
  (c++)"LXQt::ConfigDialog::~ConfigDialog()@Base" 0.9.0+20150911
  (c++)"LXQt::ConfigDialog::ConfigDialog(QString const&, LXQt::Settings*, QWidget*)@Base" 0.9.0+20150911
  (c++)"LXQt::ConfigDialog::dialogButtonsAction(QAbstractButton*)@Base" 0.9.0+20150911
+ (c++)"LXQt::ConfigDialog::event(QEvent*)@Base" 0.11.0
  (c++)"LXQt::ConfigDialog::metaObject() const@Base" 0.9.0+20150911
  (c++)"LXQt::ConfigDialog::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.9.0+20150911
  (c++)"LXQt::ConfigDialog::qt_metacast(char const*)@Base" 0.9.0+20150911
@@ -35,6 +36,7 @@ liblxqt.so.0 liblxqt0 #MINVER#, lxqt-abi-0-10-0
  (c++)"LXQt::ConfigDialog::staticMetaObject@Base" 0.9.0+20150911
  (c++)"LXQt::ConfigDialog::updateIcons()@Base" 0.9.0+20150911
  (c++)"LXQt::GridLayout::addItem(QLayoutItem*)@Base" 0.9.0+20150911
+ (c++)"LXQt::GridLayout::animatedMoveInProgress() const@Base" 0.11.0
  (c++)"LXQt::GridLayout::cellMaximumSize() const@Base" 0.9.0+20150911
  (c++)"LXQt::GridLayout::cellMinimumSize() const@Base" 0.9.0+20150911
  (c++)"LXQt::GridLayout::columnCount() const@Base" 0.9.0+20150911
@@ -111,13 +113,17 @@ liblxqt.so.0 liblxqt0 #MINVER#, lxqt-abi-0-10-0
  (c++)"LXQt::Notification::setUrgencyHint(LXQt::Notification::Urgency)@Base" 0.9.0+20150911
  (c++)"LXQt::Notification::staticMetaObject@Base" 0.9.0+20150911
  (c++)"LXQt::Notification::update()@Base" 0.9.0+20150911
+ (c++)"LXQt::PageSelectWidget::event(QEvent*)@Base" 0.11.0
+ (c++)"LXQt::PageSelectWidget::maxTextWidth() const@Base" 0.11.0
  (c++)"LXQt::PageSelectWidget::metaObject() const@Base" 0.9.0+20150911
+ (c++)"LXQt::PageSelectWidget::minimumSizeHint() const@Base" 0.11.0
  (c++)"LXQt::PageSelectWidget::~PageSelectWidget()@Base" 0.9.0+20150911
  (c++)"LXQt::PageSelectWidget::PageSelectWidget(QWidget*)@Base" 0.9.0+20150911
  (c++)"LXQt::PageSelectWidget::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.9.0+20150911
  (c++)"LXQt::PageSelectWidget::qt_metacast(char const*)@Base" 0.9.0+20150911
- (c++)"LXQt::PageSelectWidget::sizeHint() const@Base" 0.9.0+20150911
  (c++)"LXQt::PageSelectWidget::staticMetaObject@Base" 0.9.0+20150911
+ (c++)"LXQt::PageSelectWidget::updateMaxTextWidth()@Base" 0.11.0
+ (c++)"LXQt::PageSelectWidget::viewportSizeHint() const@Base" 0.11.0
  (c++)"LXQt::PluginInfo::isValid() const@Base" 0.9.0+20150911
  (c++)"LXQt::PluginInfo::loadLibrary(QString const&) const@Base" 0.9.0+20150911
  (c++)"LXQt::PluginInfo::load(QString const&)@Base" 0.9.0+20150911
@@ -188,9 +194,10 @@ liblxqt.so.0 liblxqt0 #MINVER#, lxqt-abi-0-10-0
  (c++)"LXQt::ScreenSaver::metaObject() const@Base" 0.9.0+20150911
  (c++)"LXQt::ScreenSaver::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.9.0+20150911
  (c++)"LXQt::ScreenSaver::qt_metacast(char const*)@Base" 0.9.0+20150911
+ (c++)"LXQt::ScreenSaver::~ScreenSaver()@Base" 0.11.0
  (c++)"LXQt::ScreenSaver::ScreenSaver(QObject*)@Base" 0.9.0+20150911
  (c++)"LXQt::ScreenSaver::staticMetaObject@Base" 0.9.0+20150911
- (c++)"LXQt::ScreenSaver::xdgProcess_finished(int, QProcess::ExitStatus)@Base" 0.9.0+20150911
+ (c++)"LXQt::Settings::addWatchedFile(QString const&)@Base" 0.10.0
  (c++)"LXQt::SettingsCache::loadFromSettings()@Base" 0.9.0+20150911
  (c++)"LXQt::SettingsCache::loadToSettings()@Base" 0.9.0+20150911
  (c++)"LXQt::SettingsCache::SettingsCache(QSettings*)@Base" 0.9.0+20150911
@@ -206,6 +213,8 @@ liblxqt.so.0 liblxqt0 #MINVER#, lxqt-abi-0-10-0
  (c++)"LXQt::Settings::setLocalizedValue(QString const&, QVariant const&)@Base" 0.9.0+20150911
  (c++)"LXQt::Settings::~Settings()@Base" 0.9.0+20150911
  (c++)"LXQt::Settings::settingsChanged()@Base" 0.9.0+20150911
+ (c++)"LXQt::Settings::settingsChangedByApp()@Base" 0.10.0
+ (c++)"LXQt::Settings::settingsChangedFromExternal()@Base" 0.10.0
  (c++)"LXQt::Settings::Settings(QSettings const*, QString const&, QObject*)@Base" 0.9.0+20150911
  (c++)"LXQt::Settings::Settings(QSettings const&, QString const&, QObject*)@Base" 0.9.0+20150911
  (c++)"LXQt::Settings::Settings(QString const&, QObject*)@Base" 0.9.0+20150911
@@ -263,6 +272,7 @@ liblxqt.so.0 liblxqt0 #MINVER#, lxqt-abi-0-10-0
  (c++)"typeinfo name for LXQt::Settings@Base" 0.9.0+20150911
  (c++)"typeinfo name for LXQt::SettingsCache@Base" 0.9.0+20150911
  (c++)"typeinfo name for LXQt::SingleApplication@Base" 0.9.0+20150911
+ (optional|c++)"void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int>(int&&)@Base" 0.11.0
  (c++)"vtable for LXQt::Application@Base" 0.9.0+20150911
  (c++)"vtable for LXQt::AutostartEntry@Base" 0.9.0+20150911
  (c++)"vtable for LXQt::ConfigDialog@Base" 0.9.0+20150911
