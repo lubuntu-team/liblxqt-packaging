@@ -1,9 +1,9 @@
 /*.debhelper
 /*.log
 /*.substvars
+/debhelper-build-stamp
 /files
 
 /liblxqt0/
-/liblxqt0-dbg/
 /liblxqt0-dev/
 /tmp

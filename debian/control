@@ -6,17 +6,12 @@ Uploaders: Alf Gaida <agaida@siduction.org>,
 Section: libs
 Priority: optional
 Build-Depends: debhelper (>= 10),
-               cmake (>= 3.0.2),
                libqt5svg5-dev,
                libkf5windowsystem-dev,
                libqt5x11extras5-dev,
-               libqt5xdg-dev (>= 2.0.0),
-               libqt5xdgiconloader-dev (>= 2.0.0),
                libx11-dev,
                libxss-dev,
-               pkg-config,
-               qttools5-dev,
-               qttools5-dev-tools
+               lxqt-build-tools
 Standards-Version: 3.9.8
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-lxqt/liblxqt.git/?h=debian/sid
 Vcs-Git: https://anonscm.debian.org/git/pkg-lxqt/liblxqt.git -b debian/sid
@@ -42,7 +37,10 @@ Package: liblxqt0-dev
 Architecture: any
 Section: libdevel
 Depends: ${misc:Depends},
-         liblxqt0 (= ${binary:Version})
+         liblxqt0 (= ${binary:Version}),
+         libqt5xdg-dev (>= 2.0.0),
+         libqt5xdgiconloader-dev (>= 2.0.0),
+         lxqt-build-tools
 Description: Shared libraries for LXQt desktop environment (dev)
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
  technologies. It has been tailored for users who value simplicity, speed, and

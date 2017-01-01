@@ -1,3 +1,10 @@
+liblxqt (0.11.1-1~pre1) UNRELEASED; urgency=medium
+
+  * preparing point release
+  * 
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 29 Dec 2016 14:30:19 +0100
+
 liblxqt (0.11.0-2) unstable; urgency=medium
 
   * Cherry-picking upstream version 0.11.0.
