@@ -1,9 +1,22 @@
-liblxqt (0.11.1-1~pre1) UNRELEASED; urgency=medium
+liblxqt (0.11.1-1) unstable; urgency=medium
 
-  * preparing point release
-  * 
+  * Cherry-picking upstream version 0.11.1.
+  * Bumped years in d/copyright
+  * Removed build dependencies:
+    - cmake
+    - libqt5xdg-dev
+    - libqt5xdgiconloader-dev
+    - pkg-config
+    - qttools5-dev
+    - qttools5-dev-tools
+   * Added build dependency lxqt-build-tools (>= 0.3.1)
+   * Added dependencies:
+     - libqt5xdg-dev
+     - libqt5xdgiconloader-dev
+     - lxqt-build-tools
+  * Fixed l-dev.install
 
- -- Alf Gaida <agaida@siduction.org>  Thu, 29 Dec 2016 14:30:19 +0100
+ -- Alf Gaida <agaida@siduction.org>  Mon, 02 Jan 2017 03:40:10 +0100
 
 liblxqt (0.11.0-2) unstable; urgency=medium
 
