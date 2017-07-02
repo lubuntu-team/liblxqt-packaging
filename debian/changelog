@@ -1,3 +1,11 @@
+liblxqt (0.11.1-2) unstable; urgency=medium
+
+  * Bumped Standards to 4.0.0
+  * Added dependencies desktop-file-utils and shared-mime-info
+    (Closes: #866904)
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 02 Jul 2017 20:03:10 +0200
+
 liblxqt (0.11.1-1) unstable; urgency=medium
 
   * Cherry-picking upstream version 0.11.1.
