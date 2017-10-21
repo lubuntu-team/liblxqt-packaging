@@ -2,9 +2,25 @@ cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
 
 project(liblxqt)
 
-set(QT_MINIMUM_VERSION "5.4.2")
-set(QTXDG_MINIMUM_VERSION "2.0.0")
-set(LXQTBT_MINIMUM_VERSION "0.3.1")
+set(QT_MINIMUM_VERSION "5.5.0")
+set(QTXDG_MINIMUM_VERSION "3.1.0")
+set(LXQTBT_MINIMUM_VERSION "0.4.0")
+
+# Major LXQt Version, belong to all components
+set(LXQT_MAJOR_VERSION 0)
+# Minor LXQt Version, belong to all components
+set(LXQT_MINOR_VERSION 12)
+#
+# Patch Version, belong *only* to the component
+# LXQt is 0.11 - liblxqt is at patch version 1
+# The official LXQt version will follow liblxqt.
+#
+# In a perfect world all components would have the same major- and minor- and
+# patch-version as liblxqt - in real life it will be fine if every component
+# has it's own patch version within a major/minor life cyle.
+#
+set(LXQT_PATCH_VERSION 0)
+set(LXQT_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_PATCH_VERSION})
 
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
@@ -118,7 +134,7 @@ find_package(X11 REQUIRED QUIET)
 find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus X11Extras LinguistTools)
 find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
 find_package(KF5WindowSystem REQUIRED QUIET)
-message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION_STRING}")
+message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION}")
 
 QT5_ADD_DBUS_INTERFACE(SRCS
     dbus/org.freedesktop.Notifications.xml
