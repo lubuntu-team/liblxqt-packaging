@@ -41,14 +41,14 @@ namespace LXQt {
 
 class LXQT_API MessageBox: public QMessageBox
 {
-    Q_DECLARE_TR_FUNCTIONS(LXQt::MessageBox);
+    Q_DECLARE_TR_FUNCTIONS(LXQt::MessageBox)
 
 public:
     explicit MessageBox(QWidget *parent = 0): QMessageBox(parent) {}
 
     static QWidget *parentWidget()
     {
-        QWidgetList widgets = QApplication::topLevelWidgets();
+        const QWidgetList widgets = QApplication::topLevelWidgets();
 
         if (widgets.count())
             return widgets.at(0);
@@ -69,6 +69,8 @@ public:
 
     static void warning(const QString& title, const QString& text)
     {
+        Q_UNUSED(title)
+        Q_UNUSED(text)
         QMessageBox::warning(parentWidget(), tr("LXQt Power Manager Error"), tr("Hibernate failed."));
     }
 
@@ -76,7 +78,8 @@ public:
 protected:
     virtual void resizeEvent(QResizeEvent* event)
     {
-        QRect screen = QApplication::desktop()->screenGeometry();
+        Q_UNUSED(event)
+        const QRect screen = QApplication::desktop()->screenGeometry();
         move((screen.width()  - this->width()) / 2,
              (screen.height() - this->height()) / 2);
 

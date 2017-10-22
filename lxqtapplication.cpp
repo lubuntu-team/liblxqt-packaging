@@ -57,6 +57,7 @@ variable LXQT_DEBUG set
 */
 void dbgMessageOutput(QtMsgType type, const QMessageLogContext &ctx, const QString & msgStr)
 {
+    Q_UNUSED(ctx)
     QByteArray msgBuf = msgStr.toUtf8();
     const char* msg = msgBuf.constData();
     QDir dir(XdgDirs::configHome().toUtf8() + QLatin1String("/lxqt"));
@@ -84,12 +85,12 @@ void dbgMessageOutput(QtMsgType type, const QMessageLogContext &ctx, const QStri
 
     QByteArray dt = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss.zzz").toUtf8();
     if (isatty(STDERR_FILENO))
-        fprintf(stderr, "%s %s(%p) %s: %s%s\n", color, QAPP_NAME, qApp, typestr, msg, COLOR_RESET);
+        fprintf(stderr, "%s %s(%p) %s: %s%s\n", color, QAPP_NAME, static_cast<void *>(qApp), typestr, msg, COLOR_RESET);
     else
-        fprintf(stderr, "%s(%p) %s: %s\n", QAPP_NAME, qApp, typestr, msg);
+        fprintf(stderr, "%s(%p) %s: %s\n", QAPP_NAME, static_cast<void *>(qApp), typestr, msg);
 
     FILE *f = fopen(dir.absoluteFilePath("debug.log").toUtf8().constData(), "a+");
-    fprintf(f, "%s %s(%p) %s: %s\n", dt.constData(), QAPP_NAME, qApp, typestr, msg);
+    fprintf(f, "%s %s(%p) %s: %s\n", dt.constData(), QAPP_NAME, static_cast<void *>(qApp), typestr, msg);
     fclose(f);
 
     if (type == QtFatalMsg)
@@ -102,7 +103,7 @@ Application::Application(int &argc, char** argv)
 #ifdef DEBUG
     qInstallMessageHandler(dbgMessageOutput);
 #else
-    if (!qgetenv("LXQT_DEBUG").isNull())
+    if (!qEnvironmentVariableIsSet("LXQT_DEBUG"))
         qInstallMessageHandler(dbgMessageOutput);
 #endif
 
@@ -128,7 +129,7 @@ Application::Application(int &argc, char** argv, bool handleQuitSignals)
 
 void Application::updateTheme()
 {
-    QString styleSheetKey = QFileInfo(applicationFilePath()).fileName();
+    const QString styleSheetKey = QFileInfo(applicationFilePath()).fileName();
     setStyleSheet(lxqtTheme.qss(styleSheetKey));
     emit themeChanged();
 }
@@ -140,14 +141,14 @@ namespace
     public:
         static void signalHandler(int signo)
         {
-            int ret = write(instance->mSignalSock[0], &signo, sizeof (int));
+            const int ret = write(instance->mSignalSock[0], &signo, sizeof (int));
             if (sizeof (int) != ret)
                 qCritical() << QStringLiteral("unable to write into socketpair, %1").arg(strerror(errno));
         } 
 
     public:
         template <class Lambda>
-        SignalHandler(Lambda signalEmitter)
+        SignalHandler(Application * app, Lambda signalEmitter)
             : mSignalSock{-1, -1}
         {
             if (0 != socketpair(AF_UNIX, SOCK_STREAM, 0, mSignalSock))
@@ -157,7 +158,7 @@ namespace
             }
 
             mNotifier.reset(new QSocketNotifier(mSignalSock[1], QSocketNotifier::Read));
-            QObject::connect(mNotifier.data(), &QSocketNotifier::activated, [this, signalEmitter] {
+            QObject::connect(mNotifier.data(), &QSocketNotifier::activated, app, [this, signalEmitter] {
                 int signo = 0;
                 int ret = read(mSignalSock[1], &signo, sizeof (int));
                 if (sizeof (int) != ret)
@@ -198,6 +199,6 @@ void Application::listenToUnixSignals(QList<int> const & signoList)
     static QScopedPointer<QSocketNotifier> signal_notifier;
 
     if (SignalHandler::instance.isNull())
-        SignalHandler::instance.reset(new SignalHandler{[this] (int signo) { emit unixSignal(signo); }});
+        SignalHandler::instance.reset(new SignalHandler{this, [this] (int signo) { emit unixSignal(signo); }});
     SignalHandler::instance->listenToSignals(signoList);
 }
