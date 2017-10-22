@@ -1,3 +1,12 @@
+liblxqt (0.12.0-2) experimental; urgency=medium
+
+  * Re-added explicit build dependencies, make the packaging more 
+    understandable:
+    - libqt5xdg-dev (>= 3.1.0)
+    - libqt5xdgiconloader-dev (>= 3.1.0)
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 22 Oct 2017 17:28:18 +0200
+
 liblxqt (0.12.0-1) experimental; urgency=medium
 
   * Cherry-picking upstream version 0.12.0.

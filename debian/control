@@ -9,6 +9,8 @@ Build-Depends: debhelper (>= 10),
                libqt5svg5-dev,
                libkf5windowsystem-dev,
                libqt5x11extras5-dev,
+               libqt5xdg-dev (>= 3.1.0),
+               libqt5xdgiconloader-dev (>= 3.1.0),
                libx11-dev,
                libxss-dev,
                lxqt-build-tools (>= 0.4.0)
