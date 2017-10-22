@@ -44,7 +44,7 @@ Depends: ${misc:Depends},
          liblxqt0 (= ${binary:Version}),
          libqt5xdg-dev (>= 3.1.0),
          libqt5xdgiconloader-dev (>= 3.1.0),
-         lxqt-build-tools
+         lxqt-build-tools (>= 0.4.0)
 Description: Shared libraries for LXQt desktop environment (dev)
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
  technologies. It has been tailored for users who value simplicity, speed, and

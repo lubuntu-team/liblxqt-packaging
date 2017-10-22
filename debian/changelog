@@ -1,3 +1,9 @@
+liblxqt (0.12.0-3) experimental; urgency=medium
+
+  * Fixed needed version to build-tools (>= 0.4.0)
+
+ -- Alf Gaida <agaida@siduction.org>  Mon, 23 Oct 2017 00:35:16 +0200
+
 liblxqt (0.12.0-2) experimental; urgency=medium
 
   * Re-added explicit build dependencies, make the packaging more 
