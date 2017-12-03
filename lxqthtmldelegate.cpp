@@ -65,7 +65,7 @@ void HtmlDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, 
     options.icon = QIcon();
 
     // icon size
-    QSize iconSize = icon.actualSize(mIconSize);
+    const QSize iconSize = icon.actualSize(mIconSize);
     QRect iconRect = QRect(8, 8, iconSize.width(), iconSize.height());
     if (is_right_to_left)
     {
@@ -86,7 +86,7 @@ void HtmlDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, 
         // shift text right to make icon visible
         painter->translate(iconRect.right() + 8, 0);
     }
-    QRect clip(0, 0, options.rect.width() - iconRect.width() - 8, options.rect.height());
+    const QRect clip(0, 0, options.rect.width() - iconRect.width() - 8, options.rect.height());
     painter->setClipRect(clip);
 
     // set text color to red for selected item
@@ -112,11 +112,16 @@ QSize HtmlDelegate::sizeHint(const QStyleOptionViewItem& option, const QModelInd
     QStyleOptionViewItem options = option;
     initStyleOption(&options, index);
 
-    QSize iconSize = options.icon.actualSize(mIconSize);
-    QRect iconRect = QRect(8, 8, iconSize.width(), iconSize.height());
+    const QSize iconSize = options.icon.actualSize(mIconSize);
+    const QRect iconRect = QRect(8, 8, iconSize.width(), iconSize.height());
+    const QSize optSize = options.rect.size();
 
     QTextDocument doc;
     doc.setHtml(options.text);
-    doc.setTextWidth(options.rect.width() - iconRect.right() - 8);
-    return QSize(options.rect.width(), doc.size().height() + 8);
+
+    if (optSize.width() > 0)
+        doc.setTextWidth(optSize.width() - iconRect.right() - 8);
+    doc.adjustSize();
+    return QSize(0 < optSize.width() ? optSize.width() : iconRect.width() + 8 + qRound(doc.size().width())
+            , qMax(qRound(doc.size().height()), iconSize.height()) + 8);
 }

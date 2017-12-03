@@ -107,8 +107,8 @@ static bool dbusCall(const QString &service,
 
     // If the method no returns value, we believe that it was successful.
     return msg.arguments().isEmpty() ||
-           msg.arguments().first().isNull() ||
-           msg.arguments().first().toBool();
+           msg.arguments().constFirst().isNull() ||
+           msg.arguments().constFirst().toBool();
 }
 
 /************************************************
@@ -156,10 +156,10 @@ static bool dbusCallSystemd(const QString &service,
     }
 
     // If the method no returns value, we believe that it was successful.
-    if (msg.arguments().isEmpty() || msg.arguments().first().isNull())
+    if (msg.arguments().isEmpty() || msg.arguments().constFirst().isNull())
         return true;
 
-    QString response = msg.arguments().first().toString();
+    QString response = msg.arguments().constFirst().toString();
     qDebug() << "systemd:" << method << "=" << response;
     return response == "yes" || response == "challenge";
 }
@@ -199,7 +199,7 @@ bool dbusGetProperty(const QString &service,
     }
 
     return !msg.arguments().isEmpty() &&
-            msg.arguments().first().value<QDBusVariant>().variant().toBool();
+            msg.arguments().constFirst().value<QDBusVariant>().variant().toBool();
 }
 
 
@@ -500,31 +500,45 @@ LXQtProvider::~LXQtProvider()
 
 bool LXQtProvider::canAction(Power::Action action) const
 {
+    QString command;
     switch (action)
     {
         case Power::PowerLogout:
-            // there can be case when razo-session does not run
-            return dbusCall(LXQT_SERVICE, LXQT_PATH, LXQT_SERVICE,
-                            QDBusConnection::sessionBus(), "canLogout",
-                            PowerProvider::DontCheckDBUS);
+            command = "canLogout";
+            break;
+        case Power::PowerReboot:
+            command = "canReboot";
+            break;
+        case Power::PowerShutdown:
+            command = "canPowerOff";
+            break;
         default:
             return false;
     }
+
+    // there can be case when lxqtsession-session does not run
+    return dbusCall(LXQT_SERVICE, LXQT_PATH, LXQT_SERVICE,
+            QDBusConnection::sessionBus(), command,
+            PowerProvider::DontCheckDBUS);
 }
 
 
 bool LXQtProvider::doAction(Power::Action action)
 {
     QString command;
-
     switch (action)
     {
-    case Power::PowerLogout:
-        command = "logout";
-        break;
-
-    default:
-        return false;
+        case Power::PowerLogout:
+            command = "logout";
+            break;
+        case Power::PowerReboot:
+            command = "reboot";
+            break;
+        case Power::PowerShutdown:
+            command = "powerOff";
+            break;
+        default:
+            return false;
     }
 
     return dbusCall(LXQT_SERVICE,
@@ -594,12 +608,14 @@ HalProvider::~HalProvider()
 
 bool HalProvider::canAction(Power::Action action) const
 {
+    Q_UNUSED(action)
     return false;
 }
 
 
 bool HalProvider::doAction(Power::Action action)
 {
+    Q_UNUSED(action)
     return false;
 }
 
