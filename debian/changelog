@@ -1,3 +1,29 @@
+liblxqt (0.12.0-3) experimental; urgency=medium
+
+  * Fixed needed version to build-tools (>= 0.4.0)
+
+ -- Alf Gaida <agaida@siduction.org>  Mon, 23 Oct 2017 00:35:16 +0200
+
+liblxqt (0.12.0-2) experimental; urgency=medium
+
+  * Re-added explicit build dependencies, make the packaging more
+    understandable:
+    - libqt5xdg-dev (>= 3.1.0)
+    - libqt5xdgiconloader-dev (>= 3.1.0)
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 22 Oct 2017 17:28:18 +0200
+
+liblxqt (0.12.0-1) experimental; urgency=medium
+
+  * Cherry-picking upstream version 0.12.0.
+  * Switched to experimental
+  * Bumped Standards to 4.1.1
+  * Bumped dependencies
+  * Fixed symbols
+  * Added override for dh_missing in rules
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 22 Oct 2017 14:28:46 +0200
+
 liblxqt (0.11.1-2) unstable; urgency=medium
 
   * Bumped Standards to 4.0.0
@@ -44,10 +70,10 @@ liblxqt (0.11.0-2) unstable; urgency=medium
   * Exported LC_ALL=C.UTF-8 - define language settings for reproducible
     builds
   * Fixed Format field in copyright
-  * Fixed VCS fields, use plain /git/ 
+  * Fixed VCS fields, use plain /git/
   * Fix symbols, only use lxqt-abi-0-11-0
   * Added translation handling in rules
-  * Deleted former patches 
+  * Deleted former patches
   * Added DCMAKE_BUILD_TYPE=RelWithDebInfo
 
  -- Alf Gaida <agaida@siduction.org>  Tue, 12 Jul 2016 21:17:33 +0200
@@ -58,7 +84,7 @@ liblxqt (0.10.0-5) unstable; urgency=medium
   * Secured VCS-fields
   * Added hardening=+all
   * patched LXQtTranslateDesktop.cmake - it's already fixed upstream
-    but i don't want to catch up with upstream before the upcoming 
+    but i don't want to catch up with upstream before the upcoming
     release
   * Fixed years in copyright
 
@@ -87,7 +113,7 @@ liblxqt (0.9.0+20150806-3) unstable; urgency=medium
 
   * Provide lxqt-abi-0-9-0
   * Fix VCS-Fields
-  * Modify symbols, preparing the migration to 0.10.0 
+  * Modify symbols, preparing the migration to 0.10.0
   * Removed breaks and replaces
 
  -- Alf Gaida <agaida@siduction.org>  Mon, 09 Nov 2015 18:48:51 +0100
