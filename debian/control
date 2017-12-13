@@ -14,9 +14,9 @@ Build-Depends: debhelper (>= 10),
                libx11-dev,
                libxss-dev,
                lxqt-build-tools (>= 0.4.0)
-Standards-Version: 4.1.1
-Vcs-Browser: https://anonscm.debian.org/cgit/pkg-lxqt/liblxqt.git/?h=debian/sid
-Vcs-Git: https://anonscm.debian.org/git/pkg-lxqt/liblxqt.git -b debian/sid
+Standards-Version: 4.1.2
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-lxqt/liblxqt.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-lxqt/liblxqt.git
 Homepage: https://github.com/lxde/liblxqt
 
 Package: liblxqt0
