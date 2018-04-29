@@ -16,7 +16,7 @@ Build-Depends: debhelper (>= 11~),
                lxqt-build-tools (>= 0.4.0)
 Standards-Version: 4.1.4
 Vcs-Browser: https://salsa.debian.org/lxqt-team/liblxqt
-Vcs-Git: https://salsa.debian.org/git/lxqt-team/liblxqt.git
+Vcs-Git: https://salsa.debian.org/lxqt-team/liblxqt.git
 Homepage: https://github.com/lxqt/liblxqt
 
 Package: liblxqt0
