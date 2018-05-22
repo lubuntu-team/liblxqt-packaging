@@ -25,7 +25,6 @@ Homepage: https://github.com/lxqt/liblxqt
 
 Package: liblxqt0
 Architecture: any
-Multi-Arch: same
 Depends: desktop-file-utils,
          shared-mime-info,
          ${misc:Depends},
