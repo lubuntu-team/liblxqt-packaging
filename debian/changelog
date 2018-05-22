@@ -1,4 +1,4 @@
-liblxqt (0.13.0-0ubuntu1) UNRELEASED; urgency=medium
+liblxqt (0.13.0-0ubuntu1) cosmic; urgency=medium
 
   * New upstream release.
   * Update Vcs-* and Maintainer to Lubuntu values.
@@ -10,7 +10,7 @@ liblxqt (0.13.0-0ubuntu1) UNRELEASED; urgency=medium
   * Remove Multi-Arch: same from liblxqt0 because it now contains an
     architecture-specific file.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 21 May 2018 22:14:31 -0500
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 21 May 2018 22:45:48 -0500
 
 liblxqt (0.12.0-7) unstable; urgency=medium
 
