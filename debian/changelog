@@ -4,6 +4,7 @@ liblxqt (0.13.0-0ubuntu1) UNRELEASED; urgency=medium
   * Update Vcs-* and Maintainer to Lubuntu values.
   * Update copyright.
   * Run wrap-and-sort.
+  * Update build and runtime dependencies.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 21 May 2018 22:14:31 -0500
 
