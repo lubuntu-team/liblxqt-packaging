@@ -1,0 +1,5 @@
+# lxqt-backlight_backend is a needed helper-application
+liblxqt0: application-in-library-section libs usr/bin/lxqt-backlight_backend
+
+# there will be no manpage for lxqt-backlight_backend
+liblxqt0: binary-without-manpage usr/bin/lxqt-backlight_backend
