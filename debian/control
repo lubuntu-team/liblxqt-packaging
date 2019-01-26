@@ -11,11 +11,11 @@ Build-Depends: debhelper (>= 12),
                libpolkit-qt5-1-dev,
                libqt5svg5-dev,
                libqt5x11extras5-dev,
-               libqt5xdg-dev (>= 3.2.0),
-               libqt5xdgiconloader-dev (>= 3.2.0),
+               libqt5xdg-dev (>= 3.3.0),
+               libqt5xdgiconloader-dev (>= 3.3.0),
                libx11-dev,
                libxss-dev,
-               lxqt-build-tools (>= 0.5.0)
+               lxqt-build-tools (>= 0.6.0)
 Standards-Version: 4.3.0
 Vcs-Browser: https://phab.lubuntu.me/source/liblxqt/
 Vcs-Git: https://phab.lubuntu.me/source/liblxqt.git
