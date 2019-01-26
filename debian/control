@@ -55,3 +55,14 @@ Description: Shared libraries for LXQt desktop environment (dev)
  fine with less powerful machines.
  .
  This package contain the development files.
+
+Package: liblxqt-l10n
+Architecture: all
+Multi-Arch: foreign
+Section: localization
+Depends: ${misc:Depends},
+         qttranslations5-l10n
+Breaks: liblxqt0 (<< 0.11.0)
+Replaces: liblxqt0 (<< 0.11.0)
+Description: Language package for liblxqt
+ This package contains the l10n files needed by the liblxqt.
