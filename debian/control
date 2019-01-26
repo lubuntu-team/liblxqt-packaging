@@ -16,7 +16,7 @@ Build-Depends: debhelper (>= 11),
                libx11-dev,
                libxss-dev,
                lxqt-build-tools (>= 0.5.0)
-Standards-Version: 4.1.4
+Standards-Version: 4.3.0
 Vcs-Browser: https://phab.lubuntu.me/source/liblxqt/
 Vcs-Git: https://phab.lubuntu.me/source/liblxqt.git
 XS-Debian-Vcs-Browser: https://salsa.debian.org/lxqt-team/liblxqt
