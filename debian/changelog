@@ -1,8 +1,8 @@
-liblxqt (0.14.0-0ubuntu3) UNRELEASED; urgency=medium
+liblxqt (0.14.0-0ubuntu3) disco; urgency=medium
 
   * Add Breaks/Replaces on the old liblxqt-l10n package.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 26 Jan 2019 10:08:31 -0600
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 26 Jan 2019 10:08:54 -0600
 
 liblxqt (0.14.0-0ubuntu2) disco; urgency=medium
 
