@@ -1,8 +1,9 @@
-liblxqt (0.14.1-0ubuntu1) UNRELEASED; urgency=medium
+liblxqt (0.14.1-0ubuntu1) disco; urgency=medium
 
   * New upstream release.
+  * Bump build dependency on libqtxdg.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 08 Mar 2019 23:10:36 -0600
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 08 Mar 2019 23:11:56 -0600
 
 liblxqt (0.14.0-0ubuntu3) disco; urgency=medium
 
