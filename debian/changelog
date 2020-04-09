@@ -1,3 +1,9 @@
+liblxqt (0.14.1-0ubuntu2) focal; urgency=medium
+
+  * No-change rebuild for libgcc-s1 package name change.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sun, 22 Mar 2020 16:46:08 +0100
+
 liblxqt (0.14.1-0ubuntu1) disco; urgency=medium
 
   * New upstream release.
