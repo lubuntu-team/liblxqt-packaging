@@ -1,0 +1,190 @@
+From 5bb1354a1e9a6fe35fb2ed09911d3d480f7bbfe9 Mon Sep 17 00:00:00 2001
+From: Chih-Hsuan Yen <yan12125@gmail.com>
+Date: Sat, 15 Jun 2019 11:14:53 +0800
+Subject: [PATCH] Make it build on macOS
+
+* Don't use X11 libs.
+* Don't build LXQt::ScreenSaver. It uses the X11 screensaver protocol.
+* Use symbols from the KWindowSystem class instead of NET class. The
+  NETWM header is available on XCB only.
+---
+ CMakeLists.txt             | 54 ++++++++++++++++++++++++++++++--------
+ cmake/lxqt-config.cmake.in |  4 ++-
+ lxqtsingleapplication.cpp  |  3 +--
+ 3 files changed, 47 insertions(+), 14 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 30b6d47..6a26f19 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -38,11 +38,14 @@ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_AUTOUIC ON)
+ 
+ find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
+-find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus X11Extras LinguistTools)
++find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus LinguistTools)
+ find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
+ find_package(KF5WindowSystem ${KF5_MINIMUM_VERSION} REQUIRED)
+ find_package(PolkitQt5-1 REQUIRED)
+-find_package(X11 REQUIRED)
++if (NOT APPLE)
++    find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED X11Extras)
++    find_package(X11 REQUIRED)
++endif()
+ message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION}")
+ 
+ include(CMakePackageConfigHelpers)
+@@ -57,7 +60,6 @@ set(PUB_HDRS
+     lxqtsettings.h
+     lxqtplugininfo.h
+     lxqtpowermanager.h
+-    lxqtscreensaver.h
+     lxqtapplication.h
+     lxqtsingleapplication.h
+     lxqttranslator.h
+@@ -78,12 +80,17 @@ set(PUB_HDRS
+     #lxqtbacklight/linux_backend/linuxbackend.h
+ )
+ 
++if (NOT APPLE)
++    list (APPEND PUB_HDRS
++        lxqtscreensaver.h
++    )
++endif (NOT APPLE)
++
+ set(PUBLIC_CLASSES
+     HtmlDelegate
+     Settings
+     PluginInfo
+     PowerManager
+-    ScreenSaver
+     Application
+     SingleApplication
+     Translator
+@@ -101,13 +108,17 @@ set(PUBLIC_CLASSES
+     Globals
+     Backlight
+ )
++if (NOT APPLE)
++    list (APPEND PUBLIC_CLASSES
++        ScreenSaver
++    )
++endif (NOT APPLE)
+ 
+ set(SRCS
+     lxqthtmldelegate.cpp
+     lxqtplugininfo.cpp
+     lxqtpowermanager.cpp
+     lxqtsettings.cpp
+-    lxqtscreensaver.cpp
+     lxqtapplication.cpp
+     lxqtsingleapplication.cpp
+     lxqttranslator.cpp
+@@ -128,11 +139,16 @@ set(SRCS
+     lxqtbacklight/linux_backend/linuxbackend.cpp
+ )
+ 
++if (NOT APPLE)
++    list (APPEND SRCS
++        lxqtscreensaver.cpp
++    )
++endif (NOT APPLE)
++
+ set(MOCS
+     lxqthtmldelegate.h
+     lxqtpowermanager.h
+     lxqtsettings.h
+-    lxqtscreensaver.h
+     lxqtapplication.h
+     lxqtbacklight.h
+ 
+@@ -150,6 +166,12 @@ set(MOCS
+     lxqtbacklight/linux_backend/linuxbackend.h
+ )
+ 
++if (NOT APPLE)
++    list (APPEND MOCS
++        lxqtscreensaver.h
++    )
++endif (NOT APPLE)
++
+ set(FORMS
+     configdialog/lxqtconfigdialog.ui
+ )
+@@ -177,7 +199,11 @@ set_property(SOURCE ${DBUS_INTERFACE_SRCS} ${DBUS_ADAPTOR_SRCS} PROPERTY SKIP_AU
+ list(APPEND SRCS "${DBUS_INTERFACE_SRCS}" "${DBUS_ADAPTOR_SRCS}")
+ 
+ # KF5WindowSystem is missing here. KF5WindowSystem doesn't provide an .pc file.
+-set(LXQT_PKG_CONFIG_REQUIRES "Qt5Xdg >= ${QTXDG_MINIMUM_VERSION}, Qt5Widgets >= ${QT_MINIMUM_VERSION}, Qt5Xml >= ${QT_MINIMUM_VERSION}, Qt5DBus >= ${QT_MINIMUM_VERSION}, Qt5X11Extras >= ${QT_MINIMUM_VERSION}")
++set(LXQT_PKG_CONFIG_REQUIRES "Qt5Xdg >= ${QTXDG_MINIMUM_VERSION}, Qt5Widgets >= ${QT_MINIMUM_VERSION}, Qt5Xml >= ${QT_MINIMUM_VERSION}, Qt5DBus >= ${QT_MINIMUM_VERSION}")
++
++if (NOT APPLE)
++    set(LXQT_PKG_CONFIG_REQUIRES "${LXQT_PKG_CONFIG_REQUIRES}, Qt5X11Extras >= ${QT_MINIMUM_VERSION}")
++endif (NOT APPLE)
+ 
+ 
+ # Standard directories for installation
+@@ -282,13 +308,19 @@ target_link_libraries(${LXQT_LIBRARY_NAME}
+         KF5::WindowSystem
+         Qt5::Widgets
+         Qt5::DBus
+-        Qt5::X11Extras
+         Qt5Xdg
+-    PRIVATE
+-        ${X11_Xscreensaver_LIB}
+-        ${X11_X11_LIB}
+ )
+ 
++if (NOT APPLE)
++    target_link_libraries(${LXQT_LIBRARY_NAME}
++        PUBLIC
++            Qt5::X11Extras
++        PRIVATE
++            ${X11_Xscreensaver_LIB}
++            ${X11_X11_LIB}
++    )
++endif (NOT APPLE)
++
+ set_target_properties(${LXQT_LIBRARY_NAME} PROPERTIES
+     VERSION   ${LXQT_VERSION}
+     SOVERSION ${LXQT_MAJOR_VERSION}
+diff --git a/cmake/lxqt-config.cmake.in b/cmake/lxqt-config.cmake.in
+index 5cb6dc5..25eaf61 100644
+--- a/cmake/lxqt-config.cmake.in
++++ b/cmake/lxqt-config.cmake.in
+@@ -10,11 +10,13 @@ include(CMakeFindDependencyMacro)
+ 
+ find_dependency(Qt5Widgets @QT_MINIMUM_VERSION@)
+ find_dependency(Qt5DBus @QT_MINIMUM_VERSION@)
+-find_dependency(Qt5X11Extras @QT_MINIMUM_VERSION@)
+ find_dependency(Qt5LinguistTools @QT_MINIMUM_VERSION@)
+ find_dependency(Qt5Xdg @QTXDG_MINIMUM_VERSION@)
+ find_dependency(KF5WindowSystem)
+ find_dependency(lxqt-build-tools @LXQTBT_MINIMUM_VERSION@)
++if (NOT APPLE)
++    find_dependency(Qt5X11Extras @QT_MINIMUM_VERSION@)
++endif (NOT APPLE)
+ include(LXQtConfigVars)
+ 
+ 
+diff --git a/lxqtsingleapplication.cpp b/lxqtsingleapplication.cpp
+index 4ad4b48..508ec3d 100644
+--- a/lxqtsingleapplication.cpp
++++ b/lxqtsingleapplication.cpp
+@@ -28,7 +28,6 @@
+ #include "lxqtsingleapplication.h"
+ #include "singleapplicationadaptor.h"
+ #include <KWindowSystem/KWindowSystem>
+-#include <KWindowSystem/NETWM>
+ #include <QDBusMessage>
+ #include <QWidget>
+ #include <QDebug>
+@@ -99,7 +98,7 @@ void SingleApplication::activateWindow()
+         mActivationWindow->show();
+         WId window = mActivationWindow->effectiveWinId();
+ 
+-        KWindowInfo info(window, NET::WMDesktop);
++        KWindowInfo info(window, KWindowSystem::WMDesktop);
+         int windowDesktop = info.desktop();
+ 
+         if (windowDesktop != KWindowSystem::currentDesktop())

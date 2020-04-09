@@ -36,6 +36,7 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::ConfigDialog::addPage(QWidget*, QString const&, QStringList const&)@Base" 0.9.0+20150911
  (c++)"LXQt::ConfigDialog::clicked(QDialogButtonBox::StandardButton)@Base" 0.9.0+20150911
  (c++)"LXQt::ConfigDialog::closeEvent(QCloseEvent*)@Base" 0.9.0+20150911
+ (c++)"LXQt::ConfigDialog::enableButton(QDialogButtonBox::StandardButton, bool)@Base" 0.14.1~
  (c++)"LXQt::ConfigDialog::event(QEvent*)@Base" 0.11.0
  (c++)"LXQt::ConfigDialog::metaObject() const@Base" 0.9.0+20150911
  (c++)"LXQt::ConfigDialog::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.9.0+20150911

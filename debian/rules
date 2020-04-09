@@ -5,6 +5,16 @@ export LC_ALL=C.UTF-8
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
+WHICH_OS := $(shell dpkg-architecture -qDEB_HOST_ARCH_OS 2>/dev/null)
+
+ifeq ($(WHICH_OS), hurd)
+    NOT_LINUX := -DBUILD_BACKLIGHT_LINUX_BACKEND=NO
+endif
+
+ifeq ($(WHICH_OS), kfreebsd)
+    NOT_LINUX := -DBUILD_BACKLIGHT_LINUX_BACKEND=NO
+endif
+
 %:
 	dh ${@} --buildsystem cmake
 
@@ -13,6 +23,6 @@ override_dh_missing:
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
-		-DPULL_TRANSLATIONS=OFF\
-		-DUPDATE_TRANSLATIONS=OFF\
-		-DCMAKE_BUILD_TYPE=RelWithDebInfo
+		-DUPDATE_TRANSLATIONS=OFF \
+		-DCMAKE_BUILD_TYPE=RelWithDebInfo \
+		$(NOT_LINUX)

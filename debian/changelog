@@ -1,3 +1,47 @@
+liblxqt (0.14.1-4ubuntu1) focal; urgency=low
+
+  * Merge from Debian unstable.  Remaining changes:
+    - New upstream version 0.14.1-4.
+    - Bumped standards version to 4.5.0.
+    - Using debhelper-compat ( =12).
+    - Added new build dependency dh-exec.
+    - Updated rules.
+    - Updated copyrights.
+    - Added upstream metadata.
+    - Added upstream patches fix-hurd-ftbfs and fix-osx-ftbfs.
+
+ -- Raman Sarda <theloudspeaker@lubuntu.me>  Tue, 07 Apr 2020 21:20:31 +0530
+
+liblxqt (0.14.1-4) unstable; urgency=medium
+
+  * Added kfreebsd as non-linux to rules
+  * New build dependency dh-exec
+  * Don't install backlight things for hurd and kfreebsd
+  * Prepared helper package
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 27 Jul 2019 22:59:58 +0200
+
+liblxqt (0.14.1-3) unstable; urgency=medium
+
+  * Modified debian/rules for Hurd.
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 27 Jul 2019 14:43:27 +0200
+
+liblxqt (0.14.1-2) unstable; urgency=medium
+
+  * Applied upstream CMakeLists patches for non-linux.
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 27 Jul 2019 14:20:35 +0200
+
+liblxqt (0.14.1-1) unstable; urgency=medium
+
+  * Cherry-picking upstream version 0.14.1.
+  * Bumped minimum version libqt5xdg-dev (>= 3.3.1~)
+  * Bumped minimum version libqt5xdgiconloader-dev (>= 3.3.1~)
+  * Added new symbol
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 24 Feb 2019 18:01:40 +0100
+
 liblxqt (0.14.1-0ubuntu2) focal; urgency=medium
 
   * No-change rebuild for libgcc-s1 package name change.
@@ -10,6 +54,21 @@ liblxqt (0.14.1-0ubuntu1) disco; urgency=medium
   * Bump build dependency on libqtxdg.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 08 Mar 2019 23:11:56 -0600
+
+liblxqt (0.14.0-1) unstable; urgency=medium
+
+  * Cherry-picking upstream version 0.14.0.
+  * Added Build-Depends-Package: liblxqt0-dev to d/liblxqt0-dev.symbols
+  * Dropped d/compat, use debhelper-compat = 12, no changes needed
+  * Fixed years in d/copyright
+  * Bumped minimum version libqt5xdg-dev (>= 3.3.0~)
+  * Bumped minimum version libqt5xdgiconloader-dev (>= 3.3.0~)
+  * Bumped minimum version lxqt-build-tools (>= 0.6.0~)
+  * Removed obsolete PULL_TRANSLATIONS= OFF from dh_auto_configure
+  * Added l10n-package, moved from lxqt-l10n
+  * Added d/upstream/metadata
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 27 Jan 2019 13:37:40 +0100
 
 liblxqt (0.14.0-0ubuntu3) disco; urgency=medium
 
@@ -31,6 +90,18 @@ liblxqt (0.14.0-0ubuntu1) disco; urgency=medium
   * Bump debhelper compat to 12, no changes needed.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 25 Jan 2019 22:20:23 -0600
+
+liblxqt (0.13.0-1) unstable; urgency=medium
+
+  * Cherry-picking upstream version 0.12.0.
+  * Bumped build dependencies liblqt5xdg* to >= 3.2.0~
+  * Bumpde build dependency lxqt-build-tools to >= 0.5.0~
+  * Fixed symbols for the new release
+  * Added lintian overrides for the helper scripts and configurations
+  * Removed multiarch=same - packages will not be co-installable anymore
+  * Moved debian/.gitignore to ./.gitignore
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 24 May 2018 18:49:19 +0200
 
 liblxqt (0.13.0-0ubuntu1) cosmic; urgency=medium
 
@@ -234,3 +305,4 @@ liblxqt (0.9.0-1) experimental; urgency=low
   * Initial release (Closes: #747620)
 
  -- Alf Gaida <agaida@siduction.org>  Sat, 14 Feb 2015 15:59:22 +0100
+
