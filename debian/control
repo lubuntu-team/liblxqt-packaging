@@ -8,6 +8,7 @@ Section: libs
 Priority: optional
 Build-Depends: debhelper-compat (= 12),
                dh-exec,
+               libkf5windowsystem-dev (>= 5.36.0),
                libpolkit-qt5-1-dev,
                libqt5svg5-dev,
                libqt5x11extras5-dev,
