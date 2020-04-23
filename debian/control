@@ -60,23 +60,8 @@ Package: liblxqt-l10n
 Architecture: all
 Multi-Arch: foreign
 Section: localization
-Depends: ${misc:Depends},
-         qttranslations5-l10n
-Breaks: liblxqt0 (<< 0.11.0), liblxqt-l10n (<< 0.14.0)
-Replaces: liblxqt0 (<< 0.11.0), liblxqt-l10n (<< 0.14.0)
+Depends: qttranslations5-l10n, ${misc:Depends}
+Breaks: liblxqt-l10n (<< 0.14.0), liblxqt0 (<< 0.11.0)
+Replaces: liblxqt-l10n (<< 0.14.0), liblxqt0 (<< 0.11.0)
 Description: Language package for liblxqt
  This package contains the l10n files needed by the liblxqt.
-
-
-# Package: lxqt-backlight-helper
-# Architecture: linux-any
-# Depends: ${shlibs:Depends},
-#         ${misc:Depends}
-# Description: LXQt backlight helper for linux
-#  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
-# technologies. It has been tailored for users who value simplicity, speed, and
-# an intuitive interface. Unlike most desktop environments, LXQt also works
-# fine with less powerful machines.
-# .
-# This package contains the backlight helper files needed by the linux LXQt
-# desktop environment.
