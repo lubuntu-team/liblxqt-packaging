@@ -1,6 +1,7 @@
-liblxqt (0.14.1-4ubuntu2) UNRELEASED; urgency=medium
+liblxqt (0.15.0-0ubuntu1) UNRELEASED; urgency=medium
 
-  * Remove upstream patches fixing Mac OS X and Hurd builds.
+  * New upstream release.
+    - Remove upstream patches fixing Mac OS X and Hurd builds.
   * Run wrap-and-sort.
   * Add libkf5windowsystem-dev to build dependencies.
 
