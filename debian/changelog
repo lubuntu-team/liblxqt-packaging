@@ -3,6 +3,7 @@ liblxqt (0.15.0-0ubuntu1) UNRELEASED; urgency=medium
   * New upstream release.
     - Remove upstream patches fixing Mac OS X and Hurd builds.
     - Update upstream signing key.
+    - Bump LXQt build dependencies.
   * Run wrap-and-sort.
   * Add libkf5windowsystem-dev to build dependencies.
   * Full copyright update.
