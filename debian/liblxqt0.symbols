@@ -266,6 +266,9 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::VirtualBackEnd::qt_metacast(char const*)@Base" 0.13.0
  (c++)"LXQt::VirtualBackEnd::setBacklight(int)@Base" 0.13.0
  (c++)"LXQt::VirtualBackEnd::staticMetaObject@Base" 0.13.0
+ (c++)"LXQt::Notification::queryServerInfo()@Base" 0.15.0
+ (c++)"LXQt::Notification::serverInfoReady()@Base" 0.15.0
+ (c++)"LXQt::PageSelectWidget::sizeHint() const@Base" 0.15.0
  (c++)"non-virtual thunk to LXQt::ConfigDialog::~ConfigDialog()@Base" 0.9.0+20150911
  (c++)"non-virtual thunk to LXQt::GridLayout::invalidate()@Base" 0.9.0+20150911
  (c++)"non-virtual thunk to LXQt::GridLayout::setGeometry(QRect const&)@Base" 0.9.0+20150911
