@@ -8,6 +8,7 @@ liblxqt (0.15.0-0ubuntu1) UNRELEASED; urgency=medium
   * Run wrap-and-sort.
   * Add libkf5windowsystem-dev to build dependencies.
   * Full copyright update.
+  * Remove unneeded lxqt-l10n Conflicts/Replaces.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 23 Apr 2020 03:19:56 -0500
 

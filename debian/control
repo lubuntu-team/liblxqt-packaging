@@ -62,7 +62,5 @@ Architecture: all
 Multi-Arch: foreign
 Section: localization
 Depends: qttranslations5-l10n, ${misc:Depends}
-Breaks: liblxqt-l10n (<< 0.14.0), liblxqt0 (<< 0.11.0)
-Replaces: liblxqt-l10n (<< 0.14.0), liblxqt0 (<< 0.11.0)
 Description: Language package for liblxqt
  This package contains the l10n files needed by the liblxqt.
