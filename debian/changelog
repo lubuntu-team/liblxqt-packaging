@@ -1,4 +1,4 @@
-liblxqt (0.15.0-0ubuntu1) UNRELEASED; urgency=medium
+liblxqt (0.15.0-0ubuntu1) groovy; urgency=medium
 
   * New upstream release.
     - Remove upstream patches fixing Mac OS X and Hurd builds.
@@ -10,7 +10,7 @@ liblxqt (0.15.0-0ubuntu1) UNRELEASED; urgency=medium
   * Full copyright update.
   * Remove unneeded lxqt-l10n Conflicts/Replaces.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 23 Apr 2020 03:19:56 -0500
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 03 Jun 2020 23:19:19 -0500
 
 liblxqt (0.14.1-4ubuntu1) focal; urgency=low
 
