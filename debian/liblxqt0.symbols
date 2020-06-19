@@ -266,6 +266,8 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::VirtualBackEnd::qt_metacast(char const*)@Base" 0.13.0
  (c++)"LXQt::VirtualBackEnd::setBacklight(int)@Base" 0.13.0
  (c++)"LXQt::VirtualBackEnd::staticMetaObject@Base" 0.13.0
+ (c++)"LXQt::Power::showLeaveDialog()@Base" 0.15.0+git20200619
+ (c++)"LXQt::Power::canShowLeaveDialog() const@Base" 0.15.0+git20200619
  (c++)"LXQt::Notification::queryServerInfo()@Base" 0.15.0
  (c++)"LXQt::Notification::serverInfoReady()@Base" 0.15.0
  (c++)"LXQt::PageSelectWidget::sizeHint() const@Base" 0.15.0
