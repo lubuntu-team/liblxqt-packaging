@@ -313,7 +313,7 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"typeinfo name for LXQt::SettingsCache@Base" 0.9.0+20150911
  (c++)"typeinfo name for LXQt::SingleApplication@Base" 0.9.0+20150911
  (c++)"typeinfo name for LXQt::VirtualBackEnd@Base" 0.13.0
- (c++)"void std::vector<int, std::allocator<int> >::_M_realloc_insert<int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int&&)@Base" 0.12.0
+ (c++|arch= !s390x)"void std::vector<int, std::allocator<int> >::_M_realloc_insert<int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int&&)@Base" 0.12.0
  (c++)"vtable for LXQt::Application@Base" 0.9.0+20150911
  (c++)"vtable for LXQt::AutostartEntry@Base" 0.9.0+20150911
  (c++)"vtable for LXQt::Backlight@Base" 0.13.0
