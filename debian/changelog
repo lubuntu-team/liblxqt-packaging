@@ -1,3 +1,10 @@
+liblxqt (0.15.0-0ubuntu2) hirsute; urgency=medium
+
+  * Welcome to Hirsute Hippo.
+  * Update symbols from build logs.
+
+ -- apt-ghetto <apt-ghetto@lubuntu.me>  Mon, 02 Nov 2020 14:05:02 +0100
+
 liblxqt (0.15.0-0ubuntu1) groovy; urgency=medium
 
   * New upstream release.

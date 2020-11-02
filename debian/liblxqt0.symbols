@@ -222,7 +222,7 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::Settings::Settings(QSettings const*, QString const&, QObject*)@Base" 0.9.0+20150911
  (c++)"LXQt::Settings::Settings(QString const&, QObject*)@Base" 0.9.0+20150911
  (c++)"LXQt::Settings::Settings(QString const&, QSettings::Format, QObject*)@Base" 0.9.0+20150911
- (c++)"LXQt::Settings::_fileChanged(QString)@Base" 0.9.0+20150911
+ (c++)"LXQt::Settings::_fileChanged(QString const&)@Base" 0.15.0+git20201102
  (c++)"LXQt::Settings::addWatchedFile(QString const&)@Base" 0.10.0
  (c++)"LXQt::Settings::event(QEvent*)@Base" 0.9.0+20150911
  (c++)"LXQt::Settings::fileChanged()@Base" 0.9.0+20150911
