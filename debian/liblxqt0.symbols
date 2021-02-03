@@ -1,4 +1,5 @@
 liblxqt.so.0 liblxqt0 #MINVER#
+* Build-Depends-Package: liblxqt0-dev
  (c++)"LXQt::Application::Application(int&, char**)@Base" 0.9.0+20150911
  (c++)"LXQt::Application::Application(int&, char**, bool)@Base" 0.9.0+20150911
  (c++)"LXQt::Application::listenToUnixSignals(QList<int> const&)@Base" 0.9.0+20150911
@@ -18,19 +19,19 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::AutostartEntry::removeLocal()@Base" 0.9.0+20150911
  (c++)"LXQt::AutostartEntry::setEnabled(bool)@Base" 0.9.0+20150911
  (c++)"LXQt::AutostartEntry::setFile(XdgDesktopFile const&)@Base" 0.9.0+20150911
- (c++)"LXQt::Backlight::Backlight(QObject*)@Base" 0.13.0
- (c++)"LXQt::Backlight::backlightChanged(int)@Base" 0.13.0
- (c++)"LXQt::Backlight::backlightChangedSlot(int)@Base" 0.13.0
- (c++)"LXQt::Backlight::getBacklight()@Base" 0.13.0
- (c++)"LXQt::Backlight::getMaxBacklight()@Base" 0.13.0
- (c++)"LXQt::Backlight::isBacklightAvailable()@Base" 0.13.0
- (c++)"LXQt::Backlight::isBacklightOff()@Base" 0.13.0
- (c++)"LXQt::Backlight::metaObject() const@Base" 0.13.0
- (c++)"LXQt::Backlight::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.13.0
- (c++)"LXQt::Backlight::qt_metacast(char const*)@Base" 0.13.0
- (c++)"LXQt::Backlight::setBacklight(int)@Base" 0.13.0
- (c++)"LXQt::Backlight::staticMetaObject@Base" 0.13.0
- (c++)"LXQt::Backlight::~Backlight()@Base" 0.13.0
+ (c++)"LXQt::Backlight::Backlight(QObject*)@Base" 0.13.0~
+ (c++)"LXQt::Backlight::backlightChanged(int)@Base" 0.13.0~
+ (c++)"LXQt::Backlight::backlightChangedSlot(int)@Base" 0.13.0~
+ (c++)"LXQt::Backlight::getBacklight()@Base" 0.13.0~
+ (c++)"LXQt::Backlight::getMaxBacklight()@Base" 0.13.0~
+ (c++)"LXQt::Backlight::isBacklightAvailable()@Base" 0.13.0~
+ (c++)"LXQt::Backlight::isBacklightOff()@Base" 0.13.0~
+ (c++)"LXQt::Backlight::metaObject() const@Base" 0.13.0~
+ (c++)"LXQt::Backlight::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.13.0~
+ (c++)"LXQt::Backlight::qt_metacast(char const*)@Base" 0.13.0~
+ (c++)"LXQt::Backlight::setBacklight(int)@Base" 0.13.0~
+ (c++)"LXQt::Backlight::staticMetaObject@Base" 0.13.0~
+ (c++)"LXQt::Backlight::~Backlight()@Base" 0.13.0~
  (c++)"LXQt::ConfigDialog::ConfigDialog(QString const&, LXQt::Settings*, QWidget*)@Base" 0.9.0+20150911
  (c++)"LXQt::ConfigDialog::addPage(QWidget*, QString const&, QString const&)@Base" 0.9.0+20150911
  (c++)"LXQt::ConfigDialog::addPage(QWidget*, QString const&, QStringList const&)@Base" 0.9.0+20150911
@@ -44,15 +45,15 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::ConfigDialog::reset()@Base" 0.9.0+20150911
  (c++)"LXQt::ConfigDialog::save()@Base" 0.9.0+20150911
  (c++)"LXQt::ConfigDialog::setButtons(QFlags<QDialogButtonBox::StandardButton>)@Base" 0.9.0+20150911
- (c++)"LXQt::ConfigDialog::showPage(QString const&)@Base" 0.13.0
+ (c++)"LXQt::ConfigDialog::showPage(QString const&)@Base" 0.13.0~
  (c++)"LXQt::ConfigDialog::showPage(QWidget*)@Base" 0.9.0+20150911
  (c++)"LXQt::ConfigDialog::staticMetaObject@Base" 0.9.0+20150911
  (c++)"LXQt::ConfigDialog::~ConfigDialog()@Base" 0.9.0+20150911
- (c++)"LXQt::ConfigDialogCmdLineOptions::ConfigDialogCmdLineOptions()@Base" 0.13.0
- (c++)"LXQt::ConfigDialogCmdLineOptions::page() const@Base" 0.13.0
- (c++)"LXQt::ConfigDialogCmdLineOptions::process(QCommandLineParser&)@Base" 0.13.0
- (c++)"LXQt::ConfigDialogCmdLineOptions::setCommandLine(QCommandLineParser*)@Base" 0.13.0
- (c++)"LXQt::ConfigDialogCmdLineOptions::~ConfigDialogCmdLineOptions()@Base" 0.13.0
+ (c++)"LXQt::ConfigDialogCmdLineOptions::ConfigDialogCmdLineOptions()@Base" 0.13.0~
+ (c++)"LXQt::ConfigDialogCmdLineOptions::page() const@Base" 0.13.0~
+ (c++)"LXQt::ConfigDialogCmdLineOptions::process(QCommandLineParser&)@Base" 0.13.0~
+ (c++)"LXQt::ConfigDialogCmdLineOptions::setCommandLine(QCommandLineParser*)@Base" 0.13.0~
+ (c++)"LXQt::ConfigDialogCmdLineOptions::~ConfigDialogCmdLineOptions()@Base" 0.13.0~
  (c++)"LXQt::GridLayout::GridLayout(QWidget*)@Base" 0.9.0+20150911
  (c++)"LXQt::GridLayout::addItem(QLayoutItem*)@Base" 0.9.0+20150911
  (c++)"LXQt::GridLayout::animatedMoveInProgress() const@Base" 0.11.0
@@ -153,7 +154,7 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::Power::canAction(LXQt::Power::Action) const@Base" 0.9.0+20150911
  (c++)"LXQt::Power::canHibernate() const@Base" 0.9.0+20150911
  (c++)"LXQt::Power::canLogout() const@Base" 0.9.0+20150911
- (c++)"LXQt::Power::canMonitorOff() const@Base" 0.13.0
+ (c++)"LXQt::Power::canMonitorOff() const@Base" 0.13.0~
  (c++)"LXQt::Power::canReboot() const@Base" 0.9.0+20150911
  (c++)"LXQt::Power::canShutdown() const@Base" 0.9.0+20150911
  (c++)"LXQt::Power::canSuspend() const@Base" 0.9.0+20150911
@@ -161,7 +162,7 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::Power::hibernate()@Base" 0.9.0+20150911
  (c++)"LXQt::Power::logout()@Base" 0.9.0+20150911
  (c++)"LXQt::Power::metaObject() const@Base" 0.9.0+20150911
- (c++)"LXQt::Power::monitorOff()@Base" 0.13.0
+ (c++)"LXQt::Power::monitorOff()@Base" 0.13.0~
  (c++)"LXQt::Power::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.9.0+20150911
  (c++)"LXQt::Power::qt_metacast(char const*)@Base" 0.9.0+20150911
  (c++)"LXQt::Power::reboot()@Base" 0.9.0+20150911
@@ -222,7 +223,6 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::Settings::Settings(QSettings const*, QString const&, QObject*)@Base" 0.9.0+20150911
  (c++)"LXQt::Settings::Settings(QString const&, QObject*)@Base" 0.9.0+20150911
  (c++)"LXQt::Settings::Settings(QString const&, QSettings::Format, QObject*)@Base" 0.9.0+20150911
- (c++)"LXQt::Settings::_fileChanged(QString)@Base" 0.9.0+20150911
  (c++)"LXQt::Settings::addWatchedFile(QString const&)@Base" 0.10.0
  (c++)"LXQt::Settings::event(QEvent*)@Base" 0.9.0+20150911
  (c++)"LXQt::Settings::fileChanged()@Base" 0.9.0+20150911
@@ -255,20 +255,23 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::Translator::translateLibrary(QString const&)@Base" 0.9.0+20150911
  (c++)"LXQt::Translator::translatePlugin(QString const&, QString const&)@Base" 0.9.0+20150911
  (c++)"LXQt::Translator::translationSearchPaths()@Base" 0.9.0+20150911
- (c++)"LXQt::VirtualBackEnd::VirtualBackEnd(QObject*)@Base" 0.13.0
- (c++)"LXQt::VirtualBackEnd::backlightChanged(int)@Base" 0.13.0
- (c++)"LXQt::VirtualBackEnd::getBacklight()@Base" 0.13.0
- (c++)"LXQt::VirtualBackEnd::getMaxBacklight()@Base" 0.13.0
- (c++)"LXQt::VirtualBackEnd::isBacklightAvailable()@Base" 0.13.0
- (c++)"LXQt::VirtualBackEnd::isBacklightOff()@Base" 0.13.0
- (c++)"LXQt::VirtualBackEnd::metaObject() const@Base" 0.13.0
- (c++)"LXQt::VirtualBackEnd::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.13.0
- (c++)"LXQt::VirtualBackEnd::qt_metacast(char const*)@Base" 0.13.0
- (c++)"LXQt::VirtualBackEnd::setBacklight(int)@Base" 0.13.0
- (c++)"LXQt::VirtualBackEnd::staticMetaObject@Base" 0.13.0
- (c++)"LXQt::Notification::queryServerInfo()@Base" 0.15.0
- (c++)"LXQt::Notification::serverInfoReady()@Base" 0.15.0
- (c++)"LXQt::PageSelectWidget::sizeHint() const@Base" 0.15.0
+ (c++)"LXQt::VirtualBackEnd::VirtualBackEnd(QObject*)@Base" 0.13.0~
+ (c++)"LXQt::VirtualBackEnd::backlightChanged(int)@Base" 0.13.0~
+ (c++)"LXQt::VirtualBackEnd::getBacklight()@Base" 0.13.0~
+ (c++)"LXQt::VirtualBackEnd::getMaxBacklight()@Base" 0.13.0~
+ (c++)"LXQt::VirtualBackEnd::isBacklightAvailable()@Base" 0.13.0~
+ (c++)"LXQt::VirtualBackEnd::isBacklightOff()@Base" 0.13.0~
+ (c++)"LXQt::VirtualBackEnd::metaObject() const@Base" 0.13.0~
+ (c++)"LXQt::VirtualBackEnd::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.13.0~
+ (c++)"LXQt::VirtualBackEnd::qt_metacast(char const*)@Base" 0.13.0~
+ (c++)"LXQt::VirtualBackEnd::setBacklight(int)@Base" 0.13.0~
+ (c++)"LXQt::VirtualBackEnd::staticMetaObject@Base" 0.13.0~
+ _ZN4LXQt12Notification15queryServerInfoEv@Base 0.16.0
+ _ZN4LXQt12Notification15serverInfoReadyEv@Base 0.16.0
+ _ZN4LXQt5Power15showLeaveDialogEv@Base 0.16.0
+ _ZN4LXQt8Settings12_fileChangedERK7QString@Base 0.16.0
+ _ZNK4LXQt16PageSelectWidget8sizeHintEv@Base 0.16.0
+ _ZNK4LXQt5Power18canShowLeaveDialogEv@Base 0.16.0
  (c++)"non-virtual thunk to LXQt::ConfigDialog::~ConfigDialog()@Base" 0.9.0+20150911
  (c++)"non-virtual thunk to LXQt::GridLayout::invalidate()@Base" 0.9.0+20150911
  (c++)"non-virtual thunk to LXQt::GridLayout::setGeometry(QRect const&)@Base" 0.9.0+20150911
@@ -277,7 +280,7 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"non-virtual thunk to LXQt::PageSelectWidget::~PageSelectWidget()@Base" 0.9.0+20150911
  (c++)"typeinfo for LXQt::Application@Base" 0.9.0+20150911
  (c++)"typeinfo for LXQt::AutostartEntry@Base" 0.9.0+20150911
- (c++)"typeinfo for LXQt::Backlight@Base" 0.13.0
+ (c++)"typeinfo for LXQt::Backlight@Base" 0.13.0~
  (c++)"typeinfo for LXQt::ConfigDialog@Base" 0.9.0+20150911
  (c++)"typeinfo for LXQt::GridLayout@Base" 0.9.0+20150911
  (c++)"typeinfo for LXQt::HtmlDelegate@Base" 0.9.0+20150911
@@ -292,10 +295,10 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"typeinfo for LXQt::Settings@Base" 0.9.0+20150911
  (c++)"typeinfo for LXQt::SettingsCache@Base" 0.9.0+20150911
  (c++)"typeinfo for LXQt::SingleApplication@Base" 0.9.0+20150911
- (c++)"typeinfo for LXQt::VirtualBackEnd@Base" 0.13.0
+ (c++)"typeinfo for LXQt::VirtualBackEnd@Base" 0.13.0~
  (c++)"typeinfo name for LXQt::Application@Base" 0.9.0+20150911
  (c++)"typeinfo name for LXQt::AutostartEntry@Base" 0.9.0+20150911
- (c++)"typeinfo name for LXQt::Backlight@Base" 0.13.0
+ (c++)"typeinfo name for LXQt::Backlight@Base" 0.13.0~
  (c++)"typeinfo name for LXQt::ConfigDialog@Base" 0.9.0+20150911
  (c++)"typeinfo name for LXQt::GridLayout@Base" 0.9.0+20150911
  (c++)"typeinfo name for LXQt::HtmlDelegate@Base" 0.9.0+20150911
@@ -310,11 +313,11 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"typeinfo name for LXQt::Settings@Base" 0.9.0+20150911
  (c++)"typeinfo name for LXQt::SettingsCache@Base" 0.9.0+20150911
  (c++)"typeinfo name for LXQt::SingleApplication@Base" 0.9.0+20150911
- (c++)"typeinfo name for LXQt::VirtualBackEnd@Base" 0.13.0
+ (c++)"typeinfo name for LXQt::VirtualBackEnd@Base" 0.13.0~
  (c++)"void std::vector<int, std::allocator<int> >::_M_realloc_insert<int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int&&)@Base" 0.12.0
  (c++)"vtable for LXQt::Application@Base" 0.9.0+20150911
  (c++)"vtable for LXQt::AutostartEntry@Base" 0.9.0+20150911
- (c++)"vtable for LXQt::Backlight@Base" 0.13.0
+ (c++)"vtable for LXQt::Backlight@Base" 0.13.0~
  (c++)"vtable for LXQt::ConfigDialog@Base" 0.9.0+20150911
  (c++)"vtable for LXQt::GridLayout@Base" 0.9.0+20150911
  (c++)"vtable for LXQt::HtmlDelegate@Base" 0.9.0+20150911
@@ -329,4 +332,4 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"vtable for LXQt::Settings@Base" 0.9.0+20150911
  (c++)"vtable for LXQt::SettingsCache@Base" 0.9.0+20150911
  (c++)"vtable for LXQt::SingleApplication@Base" 0.9.0+20150911
- (c++)"vtable for LXQt::VirtualBackEnd@Base" 0.13.0
+ (c++)"vtable for LXQt::VirtualBackEnd@Base" 0.13.0~

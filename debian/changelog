@@ -1,3 +1,24 @@
+liblxqt (0.16.0-1ubuntu1) hirsute; urgency=medium
+
+  * New upstream version.
+  * Bumped standards-version to 4.5.1
+  * Ignore the old upstream signing key from Debian.
+
+ -- Raman Sarda <theloudspeaker@lubuntu.me>  Sat, 23 Jan 2021 10:00:11 +0530
+
+liblxqt (0.16.0-1) unstable; urgency=medium
+
+  [ Alf Gaida ]
+  * Switched to gbp
+  * Bumped Standards-Version to 4.4.0, no changes needed.
+
+  [ Andrew Lee (李健秋) ]
+  * New upstream release. (Closes: #964658)
+  * Drop backported upstream patches.
+  * Refresh debian/liblxqt0.symbols file.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Tue, 05 Jan 2021 17:23:10 +0800
+ 
 liblxqt (0.15.0-0ubuntu1) groovy; urgency=medium
 
   * New upstream release.
