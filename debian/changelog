@@ -1,3 +1,9 @@
+liblxqt (0.16.0-1ubuntu2) hirsute; urgency=medium
+
+  * Dropped symbol failing on s390x. 
+
+ -- Walter Lapchynski <wxl@ubuntu.com>  Wed, 03 Feb 2021 16:15:06 -0800
+
 liblxqt (0.16.0-1ubuntu1) hirsute; urgency=medium
 
   * New upstream version.
