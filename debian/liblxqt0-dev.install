@@ -1,4 +1,5 @@
 usr/include/lxqt/
 usr/lib/*/liblxqt.so
 usr/lib/*/pkgconfig/lxqt.pc
+
 usr/share/cmake/lxqt/lxqt-*.cmake
