@@ -3,16 +3,17 @@ Upstream-Name: liblxqt
 Source: https://github.com/lxqt/liblxqt
 
 Files: *
-Copyright: 2012-2019 LXQt team
-           2010-2012 Razor team
-           2012 The Chromium Authors
-           2012-2013 Alec Moskvin <alecm@gmx.com>
-           2016-2018 P.L. Lucas
-           2018 Luís Pereira <luis.artur.pereira@gmail.com>
+Copyright: 2012-2019, LXQt team
+           2010-2013, Razor team
+           2012, The Chromium Authors
+           2012-2013, Alec Moskvin <alecm@gmx.com>
+           2016-2018, P.L. Lucas
+           2016, 2018, Luís Pereira <luis.artur.pereira@gmail.com>
 License: LGPL-2.1+
 
 Files: debian/*
-Copyright: 2014-2019 Alf Gaida <agaida@siduction.org>
+Copyright: 2021, Lubuntu Developers <lubuntu-devel@lists.ubuntu.com>
+           2014-2019, Alf Gaida <agaida@siduction.org>
 License: LGPL-2.1+
 
 License: LGPL-2.1+

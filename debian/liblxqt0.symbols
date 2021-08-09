@@ -54,6 +54,15 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::ConfigDialogCmdLineOptions::process(QCommandLineParser&)@Base" 0.13.0~
  (c++)"LXQt::ConfigDialogCmdLineOptions::setCommandLine(QCommandLineParser*)@Base" 0.13.0~
  (c++)"LXQt::ConfigDialogCmdLineOptions::~ConfigDialogCmdLineOptions()@Base" 0.13.0~
+ (c++)"LXQt::GlobalSettings::GlobalSettings()@Base" 0.17.0
+ (c++)"LXQt::GlobalSettings::fileChanged()@Base" 0.17.0
+ (c++)"LXQt::GlobalSettings::iconThemeChanged()@Base" 0.17.0
+ (c++)"LXQt::GlobalSettings::lxqtThemeChanged()@Base" 0.17.0
+ (c++)"LXQt::GlobalSettings::metaObject() const@Base" 0.17.0
+ (c++)"LXQt::GlobalSettings::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.17.0
+ (c++)"LXQt::GlobalSettings::qt_metacast(char const*)@Base" 0.17.0
+ (c++)"LXQt::GlobalSettings::staticMetaObject@Base" 0.17.0
+ (c++)"LXQt::GlobalSettings::~GlobalSettings()@Base" 0.17.0
  (c++)"LXQt::GridLayout::GridLayout(QWidget*)@Base" 0.9.0+20150911
  (c++)"LXQt::GridLayout::addItem(QLayoutItem*)@Base" 0.9.0+20150911
  (c++)"LXQt::GridLayout::animatedMoveInProgress() const@Base" 0.11.0
@@ -119,9 +128,11 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::Notification::metaObject() const@Base" 0.9.0+20150911
  (c++)"LXQt::Notification::notificationClosed(LXQt::Notification::CloseReason)@Base" 0.9.0+20150911
  (c++)"LXQt::Notification::notify(QString const&, QString const&, QString const&)@Base" 0.9.0+20150911
+ (c++)"LXQt::Notification::queryServerInfo()@Base" 0.16.0
  (c++)"LXQt::Notification::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.9.0+20150911
  (c++)"LXQt::Notification::qt_metacast(char const*)@Base" 0.9.0+20150911
  (c++)"LXQt::Notification::serverInfo()@Base" 0.9.0+20150911
+ (c++)"LXQt::Notification::serverInfoReady()@Base" 0.16.0
  (c++)"LXQt::Notification::setActions(QStringList const&, int)@Base" 0.9.0+20150911
  (c++)"LXQt::Notification::setBody(QString const&)@Base" 0.9.0+20150911
  (c++)"LXQt::Notification::setHint(QString const&, QVariant const&)@Base" 0.9.0+20150911
@@ -139,6 +150,7 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::PageSelectWidget::minimumSizeHint() const@Base" 0.11.0
  (c++)"LXQt::PageSelectWidget::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.9.0+20150911
  (c++)"LXQt::PageSelectWidget::qt_metacast(char const*)@Base" 0.9.0+20150911
+ (c++)"LXQt::PageSelectWidget::sizeHint() const@Base" 0.16.0
  (c++)"LXQt::PageSelectWidget::staticMetaObject@Base" 0.9.0+20150911
  (c++)"LXQt::PageSelectWidget::updateMaxTextWidth()@Base" 0.11.0
  (c++)"LXQt::PageSelectWidget::viewportSizeHint() const@Base" 0.11.0
@@ -156,6 +168,7 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::Power::canLogout() const@Base" 0.9.0+20150911
  (c++)"LXQt::Power::canMonitorOff() const@Base" 0.13.0~
  (c++)"LXQt::Power::canReboot() const@Base" 0.9.0+20150911
+ (c++)"LXQt::Power::canShowLeaveDialog() const@Base" 0.16.0
  (c++)"LXQt::Power::canShutdown() const@Base" 0.9.0+20150911
  (c++)"LXQt::Power::canSuspend() const@Base" 0.9.0+20150911
  (c++)"LXQt::Power::doAction(LXQt::Power::Action)@Base" 0.9.0+20150911
@@ -166,6 +179,7 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::Power::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.9.0+20150911
  (c++)"LXQt::Power::qt_metacast(char const*)@Base" 0.9.0+20150911
  (c++)"LXQt::Power::reboot()@Base" 0.9.0+20150911
+ (c++)"LXQt::Power::showLeaveDialog()@Base" 0.16.0
  (c++)"LXQt::Power::shutdown()@Base" 0.9.0+20150911
  (c++)"LXQt::Power::staticMetaObject@Base" 0.9.0+20150911
  (c++)"LXQt::Power::suspend()@Base" 0.9.0+20150911
@@ -189,7 +203,7 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::ProgramFinder::programName(QString const&)@Base" 0.9.0+20150911
  (c++)"LXQt::RotatedWidget::RotatedWidget(QWidget&, QWidget*, QFlags<Qt::WindowType>)@Base" 0.9.0+20150911
  (c++)"LXQt::RotatedWidget::adjustContentSize()@Base" 0.9.0+20150911
- (c++)"LXQt::RotatedWidget::adjustedPoint(QPoint) const@Base" 0.9.0+20150911
+ (c++)"LXQt::RotatedWidget::adjustedPoint(QPointF) const@Base" 0.17.0
  (c++)"LXQt::RotatedWidget::adjustedSize(QSize) const@Base" 0.9.0+20150911
  (c++)"LXQt::RotatedWidget::content() const@Base" 0.9.0+20150911
  (c++)"LXQt::RotatedWidget::enterEvent(QEvent*)@Base" 0.9.0+20150911
@@ -237,6 +251,7 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::Settings::settingsChangedFromExternal()@Base" 0.10.0
  (c++)"LXQt::Settings::staticMetaObject@Base" 0.9.0+20150911
  (c++)"LXQt::Settings::~Settings()@Base" 0.9.0+20150911
+ (c++)"LXQt::Settings::_fileChanged(QString const&)@Base" 0.16.0
  (c++)"LXQt::SettingsCache::SettingsCache(QSettings&)@Base" 0.12.0
  (c++)"LXQt::SettingsCache::SettingsCache(QSettings*)@Base" 0.9.0+20150911
  (c++)"LXQt::SettingsCache::loadFromSettings()@Base" 0.9.0+20150911
@@ -266,12 +281,6 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"LXQt::VirtualBackEnd::qt_metacast(char const*)@Base" 0.13.0~
  (c++)"LXQt::VirtualBackEnd::setBacklight(int)@Base" 0.13.0~
  (c++)"LXQt::VirtualBackEnd::staticMetaObject@Base" 0.13.0~
- _ZN4LXQt12Notification15queryServerInfoEv@Base 0.16.0
- _ZN4LXQt12Notification15serverInfoReadyEv@Base 0.16.0
- _ZN4LXQt5Power15showLeaveDialogEv@Base 0.16.0
- _ZN4LXQt8Settings12_fileChangedERK7QString@Base 0.16.0
- _ZNK4LXQt16PageSelectWidget8sizeHintEv@Base 0.16.0
- _ZNK4LXQt5Power18canShowLeaveDialogEv@Base 0.16.0
  (c++)"non-virtual thunk to LXQt::ConfigDialog::~ConfigDialog()@Base" 0.9.0+20150911
  (c++)"non-virtual thunk to LXQt::GridLayout::invalidate()@Base" 0.9.0+20150911
  (c++)"non-virtual thunk to LXQt::GridLayout::setGeometry(QRect const&)@Base" 0.9.0+20150911
@@ -282,6 +291,7 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"typeinfo for LXQt::AutostartEntry@Base" 0.9.0+20150911
  (c++)"typeinfo for LXQt::Backlight@Base" 0.13.0~
  (c++)"typeinfo for LXQt::ConfigDialog@Base" 0.9.0+20150911
+ (c++)"typeinfo for LXQt::GlobalSettings@Base" 0.17.0
  (c++)"typeinfo for LXQt::GridLayout@Base" 0.9.0+20150911
  (c++)"typeinfo for LXQt::HtmlDelegate@Base" 0.9.0+20150911
  (c++)"typeinfo for LXQt::MessageBox@Base" 0.9.0+20150911
@@ -300,6 +310,7 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"typeinfo name for LXQt::AutostartEntry@Base" 0.9.0+20150911
  (c++)"typeinfo name for LXQt::Backlight@Base" 0.13.0~
  (c++)"typeinfo name for LXQt::ConfigDialog@Base" 0.9.0+20150911
+ (c++)"typeinfo name for LXQt::GlobalSettings@Base" 0.17.0
  (c++)"typeinfo name for LXQt::GridLayout@Base" 0.9.0+20150911
  (c++)"typeinfo name for LXQt::HtmlDelegate@Base" 0.9.0+20150911
  (c++)"typeinfo name for LXQt::MessageBox@Base" 0.9.0+20150911
@@ -319,6 +330,7 @@ liblxqt.so.0 liblxqt0 #MINVER#
  (c++)"vtable for LXQt::AutostartEntry@Base" 0.9.0+20150911
  (c++)"vtable for LXQt::Backlight@Base" 0.13.0~
  (c++)"vtable for LXQt::ConfigDialog@Base" 0.9.0+20150911
+ (c++)"vtable for LXQt::GlobalSettings@Base" 0.17.0
  (c++)"vtable for LXQt::GridLayout@Base" 0.9.0+20150911
  (c++)"vtable for LXQt::HtmlDelegate@Base" 0.9.0+20150911
  (c++)"vtable for LXQt::MessageBox@Base" 0.9.0+20150911

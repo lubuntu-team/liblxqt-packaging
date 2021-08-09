@@ -6,17 +6,17 @@ Uploaders: Alf Gaida <agaida@siduction.org>,
            Andrew Lee (李健秋) <ajqlee@debian.org>
 Section: libs
 Priority: optional
-Build-Depends: debhelper-compat (= 12),
+Build-Depends: debhelper-compat (= 13),
                dh-exec,
                libkf5windowsystem-dev (>= 5.36.0),
                libpolkit-qt5-1-dev,
                libqt5svg5-dev,
                libqt5x11extras5-dev,
-               libqt5xdg-dev (>= 3.5.0),
-               libqt5xdgiconloader-dev (>= 3.5.0),
+               libqt5xdg-dev (>= 3.7.1),
+               libqt5xdgiconloader-dev (>= 3.7.1),
                libx11-dev,
                libxss-dev,
-               lxqt-build-tools (>= 0.7.0)
+               lxqt-build-tools (>= 0.9.0)
 Standards-Version: 4.5.1
 Vcs-Browser: https://phab.lubuntu.me/source/liblxqt/
 Vcs-Git: https://phab.lubuntu.me/source/liblxqt.git
@@ -30,7 +30,6 @@ Depends: desktop-file-utils,
          shared-mime-info,
          ${misc:Depends},
          ${shlibs:Depends}
-#         lxqt-backlight-helper [linux-any],
 Recommends: liblxqt-l10n
 Pre-Depends: ${misc:Pre-Depends}
 Description: Shared libraries for LXQt desktop environment (libs)
@@ -62,23 +61,8 @@ Package: liblxqt-l10n
 Architecture: all
 Multi-Arch: foreign
 Section: localization
-Depends: ${misc:Depends},
-         qttranslations5-l10n
+Depends: qttranslations5-l10n, ${misc:Depends}
 Breaks: liblxqt0 (<< 0.11.0)
 Replaces: liblxqt0 (<< 0.11.0)
 Description: Language package for liblxqt
  This package contains the l10n files needed by the liblxqt.
-
-
-# Package: lxqt-backlight-helper
-# Architecture: linux-any
-# Depends: ${shlibs:Depends},
-#         ${misc:Depends}
-# Description: LXQt backlight helper for linux
-#  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
-# technologies. It has been tailored for users who value simplicity, speed, and
-# an intuitive interface. Unlike most desktop environments, LXQt also works
-# fine with less powerful machines.
-# .
-# This package contains the backlight helper files needed by the linux LXQt
-# desktop environment.
