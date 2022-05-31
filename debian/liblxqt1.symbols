@@ -1,3 +1,4 @@
+# SymbolsHelper-Confirmed: 1.1.0 amd64 armhf
 liblxqt.so.1 liblxqt1 #MINVER#
 * Build-Depends-Package: liblxqt1-dev
  _ZN4LXQt10GridLayout10invalidateEv@Base 1.1.0
@@ -394,12 +395,9 @@ liblxqt.so.1 liblxqt1 #MINVER#
  _ZTVN4LXQt5PowerE@Base 1.1.0
  _ZTVN4LXQt8SettingsE@Base 1.1.0
  _ZTVN4LXQt9BacklightE@Base 1.1.0
- _ZThn16_N4LXQt10GridLayout10invalidateEv@Base 1.1.0
- _ZThn16_N4LXQt10GridLayout11setGeometryERK5QRect@Base 1.1.0
- _ZThn16_N4LXQt10GridLayoutD0Ev@Base 1.1.0
- _ZThn16_N4LXQt10GridLayoutD1Ev@Base 1.1.0
- _ZThn16_N4LXQt12ConfigDialogD0Ev@Base 1.1.0
- _ZThn16_N4LXQt12ConfigDialogD1Ev@Base 1.1.0
- _ZThn16_N4LXQt16PageSelectWidgetD0Ev@Base 1.1.0
- _ZThn16_N4LXQt16PageSelectWidgetD1Ev@Base 1.1.0
- _ZThn16_NK4LXQt10GridLayout8sizeHintEv@Base 1.1.0
+ (c++|arch=!armhf)"non-virtual thunk to LXQt::ConfigDialog::~ConfigDialog()@Base" 1.1.0
+ (c++)"non-virtual thunk to LXQt::GridLayout::invalidate()@Base" 1.1.0
+ (c++|arch=!armhf)"non-virtual thunk to LXQt::GridLayout::setGeometry(QRect const&)@Base" 1.1.0
+ (c++|arch=!armhf)"non-virtual thunk to LXQt::GridLayout::sizeHint() const@Base" 1.1.0
+ (c++|arch=!armhf)"non-virtual thunk to LXQt::GridLayout::~GridLayout()@Base" 1.1.0
+ (c++)"non-virtual thunk to LXQt::PageSelectWidget::~PageSelectWidget()@Base" 1.1.0
