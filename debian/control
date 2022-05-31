@@ -12,19 +12,19 @@ Build-Depends: debhelper-compat (= 13),
                libpolkit-qt5-1-dev,
                libqt5svg5-dev,
                libqt5x11extras5-dev,
-               libqt5xdg-dev (>= 3.7.1),
-               libqt5xdgiconloader-dev (>= 3.7.1),
+               libqt5xdg-dev (>= 3.9.1),
+               libqt5xdgiconloader-dev (>= 3.9.1),
                libx11-dev,
                libxss-dev,
-               lxqt-build-tools (>= 0.9.0)
-Standards-Version: 4.5.1
+               lxqt-build-tools (>= 0.11.0)
+Standards-Version: 4.6.1
 Vcs-Browser: https://phab.lubuntu.me/source/liblxqt/
 Vcs-Git: https://phab.lubuntu.me/source/liblxqt.git
 XS-Debian-Vcs-Browser: https://salsa.debian.org/lxqt-team/liblxqt
 XS-Debian-Vcs-Git: https://salsa.debian.org/lxqt-team/liblxqt.git
 Homepage: https://github.com/lxqt/liblxqt
 
-Package: liblxqt0
+Package: liblxqt1
 Architecture: any
 Depends: desktop-file-utils,
          shared-mime-info,
@@ -41,10 +41,10 @@ Description: Shared libraries for LXQt desktop environment (libs)
  This package contains the shared libraries needed by the LXQt desktop
  environment.
 
-Package: liblxqt0-dev
+Package: liblxqt1-dev
 Architecture: any
 Section: libdevel
-Depends: liblxqt0 (= ${binary:Version}),
+Depends: liblxqt1 (= ${binary:Version}),
          libqt5xdg-dev (>= 3.2.0),
          libqt5xdgiconloader-dev (>= 3.2.0),
          lxqt-build-tools (>= 0.5.0~),
@@ -62,7 +62,7 @@ Architecture: all
 Multi-Arch: foreign
 Section: localization
 Depends: qttranslations5-l10n, ${misc:Depends}
-Breaks: liblxqt0 (<< 0.11.0)
-Replaces: liblxqt0 (<< 0.11.0)
+Breaks: liblxqt1 (<< 0.11.0)
+Replaces: liblxqt1 (<< 0.11.0)
 Description: Language package for liblxqt
  This package contains the l10n files needed by the liblxqt.
