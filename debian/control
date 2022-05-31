@@ -47,9 +47,9 @@ Package: liblxqt1-dev
 Architecture: any
 Section: libdevel
 Depends: liblxqt1 (= ${binary:Version}),
-         libqt5xdg-dev (>= 3.2.0),
-         libqt5xdgiconloader-dev (>= 3.2.0),
-         lxqt-build-tools (>= 0.5.0~),
+         libqt5xdg-dev (>= 3.9.1),
+         libqt5xdgiconloader-dev (>= 3.9.1),
+         lxqt-build-tools (>= 0.11.0),
          ${misc:Depends}
 Description: Shared libraries for LXQt desktop environment (dev)
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
