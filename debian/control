@@ -32,6 +32,8 @@ Depends: desktop-file-utils,
          ${shlibs:Depends}
 Recommends: liblxqt-l10n
 Pre-Depends: ${misc:Pre-Depends}
+Breaks: liblxqt0 (<< 0.99)
+Replaces: liblxqt0 (<< 0.99)
 Description: Shared libraries for LXQt desktop environment (libs)
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
  technologies. It has been tailored for users who value simplicity, speed, and
@@ -62,7 +64,5 @@ Architecture: all
 Multi-Arch: foreign
 Section: localization
 Depends: qttranslations5-l10n, ${misc:Depends}
-Breaks: liblxqt1 (<< 0.11.0)
-Replaces: liblxqt1 (<< 0.11.0)
 Description: Language package for liblxqt
  This package contains the l10n files needed by the liblxqt.
