@@ -1,4 +1,4 @@
-liblxqt (1.1.0-0ubuntu3) UNRELEASED; urgency=medium
+liblxqt (1.1.0-0ubuntu3) jammy; urgency=medium
 
   * Backport to Jammy.
   * Removed dh-exec hashbang from debian/liblxqt1.install.
@@ -6,7 +6,7 @@ liblxqt (1.1.0-0ubuntu3) UNRELEASED; urgency=medium
   * Removes "-Wl,--as-needed" linker flag.
   * Ran wrap-and-sort.
 
- -- Aaron Rainbolt <arraybolt3@gmail.com>  Wed, 22 Jun 2022 00:05:06 -0500
+ -- Aaron Rainbolt <arraybolt3@gmail.com>  Wed, 22 Jun 2022 00:44:30 -0500
 
 liblxqt (1.1.0-0ubuntu2) kinetic; urgency=medium
 
