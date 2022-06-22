@@ -5,6 +5,7 @@ liblxqt (1.1.0-0ubuntu2~ppa1) jammy; urgency=medium
   * Got rid of non-standard Repository-Browser field in debian/upstream/metadata.
   * Removes "-Wl,--as-needed" linker flag.
   * Ran wrap-and-sort.
+  * Added Lubuntu Developers to debian/copyright.
 
  -- Aaron Rainbolt <arraybolt3@gmail.com>  Wed, 22 Jun 2022 00:44:30 -0500
 
