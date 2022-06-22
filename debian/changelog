@@ -2,6 +2,7 @@ liblxqt (1.1.0-0ubuntu3) UNRELEASED; urgency=medium
 
   * Backport to Jammy.
   * Removed dh-exec hashbang from debian/liblxqt1.install.
+  * Got rid of non-standard Repository-Browser field in debian/upstream/metadata.
 
  -- Aaron Rainbolt <arraybolt3@gmail.com>  Wed, 22 Jun 2022 00:05:06 -0500
 
