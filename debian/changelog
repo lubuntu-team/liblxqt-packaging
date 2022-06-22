@@ -1,4 +1,4 @@
-liblxqt (1.1.0-0ubuntu3) jammy; urgency=medium
+liblxqt (1.1.0-0ubuntu3~ppa1) jammy; urgency=medium
 
   * Backport to Jammy.
   * Removed dh-exec hashbang from debian/liblxqt1.install.
