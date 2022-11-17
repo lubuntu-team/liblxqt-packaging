@@ -18,8 +18,8 @@ Build-Depends: debhelper-compat (= 13),
                libxss-dev,
                lxqt-build-tools (>= 0.11.0)
 Standards-Version: 4.6.1
-Vcs-Browser: https://phab.lubuntu.me/source/liblxqt/
-Vcs-Git: https://phab.lubuntu.me/source/liblxqt.git
+Vcs-Browser: https://git.lubuntu.me/Lubuntu/liblxqt-packaging
+Vcs-Git: https://git.lubuntu.me/Lubuntu/liblxqt-packaging.git
 XS-Debian-Vcs-Browser: https://salsa.debian.org/lxqt-team/liblxqt
 XS-Debian-Vcs-Git: https://salsa.debian.org/lxqt-team/liblxqt.git
 Homepage: https://github.com/lxqt/liblxqt
