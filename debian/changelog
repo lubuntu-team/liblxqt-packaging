@@ -1,4 +1,4 @@
-liblxqt (1.2.0-0ubuntu1) UNRELEASED; urgency=medium
+liblxqt (1.2.0-0ubuntu1) lunar; urgency=medium
 
   * New upstream release.
   * Fix the watch file, for real this time.
@@ -8,7 +8,7 @@ liblxqt (1.2.0-0ubuntu1) UNRELEASED; urgency=medium
   * Remove a seemingly-obsolete Lintian override.
   * Fix a typo in the upstream metadata.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 16 Nov 2022 18:38:17 -0600
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 16 Nov 2022 19:19:19 -0600
 
 liblxqt (1.1.0-0ubuntu2) kinetic; urgency=medium
 
