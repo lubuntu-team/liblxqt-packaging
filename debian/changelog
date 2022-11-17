@@ -4,6 +4,7 @@ liblxqt (1.2.0-0ubuntu1) UNRELEASED; urgency=medium
   * Fix the watch file, for real this time.
   * Lubuntuify the package slightly, to make debhelper happy.
   * Bump build dependencies to the latest upstream LXQt versions.
+  * Remove unnecessary dh-exec call.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 16 Nov 2022 18:38:17 -0600
 
