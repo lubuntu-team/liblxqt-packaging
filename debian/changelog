@@ -1,11 +1,11 @@
-liblxqt (1.2.0-0ubuntu2) UNRELEASED; urgency=medium
+liblxqt (1.2.0-0ubuntu2) lunar; urgency=medium
 
   * Removed the obsolete '-Wl,--as-needed' linker flag from debian/rules.
   * Removed trailing whitespace from changelog.
   * Added 'Rules-Requires-Root: no' to debian/control.
   * Overhauled copyright file.
 
- -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Mon, 28 Nov 2022 14:35:33 -0600
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Mon, 28 Nov 2022 14:44:46 -0600
 
 liblxqt (1.2.0-0ubuntu1) lunar; urgency=medium
 
