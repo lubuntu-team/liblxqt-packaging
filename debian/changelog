@@ -2,6 +2,7 @@ liblxqt (1.2.0-0ubuntu2) UNRELEASED; urgency=medium
 
   * Removed the obsolete '-Wl,--as-needed' linker flag from debian/rules.
   * Removed trailing whitespace from changelog.
+  * Added 'Rules-Requires-Root: no' to debian/control.
 
  -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Mon, 28 Nov 2022 14:35:33 -0600
 

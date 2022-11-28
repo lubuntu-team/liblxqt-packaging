@@ -23,6 +23,7 @@ Vcs-Git: https://git.lubuntu.me/Lubuntu/liblxqt-packaging.git
 XS-Debian-Vcs-Browser: https://salsa.debian.org/lxqt-team/liblxqt
 XS-Debian-Vcs-Git: https://salsa.debian.org/lxqt-team/liblxqt.git
 Homepage: https://github.com/lxqt/liblxqt
+Rules-Requires-Root: no
 
 Package: liblxqt1
 Architecture: any
