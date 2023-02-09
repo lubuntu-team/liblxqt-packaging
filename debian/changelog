@@ -1,3 +1,9 @@
+liblxqt (1.2.0-0ubuntu3) lunar; urgency=medium
+
+  * No-change rebuild against lxqt-build-tools 0.12.0-0ubuntu3.
+
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Thu, 09 Feb 2023 13:49:31 -0600
+
 liblxqt (1.2.0-0ubuntu2) lunar; urgency=medium
 
   * Removed the obsolete '-Wl,--as-needed' linker flag from debian/rules.
