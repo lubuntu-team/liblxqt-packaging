@@ -2,6 +2,7 @@ liblxqt (1.3.0-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release.
   * wrap-and-sort.
+  * Update Standards-version to 4.6.2, no changes needed.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 10 May 2023 12:01:39 -0500
 
