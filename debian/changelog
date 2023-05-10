@@ -1,3 +1,9 @@
+liblxqt (1.3.0-0ubuntu1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 10 May 2023 12:01:39 -0500
+
 liblxqt (1.2.0-0ubuntu3) lunar; urgency=medium
 
   * No-change rebuild against lxqt-build-tools 0.12.0-0ubuntu3.
