@@ -3,7 +3,7 @@ Upstream-Name: liblxqt
 Source: https://github.com/lxqt/liblxqt
 
 Files: *
-Copyright: 2012-2022 LXQt team
+Copyright: 2012-2023 LXQt team
            2010-2013 Razor team
 License: LGPL-2.1+
 
@@ -32,7 +32,7 @@ License: GPL-2+
 Files: debian/*
 Copyright: 2014-2019 Alf Gaida <agaida@siduction.org>
            2022-2023 Simon Quigley <tsimonq2@debian.org>
-           2022      Aaron Rainbolt <arraybolt3@ubuntu.com>
+           2022-2023 Aaron Rainbolt <arraybolt3@gmail.com>
 License: LGPL-2.1+
 
 License: LGPL-2.1+
