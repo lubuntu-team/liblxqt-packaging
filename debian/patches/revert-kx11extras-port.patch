@@ -1,0 +1,49 @@
+Description: Revert port away from deprecated KWindowSystem
+Author: Simon Quigley <tsimonq2@ubuntu.com>
+Origin: backport
+Bug: https://github.com/lxqt/liblxqt/issues/334
+Applied-Upstream: fae257647adc8729b597d9cf9617c81b99f9df42, reverted
+Last-Update: 2023-11-10
+
+--- liblxqt-1.4.0.orig/CMakeLists.txt
++++ liblxqt-1.4.0/CMakeLists.txt
+@@ -8,7 +8,7 @@ project(liblxqt)
+ 
+ 
+ set(LXQTBT_MINIMUM_VERSION "0.13.0")
+-set(KF5_MINIMUM_VERSION "5.101.0")
++set(KF5_MINIMUM_VERSION "5.36.0")
+ set(QT_MINIMUM_VERSION "5.15.0")
+ set(QTXDG_MINIMUM_VERSION "3.12.0")
+ 
+--- liblxqt-1.4.0.orig/lxqtsingleapplication.cpp
++++ liblxqt-1.4.0/lxqtsingleapplication.cpp
+@@ -28,7 +28,6 @@
+ #include "lxqtsingleapplication.h"
+ #include "singleapplicationadaptor.h"
+ #include <KWindowSystem/KWindowSystem>
+-#include <KWindowSystem/KX11Extras>
+ #include <QDBusMessage>
+ #include <QWidget>
+ #include <QDebug>
+@@ -96,16 +95,13 @@ void SingleApplication::activateWindow()
+     if (mActivationWindow) {
+         mActivationWindow->show();
+         WId window = mActivationWindow->effectiveWinId();
++
+         KWindowInfo info(window, KWindowSystem::WMDesktop);
+         int windowDesktop = info.desktop();
+ 
+-        if (windowDesktop != KX11Extras::currentDesktop())
+-            KX11Extras::setCurrentDesktop(windowDesktop);
+-
+-        if (QWindow *w = mActivationWindow->windowHandle())
+-            KWindowSystem::activateWindow(w);
+-         else
+-            qDebug() << Q_FUNC_INFO << "Got null windowHandle";
++        if (windowDesktop != KWindowSystem::currentDesktop())
++            KWindowSystem::setCurrentDesktop(windowDesktop);
++        KWindowSystem::activateWindow(window);
+     } else {
+         qDebug() << Q_FUNC_INFO << "activationWindow not set or null";
+     }

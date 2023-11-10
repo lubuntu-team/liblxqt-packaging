@@ -1,4 +1,4 @@
-liblxqt (1.4.0-0ubuntu1~ppa1) jammy; urgency=medium
+liblxqt (1.4.0-0ubuntu1~ppa3) jammy; urgency=medium
 
   * Backport to Jammy.
 
