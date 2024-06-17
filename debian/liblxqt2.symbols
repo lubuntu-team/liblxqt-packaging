@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 1.1.0 amd64 armhf
+# SymbolsHelper-Confirmed: 2.0.0 amd64 arm64 armhf ppc64el riscv64 s390x
 liblxqt.so.2 liblxqt2 #MINVER#
 * Build-Depends-Package: liblxqt1-dev
  _ZN4LXQt10GridLayout10invalidateEv@Base 1.1.0
@@ -28,7 +28,7 @@ liblxqt.so.2 liblxqt2 #MINVER#
  _ZN4LXQt10GridLayoutD1Ev@Base 1.1.0
  _ZN4LXQt10GridLayoutD2Ev@Base 1.1.0
  _ZN4LXQt10PluginInfo4loadERK7QString@Base 1.1.0
- _ZN4LXQt10PluginInfo6searchERK11QStringListRK7QStringS6_@Base 1.1.0
+ _ZN4LXQt10PluginInfo6searchERK5QListI7QStringERKS2_S7_@Base 2.0.0
  _ZN4LXQt10PluginInfo6searchERK7QStringS3_S3_@Base 1.1.0
  _ZN4LXQt10PluginInfoC1Ev@Base 1.1.0
  _ZN4LXQt10PluginInfoC2Ev@Base 1.1.0
@@ -36,7 +36,7 @@ liblxqt.so.2 liblxqt2 #MINVER#
  _ZN4LXQt10Translator16translateLibraryERK7QString@Base 1.1.0
  _ZN4LXQt10Translator20translateApplicationERK7QString@Base 1.1.0
  _ZN4LXQt10Translator22translationSearchPathsEv@Base 1.1.0
- _ZN4LXQt10Translator25setTranslationSearchPathsERK11QStringList@Base 1.1.0
+ _ZN4LXQt10Translator25setTranslationSearchPathsERK5QListI7QStringE@Base 2.0.0
  _ZN4LXQt11Application10unixSignalEi@Base 1.1.0
  _ZN4LXQt11Application11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN4LXQt11Application11qt_metacastEPKc@Base 1.1.0
@@ -69,7 +69,7 @@ liblxqt.so.2 liblxqt2 #MINVER#
  _ZN4LXQt12ConfigDialog4saveEv@Base 1.1.0
  _ZN4LXQt12ConfigDialog5eventEP6QEvent@Base 1.1.0
  _ZN4LXQt12ConfigDialog5resetEv@Base 1.1.0
- _ZN4LXQt12ConfigDialog7addPageEP7QWidgetRK7QStringRK11QStringList@Base 1.1.0
+ _ZN4LXQt12ConfigDialog7addPageEP7QWidgetRK7QStringRK5QListIS3_E@Base 2.0.0
  _ZN4LXQt12ConfigDialog7addPageEP7QWidgetRK7QStringS5_@Base 1.1.0
  _ZN4LXQt12ConfigDialog7clickedEN16QDialogButtonBox14StandardButtonE@Base 1.1.0
  _ZN4LXQt12ConfigDialog8showPageEP7QWidget@Base 1.1.0
@@ -89,7 +89,7 @@ liblxqt.so.2 liblxqt2 #MINVER#
  _ZN4LXQt12HtmlDelegateD2Ev@Base 1.1.0
  _ZN4LXQt12Notification10clearHintsEv@Base 1.1.0
  _ZN4LXQt12Notification10serverInfoEv@Base 1.1.0
- _ZN4LXQt12Notification10setActionsERK11QStringListi@Base 1.1.0
+ _ZN4LXQt12Notification10setActionsERK5QListI7QStringEi@Base 2.0.0
  _ZN4LXQt12Notification10setSummaryERK7QString@Base 1.1.0
  _ZN4LXQt12Notification10setTimeoutEi@Base 1.1.0
  _ZN4LXQt12Notification11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
@@ -129,9 +129,9 @@ liblxqt.so.2 liblxqt2 #MINVER#
  _ZN4LXQt12PowerManagerD1Ev@Base 1.1.0
  _ZN4LXQt12PowerManagerD2Ev@Base 1.1.0
  _ZN4LXQt13ProgramFinder11programNameERK7QString@Base 1.1.0
- _ZN4LXQt13ProgramFinder12findProgramsERK11QStringList@Base 1.1.0
+ _ZN4LXQt13ProgramFinder12findProgramsERK5QListI7QStringE@Base 2.0.0
  _ZN4LXQt13ProgramFinder13programExistsERK7QString@Base 1.1.0
- _ZN4LXQt13RotatedWidget10enterEventEP6QEvent@Base 1.1.0
+ _ZN4LXQt13RotatedWidget10enterEventEP11QEnterEvent@Base 2.0.0
  _ZN4LXQt13RotatedWidget10leaveEventEP6QEvent@Base 1.1.0
  _ZN4LXQt13RotatedWidget10paintEventEP11QPaintEvent@Base 1.1.0
  _ZN4LXQt13RotatedWidget10wheelEventEP11QWheelEvent@Base 1.1.0
@@ -337,7 +337,10 @@ liblxqt.so.2 liblxqt2 #MINVER#
  _ZNK4LXQt9LXQtTheme4nameEv@Base 1.1.0
  _ZNK4LXQt9LXQtTheme4pathEv@Base 1.1.0
  _ZNK4LXQt9LXQtTheme7isValidEv@Base 1.1.0
+ (optional=templinst)_ZNKSt8_Rb_treeI7QStringSt4pairIKS0_8QVariantESt10_Select1stIS4_ESt4lessIS0_ESaIS4_EE4findERS2_@Base 2.0.0
  _ZNSt6vectorIiSaIiEE17_M_realloc_insertIJiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_@Base 1.1.0
+ (optional=templinst)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_8QVariantESt10_Select1stIS4_ESt4lessIS0_ESaIS4_EE24_M_get_insert_unique_posERS2_@Base 2.0.0
+ (optional=templinst|arch=!armhf !s390x)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_8QVariantESt10_Select1stIS4_ESt4lessIS0_ESaIS4_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS4_ERS2_@Base 2.0.0
  _ZTIN4LXQt10GridLayoutE@Base 1.1.0
  _ZTIN4LXQt10MessageBoxE@Base 1.1.0
  _ZTIN4LXQt10PluginInfoE@Base 1.1.0
@@ -395,9 +398,11 @@ liblxqt.so.2 liblxqt2 #MINVER#
  _ZTVN4LXQt5PowerE@Base 1.1.0
  _ZTVN4LXQt8SettingsE@Base 1.1.0
  _ZTVN4LXQt9BacklightE@Base 1.1.0
- (c++|arch=!armhf)"non-virtual thunk to LXQt::ConfigDialog::~ConfigDialog()@Base" 1.1.0
+ _Zls6QDebugRK5QListIN4LXQt10PluginInfoEE@Base 2.0.0
+ _Zls6QDebugRKN4LXQt10PluginInfoE@Base 2.0.0
+ (c++)"non-virtual thunk to LXQt::ConfigDialog::~ConfigDialog()@Base" 2.0.0
  (c++)"non-virtual thunk to LXQt::GridLayout::invalidate()@Base" 1.1.0
- (c++|arch=!armhf)"non-virtual thunk to LXQt::GridLayout::setGeometry(QRect const&)@Base" 1.1.0
- (c++|arch=!armhf)"non-virtual thunk to LXQt::GridLayout::sizeHint() const@Base" 1.1.0
- (c++|arch=!armhf)"non-virtual thunk to LXQt::GridLayout::~GridLayout()@Base" 1.1.0
+ (c++)"non-virtual thunk to LXQt::GridLayout::setGeometry(QRect const&)@Base" 2.0.0
+ (c++)"non-virtual thunk to LXQt::GridLayout::sizeHint() const@Base" 2.0.0
+ (c++)"non-virtual thunk to LXQt::GridLayout::~GridLayout()@Base" 2.0.0
  (c++)"non-virtual thunk to LXQt::PageSelectWidget::~PageSelectWidget()@Base" 1.1.0

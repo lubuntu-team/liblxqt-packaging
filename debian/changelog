@@ -1,4 +1,4 @@
-liblxqt (2.0.0-0ubuntu1~ppa1) oracular; urgency=medium
+liblxqt (2.0.0-0ubuntu1~ppa2) oracular; urgency=medium
 
   * New upstream release.
   * Bump build dependencies.
@@ -6,6 +6,7 @@ liblxqt (2.0.0-0ubuntu1~ppa1) oracular; urgency=medium
   * Bump Standards-Version to 4.7.0, no changes necessary.
   * Bump soname.
   * Adjust package names.
+  * Update symbols file.
 
  -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Mon, 17 Jun 2024 11:59:42 -0500
 
