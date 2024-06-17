@@ -24,7 +24,7 @@ XS-Debian-Vcs-Git: https://salsa.debian.org/lxqt-team/liblxqt.git
 Homepage: https://github.com/lxqt/liblxqt
 Rules-Requires-Root: no
 
-Package: liblxqt1
+Package: liblxqt2
 Architecture: any
 Depends: desktop-file-utils,
          shared-mime-info,
@@ -43,10 +43,10 @@ Description: Shared libraries for LXQt desktop environment (libs)
  This package contains the shared libraries needed by the LXQt desktop
  environment.
 
-Package: liblxqt1-dev
+Package: liblxqt2-dev
 Architecture: any
 Section: libdevel
-Depends: liblxqt1 (= ${binary:Version}),
+Depends: liblxqt2 (= ${binary:Version}),
          libqt6xdg-dev (>= 4.0.0),
          libqt6xdgiconloader-dev (>= 4.0.0),
          lxqt-build-tools (>= 2.0.0),

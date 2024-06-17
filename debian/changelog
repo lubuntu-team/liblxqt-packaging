@@ -4,6 +4,7 @@ liblxqt (2.0.0-0ubuntu1) UNRELEASED; urgency=medium
   * Bump build dependencies.
   * Update copyright file.
   * Bump Standards-Version to 4.7.0, no changes necessary.
+  * Bump soname.
 
  -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Mon, 17 Jun 2024 11:59:42 -0500
 

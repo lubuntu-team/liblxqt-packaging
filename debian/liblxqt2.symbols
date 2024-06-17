@@ -1,5 +1,5 @@
 # SymbolsHelper-Confirmed: 1.1.0 amd64 armhf
-liblxqt.so.1 liblxqt1 #MINVER#
+liblxqt.so.2 liblxqt2 #MINVER#
 * Build-Depends-Package: liblxqt1-dev
  _ZN4LXQt10GridLayout10invalidateEv@Base 1.1.0
  _ZN4LXQt10GridLayout10setStretchE6QFlagsINS0_11StretchFlagEE@Base 1.1.0
