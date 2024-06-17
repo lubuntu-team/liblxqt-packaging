@@ -1,6 +1,6 @@
 # SymbolsHelper-Confirmed: 2.0.0 amd64 arm64 armhf ppc64el riscv64 s390x
 liblxqt.so.2 liblxqt2 #MINVER#
-* Build-Depends-Package: liblxqt1-dev
+* Build-Depends-Package: liblxqt2-dev
  _ZN4LXQt10GridLayout10invalidateEv@Base 1.1.0
  _ZN4LXQt10GridLayout10setStretchE6QFlagsINS0_11StretchFlagEE@Base 1.1.0
  _ZN4LXQt10GridLayout11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
