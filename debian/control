@@ -16,7 +16,7 @@ Build-Depends: debhelper-compat (= 13),
                libxss-dev,
                lxqt-build-tools (>= 2.0.0),
                qt6-svg-dev
-Standards-Version: 4.6.2
+Standards-Version: 4.7.0
 Vcs-Browser: https://git.lubuntu.me/Lubuntu/liblxqt-packaging
 Vcs-Git: https://git.lubuntu.me/Lubuntu/liblxqt-packaging.git
 XS-Debian-Vcs-Browser: https://salsa.debian.org/lxqt-team/liblxqt
