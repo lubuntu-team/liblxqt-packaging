@@ -2,6 +2,7 @@ liblxqt (2.0.0-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release.
   * Bump build dependencies.
+  * Update copyright file.
 
  -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Mon, 17 Jun 2024 11:59:42 -0500
 
