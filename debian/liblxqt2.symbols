@@ -338,7 +338,6 @@ liblxqt.so.2 liblxqt2 #MINVER#
  _ZNK4LXQt9LXQtTheme4pathEv@Base 1.1.0
  _ZNK4LXQt9LXQtTheme7isValidEv@Base 1.1.0
  (optional=templinst)_ZNKSt8_Rb_treeI7QStringSt4pairIKS0_8QVariantESt10_Select1stIS4_ESt4lessIS0_ESaIS4_EE4findERS2_@Base 2.0.0
- _ZNSt6vectorIiSaIiEE17_M_realloc_insertIJiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_@Base 1.1.0
  (optional=templinst)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_8QVariantESt10_Select1stIS4_ESt4lessIS0_ESaIS4_EE24_M_get_insert_unique_posERS2_@Base 2.0.0
  (optional=templinst|arch=!armhf !s390x)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_8QVariantESt10_Select1stIS4_ESt4lessIS0_ESaIS4_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS4_ERS2_@Base 2.0.0
  _ZTIN4LXQt10GridLayoutE@Base 1.1.0
