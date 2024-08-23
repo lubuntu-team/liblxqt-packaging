@@ -1,4 +1,10 @@
-liblxqt (2.0.0-0ubuntu1~ppa2) oracular; urgency=medium
+liblxqt (2.0.0-0ubuntu2) UNRELEASED; urgency=medium
+
+  * Update symbols from build logs.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 23 Aug 2024 21:22:05 +0100
+
+liblxqt (2.0.0-0ubuntu1) oracular; urgency=medium
 
   * New upstream release.
   * Bump build dependencies.
@@ -8,7 +14,7 @@ liblxqt (2.0.0-0ubuntu1~ppa2) oracular; urgency=medium
   * Adjust package names.
   * Update symbols file.
 
- -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Mon, 17 Jun 2024 11:59:42 -0500
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Thu, 15 Aug 2024 16:03:02 -0500
 
 liblxqt (1.4.0-0ubuntu1) noble; urgency=medium
 
