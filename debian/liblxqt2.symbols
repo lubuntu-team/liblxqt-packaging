@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 2.0.0 amd64 arm64 armhf ppc64el riscv64 s390x
+# SymbolsHelper-Confirmed: 2.1.0 amd64
 liblxqt.so.2 liblxqt2 #MINVER#
 * Build-Depends-Package: liblxqt2-dev
  _ZN4LXQt10GridLayout10invalidateEv@Base 1.1.0
@@ -8,6 +8,7 @@ liblxqt.so.2 liblxqt2 #MINVER#
  _ZN4LXQt10GridLayout11setGeometryERK5QRect@Base 1.1.0
  _ZN4LXQt10GridLayout11setRowCountEi@Base 1.1.0
  _ZN4LXQt10GridLayout12setDirectionENS0_9DirectionE@Base 1.1.0
+ _ZN4LXQt10GridLayout13setItemsOrderENS0_10ItemsOrderE@Base 2.1.0
  _ZN4LXQt10GridLayout14setColumnCountEi@Base 1.1.0
  _ZN4LXQt10GridLayout16setCellFixedSizeE5QSize@Base 1.1.0
  _ZN4LXQt10GridLayout16staticMetaObjectE@Base 1.1.0
@@ -277,6 +278,7 @@ liblxqt.so.2 liblxqt2 #MINVER#
  _ZN4LXQt9LXQtThemeD1Ev@Base 1.1.0
  _ZN4LXQt9LXQtThemeD2Ev@Base 1.1.0
  _ZN4LXQt9LXQtThemeaSERKS0_@Base 1.1.0
+ _ZNK4LXQt10GridLayout10itemsOrderEv@Base 2.1.0
  _ZNK4LXQt10GridLayout10metaObjectEv@Base 1.1.0
  _ZNK4LXQt10GridLayout11columnCountEv@Base 1.1.0
  _ZNK4LXQt10GridLayout15cellMaximumSizeEv@Base 1.1.0

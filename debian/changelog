@@ -2,6 +2,7 @@ liblxqt (2.1.0-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release.
     - Bump build dependencies.
+    - Update symbols from amd64 build logs.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 05 Nov 2024 11:42:15 -0600
 
