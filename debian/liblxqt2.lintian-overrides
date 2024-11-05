@@ -1,2 +1,5 @@
 # there will be no manpage for lxqt-backlight_backend
-liblxqt1: no-manual-page [usr/bin/lxqt-backlight_backend]
+liblxqt2: no-manual-page [usr/bin/lxqt-backlight_backend]
+
+# This is fine
+liblxqt2: application-in-library-section libs [usr/bin/lxqt-backlight_backend]
