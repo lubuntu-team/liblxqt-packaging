@@ -10,12 +10,12 @@ Build-Depends: debhelper-compat (= 13),
                dh-exec,
                libkf6windowsystem-dev (>= 6.0.0),
                libpolkit-qt6-1-dev,
-               libqt6xdg-dev (>= 4.1.0),
-               libqt6xdgiconloader-dev (>= 4.1.0),
+               libqt6xdg-dev (>= 4.2.0),
+               libqt6xdgiconloader-dev (>= 4.2.0),
                libx11-dev,
                libxkbcommon-dev (>= 0.5.0),
                libxss-dev,
-               lxqt-build-tools (>= 2.1.0),
+               lxqt-build-tools (>= 2.2.0),
                qt6-svg-dev (>= 6.6.0)
 Standards-Version: 4.7.2
 Vcs-Browser: https://git.lubuntu.me/Lubuntu/liblxqt-packaging
@@ -48,9 +48,9 @@ Package: liblxqt2-dev
 Architecture: any
 Section: libdevel
 Depends: liblxqt2 (= ${binary:Version}),
-         libqt6xdg-dev (>= 4.1.0),
-         libqt6xdgiconloader-dev (>= 4.1.0),
-         lxqt-build-tools (>= 2.1.0),
+         libqt6xdg-dev (>= 4.2.0),
+         libqt6xdgiconloader-dev (>= 4.2.0),
+         lxqt-build-tools (>= 2.2.0),
          ${misc:Depends}
 Description: Shared libraries for LXQt desktop environment (dev)
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
