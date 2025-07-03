@@ -3,8 +3,9 @@ liblxqt (2.2.0-0ubuntu1) questing; urgency=medium
   * New upstream release.
     - Update build dependencies.
   * Update Standards-Version to 4.7.2, no changes needed.
+  * Update copyright file.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 19 Apr 2025 22:46:56 -0500
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Thu, 03 Jul 2025 15:03:59 -0500
 
 liblxqt (2.1.0-0ubuntu3) plucky; urgency=medium
 
