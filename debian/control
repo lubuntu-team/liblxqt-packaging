@@ -10,12 +10,12 @@ Build-Depends: debhelper-compat (= 13),
                dh-exec,
                libkf6windowsystem-dev (>= 6.0.0),
                libpolkit-qt6-1-dev,
-               libqt6xdg-dev (>= 4.2.0),
-               libqt6xdgiconloader-dev (>= 4.2.0),
+               libqt6xdg-dev (>= 4.3.0),
+               libqt6xdgiconloader-dev (>= 4.3.0),
                libx11-dev,
                libxkbcommon-dev (>= 0.5.0),
                libxss-dev,
-               lxqt-build-tools (>= 2.2.0),
+               lxqt-build-tools (>= 2.3.0),
                qt6-svg-dev (>= 6.6.0)
 Standards-Version: 4.7.3
 Vcs-Browser: https://git.lubuntu.me/Lubuntu/liblxqt-packaging
