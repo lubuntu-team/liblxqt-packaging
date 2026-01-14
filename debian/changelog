@@ -2,6 +2,7 @@ liblxqt (2.3.0-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release.
   * Update copyright file.
+  * Update Standards-Version to 4.7.3, no changes needed.
 
  -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Wed, 14 Jan 2026 13:00:32 -0600
 
