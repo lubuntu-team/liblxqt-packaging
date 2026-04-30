@@ -1,3 +1,9 @@
+liblxqt (2.4.0-0ubuntu1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Simon Quigley <tsimonq2@debian.org>  Thu, 30 Apr 2026 12:48:29 -0500
+
 liblxqt (2.3.0-0ubuntu1) resolute; urgency=medium
 
   * New upstream release.
