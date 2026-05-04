@@ -1,5 +1,6 @@
 liblxqt (2.4.0-0ubuntu1) stonking; urgency=medium
 
+  [ Simon Quigley ]
   * New upstream release.
     - Update build dependencies.
   * Update the upstream signing key.
@@ -7,7 +8,10 @@ liblxqt (2.4.0-0ubuntu1) stonking; urgency=medium
   * Drop Conflicts/Replaces on liblxqt2, we are past an LTS.
   * Update the copyright file.
 
- -- Simon Quigley <tsimonq2@debian.org>  Thu, 30 Apr 2026 12:54:06 -0500
+  [ Aaron Rainbolt ]
+  * Bump LXQt team copyright year.
+
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Mon, 04 May 2026 00:40:47 -0400
 
 liblxqt (2.3.0-0ubuntu1) resolute; urgency=medium
 
