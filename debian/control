@@ -5,7 +5,7 @@ Uploaders: Alf Gaida <agaida@siduction.org>,
            ChangZhuo Chen (陳昌倬) <czchen@debian.org>,
            Andrew Lee (李健秋) <ajqlee@debian.org>
 Section: libs
-Build-Depends: debhelper-compat (= 13),
+Build-Depends: debhelper-compat (= 14),
                dh-exec,
                libkf6windowsystem-dev (>= 6.0.0),
                libpolkit-qt6-1-dev,
@@ -25,12 +25,8 @@ Homepage: https://github.com/lxqt/liblxqt
 
 Package: liblxqt2
 Architecture: any
-Depends: desktop-file-utils,
-         shared-mime-info,
-         ${misc:Depends},
-         ${shlibs:Depends}
+Depends: desktop-file-utils, shared-mime-info
 Recommends: liblxqt-l10n
-Pre-Depends: ${misc:Pre-Depends}
 Description: Shared libraries for LXQt desktop environment (libs)
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
  technologies. It has been tailored for users who value simplicity, speed, and
@@ -46,8 +42,7 @@ Section: libdevel
 Depends: liblxqt2 (= ${binary:Version}),
          libqt6xdg-dev (>= 4.2.0),
          libqt6xdgiconloader-dev (>= 4.2.0),
-         lxqt-build-tools (>= 2.2.0),
-         ${misc:Depends}
+         lxqt-build-tools (>= 2.2.0)
 Description: Shared libraries for LXQt desktop environment (dev)
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
  technologies. It has been tailored for users who value simplicity, speed, and
@@ -60,7 +55,7 @@ Package: liblxqt-l10n
 Architecture: all
 Multi-Arch: foreign
 Section: localization
-Depends: qt6-translations-l10n, ${misc:Depends}
+Depends: qt6-translations-l10n
 Description: Language package for liblxqt
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
  technologies. It has been tailored for users who value simplicity, speed, and
