@@ -1,3 +1,9 @@
+liblxqt (2.5.0-0ubuntu1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Simon Quigley <tsimonq2@debian.org>  Wed, 04 Nov 2026 20:22:39 -0600
+
 liblxqt (2.4.0-0ubuntu1) stonking; urgency=medium
 
   [ Simon Quigley ]
